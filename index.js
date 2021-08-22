@@ -1,5 +1,6 @@
 window.fbAsyncInit = function()
 {
+    console.log('RUNNING INITIALIZER');
     FB.init({
         appId   : "221523695878917",
         cookie  : true,  // enable cookies to allow the server to access
@@ -35,7 +36,7 @@ window.fbAsyncInit = function()
         var accessToken = response.authResponse.accessToken;
         console.log(accessToken)
       } 
-    } )
+    });
 
     // FB.login(function(response) { alert(response.authResponse.accessToken);
     // }, {perms:'read_stream,publish_stream,offline_access'});
