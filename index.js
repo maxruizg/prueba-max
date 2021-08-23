@@ -17,8 +17,8 @@ window.fbAsyncInit = function()
           console.log('Good to see you, ' + response.name + '.');
         });
 
-        var since = "since:'2021-07-21'"
-        var until = "until:'2021-07-22'"
+        var since = "since:'2021-07-31'"
+        var until = "until:'2021-07-31'"
         
         FB.api(
           '/23848541904820038/insights',
