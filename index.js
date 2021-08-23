@@ -1,4 +1,3 @@
-const 
 
 window.fbAsyncInit = function()
 {
