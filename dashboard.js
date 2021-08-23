@@ -31,7 +31,7 @@ window.fbAsyncInit = function()
     console.log('User cancelled login or did not fully authorize.');
     }
     });
-}
+};
 
 (() => {
     var ctx = document.getElementById('myChart1');
@@ -152,7 +152,7 @@ window.fbAsyncInit = function()
     }
     });
     myChart.resize(20, 20)
-})()
+})();
 
 // Funcion para salvar metricas desde un boton
 function saveMetrics() {
