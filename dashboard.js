@@ -34,7 +34,7 @@ function Facebook() {
     }
 }
 
-facebook()
+Facebook()
 
 (() => {
     var ctx = document.getElementById('myChart1');
