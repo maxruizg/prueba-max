@@ -1,5 +1,5 @@
+
 (() => {
-    
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
     type: 'line',
@@ -8,7 +8,7 @@
         datasets: [
         {
             label: "Actual",
-            data: [10, 19, 3, 5, 2, 3, 5, 4],
+            data: [10, 19, 3, x, 2, 3, 5, 4],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
@@ -142,6 +142,3 @@ while(i < 10 && readData != null){
     options[readData[i]].selected = true
     i++
 }
-
-var miFuncion = require('./index')
-console.log(miFuncion.miFuncion)

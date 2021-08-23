@@ -22,27 +22,14 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"id"},
           function(response) {
-            console.log(response)
+            const idCampaigns = response
           }
         );
 
-        
       } else {
        console.log('User cancelled login or did not fully authorize.');
       }
     });
 }
 
-class Persona {
-  constructor(data, time){
-    this.data = data
-    this.time = time
-  }
-}
-
-const persona = new Persona([1, 2, 3], [1, 2 ,3])
-
-const data = 2
-const miFuncion = () => {
-  return data
-}
+const x = 10
