@@ -141,7 +141,7 @@ function saveMetrics() {
     localStorage.setItem("filterMonth", JSON.stringify(filters));
 }
 
-const readData = JSON.parse(localStorage.getItem("filterData"))
+let readData = JSON.parse(localStorage.getItem("filterData"))
 i = 0
 
 // Cambio de ciclo para condicionar null en readData
