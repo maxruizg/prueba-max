@@ -23,20 +23,19 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
             const idCampaigns = response
-            console.log('Hola')
+            console.log('hola')
+            for(const campaign in idCampaigns){
+              FB.api(
+                '/' + campaign + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2020-08-01',until:'2020-08-31'}]"},
+                function(response) {
+                    console.log(response)
+                }
+              );
+            }
           }
         );
-
-        for(campaign in idCampaigns){
-          FB.api(
-            '/' + campaign + '/insights',
-            'GET',
-            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2020-08-01',until:'2020-08-31'}]"},
-            function(response) {
-                console.log(response)
-            }
-          );
-        }
 
       } else {
        console.log('User cancelled login or did not fully authorize.');
