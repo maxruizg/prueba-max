@@ -23,6 +23,9 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
             const idCampaigns = response
+            localStorage.setItem("idCampaigns", JSON.stringify(idCampaigns))
+            const readData = JSON.parse(localStorage.getItem("idCampaigns"))
+            console.log(readData)
           }
         );
 
