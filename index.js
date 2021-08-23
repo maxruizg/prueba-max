@@ -12,15 +12,18 @@ window.fbAsyncInit = function()
     FB.login(function(response) {
         console.log('Running login');
       if (response.authResponse) {
-       console.log('Welcome!  Fetching your information.... ');
-       FB.api('/me', function(response) {
-         console.log('Good to see you, ' + response.name + '.');
-       });
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+          console.log('Good to see you, ' + response.name + '.');
+        });
 
+        var since = "since:'2021-07-21'"
+        var until = "until:'2021-07-22'"
+        
         FB.api(
           '/23848541904820038/insights',
           'GET',
-          {"fields":"impressions,clicks,ctr,spend,cpc","time_ranges":"[{since:'2021-07-21',until:'2021-08-01'}]"},
+          {"fields":"impressions,clicks,ctr,spend,cpc","time_ranges":"[{" + since + "," + until + "}]"},
           function(response) {
               console.log(response)
           }
