@@ -24,17 +24,20 @@ window.fbAsyncInit = function()
           function(response) {
             const idCampaigns = response.data
             console.log(idCampaigns)
-            for(const id in idCampaigns){
-              console.log(id.id)
-              FB.api(
-                '/' + idCampaigns[id] + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-06-31'}]"},
-                function(response) {
-                    console.log(response)
-                }
-              );
-            }
+            idCampaigns.array.forEach(element => {
+              console.log(element.id)
+            });
+            // fore(const id in idCampaigns){
+            //   console.log(id.id)
+            //   FB.api(
+            //     '/' + idCampaigns[id] + '/insights',
+            //     'GET',
+            //     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-06-31'}]"},
+            //     function(response) {
+            //         console.log(response)
+            //     }
+            //   );
+            // }
           }
         );
 
