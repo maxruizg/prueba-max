@@ -142,5 +142,4 @@ while(i < 10 && readData != null){
     options[readData[i]].selected = true
     i++
 }
-
-console.log(miFuncion)
+console.log(miFuncion())
