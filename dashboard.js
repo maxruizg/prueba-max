@@ -1,4 +1,4 @@
-const facebook = () => {
+function Facebook() {
     window.fbAsyncInit = function()
     {
         FB.init({
@@ -34,7 +34,7 @@ const facebook = () => {
     }
 }
 
-facebook
+facebook()
 
 (() => {
     var ctx = document.getElementById('myChart1');
