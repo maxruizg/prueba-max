@@ -34,11 +34,12 @@ window.fbAsyncInit = function()
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-08-30'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-06-30'}]"},
                 function(response) {
                   const data = response.data
                   // totalSpend[0] += parseInt(data.spend)
-                  console.log(data.spend)
+                  console.log(response)
+                  console.log(response.data)
                 }
               );
             });
