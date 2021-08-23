@@ -25,6 +25,7 @@ window.fbAsyncInit = function()
             const idCampaigns = response.data
             console.log(idCampaigns)
             idCampaigns.forEach(element => {
+              console.log(element.id)
               FB.api(
                 '/' + element + '/insights',
                 'GET',
