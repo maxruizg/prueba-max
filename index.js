@@ -22,7 +22,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"id"},
           function(response) {
-            const idCampaigns = JSON.parse(response)
+            const idCampaigns = response
             console.log(idCampaigns)
             for(const id in idCampaigns){
               FB.api(
