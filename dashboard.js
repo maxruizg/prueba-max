@@ -1,6 +1,6 @@
-import DataQueries from "./index";
-
 (() => {
+    import DataQueries from "./index.js";
+
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
     type: 'line',
