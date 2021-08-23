@@ -23,7 +23,7 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
             const idCampaigns = response
-            console.log('hola')
+            console.log(idCampaigns)
             for(const campaign in idCampaigns){
               FB.api(
                 '/' + campaign.id + '/insights',
