@@ -1,0 +1,150 @@
+:root {
+    --colorInterno: #adb5bd;
+    --colorExterno: #6c757d;
+    --colorSelect: #ced4da;
+}
+body {
+    /* border: solid blue 1px; */
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.grid {
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--colorExterno);
+    font-family: sans-serif;
+    /* border: solid red 1px; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    height: 800px;
+    width: 1600px;
+    padding: 10px;
+}
+.footer {
+    /* border: solid red 1px; */
+    height: 50px;
+    width: 1620px;
+    background-color: var(--colorExterno);
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.save {
+    background-color: var(--colorSelect);
+    margin: 10px;
+    color: black;
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 5px;
+    height: 25px;
+}
+.grafic {
+    /* border: solid blue 1px; */
+    background-color: var(--colorInterno);
+    height: 390px;
+    width: 790px;
+    margin: 5px;
+}
+select {
+    border-radius: 5px;
+    border: 1px var(--colorInterno) solid;
+    background-color: var(--colorSelect);
+    height: 20px;
+    width: 100px;
+}
+select:hover {
+    border: 1px var(--colorInterno) solid;
+}
+.options {
+    margin-right: 20px;
+    float: right;
+}
+.options2 {
+    height: 15px;
+    width: 70px;
+    font-size: 10px;
+}
+.options3 {
+    height: 15px;
+    width: 60px;
+    font-size: 10px;
+}
+.options4 {
+    height: 20px;
+    width: 120px;
+}
+.espacio {
+    height: 15px;
+}
+.title1 {
+    font-size: 20px;
+    margin-left: 20px;
+}
+.chart1, .chart2 {
+    /* height: 10%; */
+    height: 60%;
+    width: 100%;
+}
+.dataGrid1 {
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: 50% 50%;
+}
+.data1 {
+    /* border: solid blue 1px; */
+    text-align: center;
+    background-color: var(--colorInterno);
+    height: 190px;
+    width: 390px;
+    margin: 5px;
+}
+.data2 {
+    text-align: center;
+}
+.space {
+    height: 20px;
+}
+.data2 {
+    /* border: solid blue 1px; */
+    background-color: var(--colorInterno);
+    height: 190px;
+    width: 190px;
+    margin: 5px;
+}
+.dataGrid2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.list {
+    background-color: var(--colorInterno);
+    height: 390px;
+    width: 390px;
+    margin: 5px;
+    text-align: center;
+}
+.listElements {
+    border: solid var(--colorExterno) 1px;
+    display: flexP;
+    width: 370px;
+    height: 315px;
+    margin: 10px;
+}
+.smallText {
+    font-size: 11px;
+}
+button {
+    transition-duration: 0.4s;
+    border: none;
+}
+button:hover {
+    background-color: #212529;
+    color: white;
+}

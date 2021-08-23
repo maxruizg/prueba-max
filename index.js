@@ -42,5 +42,3 @@ window.fbAsyncInit = function()
     //   } 
     // });
 }
-
-console.log('hola')
