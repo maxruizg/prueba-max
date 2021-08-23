@@ -28,6 +28,7 @@ window.fbAsyncInit = function()
               console.log(response)
           }
         );
+
         
       } else {
        console.log('User cancelled login or did not fully authorize.');
