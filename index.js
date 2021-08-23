@@ -26,7 +26,7 @@ window.fbAsyncInit = function()
             console.log('hola')
             for(const campaign in idCampaigns){
               FB.api(
-                '/' + campaign + '/insights',
+                '/' + campaign.id + '/insights',
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2020-08-01',until:'2020-08-31'}]"},
                 function(response) {
