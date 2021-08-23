@@ -32,4 +32,4 @@ window.fbAsyncInit = function()
     });
 }
 
-const x = 10
+export const x = 10
