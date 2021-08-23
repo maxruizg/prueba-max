@@ -142,4 +142,6 @@ while(i < 10 && readData != null){
     options[readData[i]].selected = true
     i++
 }
-console.log(miFuncion())
+
+var miFuncion = require('./index')
+console.log(miFuncion.miFuncion)
