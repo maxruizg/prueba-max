@@ -31,7 +31,7 @@ window.fbAsyncInit = function()
     console.log('User cancelled login or did not fully authorize.');
     }
     });
-};
+}
 
 (() => {
     var ctx = document.getElementById('myChart1');
