@@ -25,7 +25,14 @@ window.fbAsyncInit = function()
             const idCampaigns = response.data
             console.log(idCampaigns)
             idCampaigns.forEach(element => {
-              console.log(element.id)
+              FB.api(
+                '/' + element + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-01',until:'2021-08-01'}]"},
+                function(response) {
+                    console.log(response)
+                }
+              );
             });
             // fore(const id in idCampaigns){
             //   console.log(id.id)
