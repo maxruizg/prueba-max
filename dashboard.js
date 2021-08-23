@@ -1,4 +1,4 @@
-import x from './index'
+
 (() => {
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
