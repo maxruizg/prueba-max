@@ -24,7 +24,7 @@ window.fbAsyncInit = function()
           function(response) {
             const idCampaigns = response.data
             console.log(idCampaigns)
-            idCampaigns.array.forEach(element => {
+            idCampaigns.forEach(element => {
               console.log(element.id)
             });
             // fore(const id in idCampaigns){
