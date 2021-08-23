@@ -1,3 +1,5 @@
+import DataQueries from "./index";
+
 (() => {
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
@@ -134,6 +136,7 @@ function saveMetrics() {
 const readData = JSON.parse(localStorage.getItem("filterData"))
 i = 0
 
+// Cambio de ciclo para condicionar null en readData
 while(i < 10 && readData != null){
     var select = document.getElementById(`selectMetrica${i+1}`)
     var options = select.options

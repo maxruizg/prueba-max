@@ -16,16 +16,13 @@ window.fbAsyncInit = function()
         FB.api('/me', function(response) {
           console.log('Good to see you, ' + response.name + '.');
         });
-
-        var since = "since:'2021-07-31'"
-        var until = "until:'2021-07-31'"
         
         FB.api(
-          '/23848541904820038/insights',
+          '/act_1468139590049416/campaigns',
           'GET',
-          {"fields":"impressions,clicks,ctr,spend,cpc","time_ranges":"[{" + since + "," + until + "}]"},
+          {"fields":"id"},
           function(response) {
-              console.log(response)
+            console.log(response)
           }
         );
 
@@ -34,4 +31,11 @@ window.fbAsyncInit = function()
        console.log('User cancelled login or did not fully authorize.');
       }
     });
+}
+
+export default class DataQueries {
+  constructor(data, time) {
+    this.data = data
+    this.time = time
+  }
 }
