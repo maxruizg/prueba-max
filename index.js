@@ -34,11 +34,4 @@ window.fbAsyncInit = function()
        console.log('User cancelled login or did not fully authorize.');
       }
     });
-
-    // FB.getLoginStatus(function(response) {
-    //   if (response.status === 'connected') {
-    //     var accessToken = response.authResponse.accessToken;
-    //     console.log(accessToken)
-    //   } 
-    // });
 }

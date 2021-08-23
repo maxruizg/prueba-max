@@ -133,9 +133,10 @@ function saveMetrics() {
 
 const readData = JSON.parse(localStorage.getItem("filterData"))
 i = 0
-do{
+
+while(i < 10 && readData != null){
     var select = document.getElementById(`selectMetrica${i+1}`)
     var options = select.options
     options[readData[i]].selected = true
     i++
-}while(i < 10)
+}
