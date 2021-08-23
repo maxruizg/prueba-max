@@ -1,3 +1,38 @@
+(()=>{
+    window.fbAsyncInit = function()
+    {
+        FB.init({
+            appId   : "1345101055833302",
+            cookie  : true,  // enable cookies to allow the server to access
+                    // the session
+            xfbml   : true,  // parse social plugins on this page
+            version : 'v11.0', // use version 2.1
+            status  : false
+        });
+
+        FB.login(function(response) {
+            console.log('Running login');
+        if (response.authResponse) {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+            console.log('Good to see you, ' + response.name + '.');
+            });
+            
+            FB.api(
+            '/act_1468139590049416/campaigns',
+            'GET',
+            {"fields":"id"},
+            function(response) {
+                const idCampaigns = response
+            }
+            );
+
+        } else {
+        console.log('User cancelled login or did not fully authorize.');
+        }
+        });
+    }
+})();
 
 (() => {
     var ctx = document.getElementById('myChart1');
@@ -8,7 +43,7 @@
         datasets: [
         {
             label: "Actual",
-            data: [10, 19, 3, x, 2, 3, 5, 4],
+            data: [10, 19, 3, 5, 2, 3, 5, 4],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
@@ -143,36 +178,3 @@ while(i < 10 && readData != null){
     i++
 }
 
-window.fbAsyncInit = function()
-{
-    FB.init({
-        appId   : "1345101055833302",
-        cookie  : true,  // enable cookies to allow the server to access
-                // the session
-        xfbml   : true,  // parse social plugins on this page
-        version : 'v11.0', // use version 2.1
-        status  : false
-    });
-
-    FB.login(function(response) {
-        console.log('Running login');
-      if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-          console.log('Good to see you, ' + response.name + '.');
-        });
-        
-        FB.api(
-          '/act_1468139590049416/campaigns',
-          'GET',
-          {"fields":"id"},
-          function(response) {
-            const idCampaigns = response
-          }
-        );
-
-      } else {
-       console.log('User cancelled login or did not fully authorize.');
-      }
-    });
-}
