@@ -41,3 +41,8 @@ class Persona {
 }
 
 const persona = new Persona([1, 2, 3], [1, 2 ,3])
+
+const data = 2
+const miFuncion = () => {
+  return data
+}

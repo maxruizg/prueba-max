@@ -143,4 +143,4 @@ while(i < 10 && readData != null){
     i++
 }
 
-console.log(Persona.data)
+console.log(miFuncion)
