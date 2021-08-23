@@ -1,3 +1,5 @@
+const 
+
 window.fbAsyncInit = function()
 {
     FB.init({
@@ -28,23 +30,12 @@ window.fbAsyncInit = function()
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-01',until:'2021-08-01'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-08-30'}]"},
                 function(response) {
-                    console.log(response)
+                  console.log(response)
                 }
               );
             });
-            // fore(const id in idCampaigns){
-            //   console.log(id.id)
-            //   FB.api(
-            //     '/' + idCampaigns[id] + '/insights',
-            //     'GET',
-            //     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-06-31'}]"},
-            //     function(response) {
-            //         console.log(response)
-            //     }
-            //   );
-            // }
           }
         );
 
