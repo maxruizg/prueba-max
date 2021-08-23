@@ -1,5 +1,5 @@
 (() => {
-    import DataQueries from "./index.js";
+    const p = new DataQueries([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
 
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
