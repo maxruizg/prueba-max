@@ -3,6 +3,7 @@ let totalClicks = []
 let totalImpressions = []
 let totalCtr = []
 let totalCpc = []
+let i = 0
 
 window.fbAsyncInit = function()
 {
@@ -36,7 +37,9 @@ window.fbAsyncInit = function()
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-08-30'}]"},
                 function(response) {
-                  console.log(response.data)
+                  const data = response.data
+                  totalSpend[i] += data.spend
+                  console.log(totalSpend)
                 }
               );
             });
