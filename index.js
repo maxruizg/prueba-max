@@ -31,5 +31,3 @@ window.fbAsyncInit = function()
       }
     });
 }
-
-export const x = 10
