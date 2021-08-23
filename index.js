@@ -1,4 +1,8 @@
-const totalSpend, totalClicks, totalImpressions, totalCtr, totalCpc = []
+const totalSpend = []
+const totalClicks = []
+const totalImpressions = []
+const totalCtr = []
+const totalCpc = []
 
 window.fbAsyncInit = function()
 {

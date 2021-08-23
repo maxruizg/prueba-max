@@ -16,19 +16,27 @@
                 <div class='grafic'>
                     <div class='espacio'></div>
                     <span class ='title1'>3.09M ^30%</span>
-                    <select class='options'>
-                        <option value='1'>Meses</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                    <select class='options' id='selectMonth1'>
+                        <option value='0'>Meses</option>
+                        <option value='1'>Enero</option>
+                        <option value='2'>Febrero</option>
+                        <option value='3'>Marzo</option>
+                        <option value='4'>Abril</option>
+                        <option value='5'>Mayo</option>
+                        <option value='6'>Junio</option>
+                        <option value='7'>Julio</option>
+                        <option value='8'>Agosto</option>
+                        <option value='9'>Septiembre</option>
+                        <option value='10'>Octubre</option>
+                        <option value='11'>Noviembre</option>
+                        <option value='12'>Diciembre</option>
                     </select>
                     <select class='options' id='selectMetrica1'>
                         <option value="0">Gasto Total</option>
-                        <option value="1">Gasto Promedio Diario</option>
-                        <option value="2">Clicks Totales</option>
+                        <option value="1">Impresiones</option>
+                        <option value="2">Clicks</option>
                         <option value="3">Costo por Click</option>
                         <option value="4">Click Through Rate</option>
-                        <option value="5">ROAS</option>
                     </select>
                     <canvas id="myChart1" width="600" height="250"></canvas>
                 </div>
@@ -37,19 +45,27 @@
                 <div class='grafic'>
                     <div class ='espacio'></div>
                     <span class ='title1'>3.09M ^30%</span>
-                    <select class='options'>
-                        <option value='1'>Meses</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                    <select class='options' id='selectMonth2'>
+                        <option value='0'>Meses</option>
+                        <option value='1'>Enero</option>
+                        <option value='2'>Febrero</option>
+                        <option value='3'>Marzo</option>
+                        <option value='4'>Abril</option>
+                        <option value='5'>Mayo</option>
+                        <option value='6'>Junio</option>
+                        <option value='7'>Julio</option>
+                        <option value='8'>Agosto</option>
+                        <option value='9'>Septiembre</option>
+                        <option value='10'>Octubre</option>
+                        <option value='11'>Noviembre</option>
+                        <option value='12'>Diciembre</option>
                     </select>
                     <select class='options' id='selectMetrica2'>
                         <option value="0">Gasto Total</option>
-                        <option value="1">Gasto Promedio Diario</option>
-                        <option value="2">Clicks Totales</option>
+                        <option value="1">Impresiones</option>
+                        <option value="2">Clicks</option>
                         <option value="3">Costo por Click</option>
                         <option value="4">Click Through Rate</option>
-                        <option value="5">ROAS</option>
                     </select>
                     <canvas id="myChart2" width="600" height="250"></canvas>
                 </div>
@@ -58,7 +74,7 @@
                 <div class='data1'>
                     <div class='space'></div>
                     <div><span class='smallText'>Inversion</span>
-                        <select class='options2' >
+                        <select class='options2' id='selectMonth3'>
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -82,7 +98,7 @@
                 <div class='data2'>
                     <div class="space"></div>
                     <div><span class='smallText'>CPM</span>
-                        <select class='options3' >
+                        <select class='options3' id='selectMonth4'>
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -107,7 +123,7 @@
                 <div class='data2'>
                     <div class="space"></div>
                     <div><span class='smallText'>CPM</span>
-                        <select class='options3' >
+                        <select class='options3' id='selectMonth5'>
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -132,7 +148,7 @@
                 <div class='data1'>
                     <div class='space'></div>
                     <div><span class='smallText'>ROAS</span>
-                        <select class='options3' >
+                        <select class='options3' id='selectMonth6'>
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -156,7 +172,7 @@
                 <div class='data2'>
                     <div class="space"></div>
                     <div><span class='smallText'>CPM</span>
-                        <select class='options3' >
+                        <select class='options3' id='selectMonth7'>
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -181,7 +197,7 @@
                 <div class='data2'>
                     <div class="space"></div>
                     <div><span class='smallText'>CPM</span>
-                        <select class='options3' >
+                        <select class='options3' id='selectMonth8'>
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -209,7 +225,7 @@
                     <div class="header">
                         <div class="espacio"></div>
                         <div>MEJORES CAMPAÑAS</div>
-                        <select name="" id="" class="options4">
+                        <select name="" id='selectMonth9' class="options4">
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
@@ -235,11 +251,19 @@
                     <div class="header">
                         <div class="espacio"></div>
                         <div>MEJORES ADS</div>
-                        <select name="mejoresads" id="mejoresads" class="options4">
+                        <select name="mejoresads" id='selectMonth10' class="options4">
                             <option value='0'>Mes</option>
                             <option value="1">Enero</option>
                             <option value="2">Febrero</option>
                             <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
+                            <option value="4">Abril</option>
                             <option value="4">Abril</option>
                         </select>
                         <span>
