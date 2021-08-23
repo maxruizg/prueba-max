@@ -1,14 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Prueba</h1>
-    <script src='index.js'></script>
-    <script async defer crossorigin="anonymous" src='https://connect.facebook.net/en-US/sdk.js'></script>
-</body>
+<html lang='es'>
+    <head>
+        <meta charset='utf-8' />
+        <title>Dashboard</title>
+        <link rel='stylesheet' type='text/css' href='styles.css' />
+       
+        
+    </head>
+    <body>
+        </script>
+        <!--TODO: Boton para guardar las metrica -->
+        <!--TODO: filtro (select) de metricas para todos los recuadros-->
+        <div class='grid' id='grid'>
+            <div>
+                <div class='grafic'>
+                    <div class='espacio'></div>
+                    <span class ='title1'>3.09M ^30%</span>
+                    <select class='options'>
+                        <option value='1'>Meses</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                    <select class='options' id='selectMetrica1'>
+                        <option value="0">Gasto Total</option>
+                        <option value="1">Gasto Promedio Diario</option>
+                        <option value="2">Clicks Totales</option>
+                        <option value="3">Costo por Click</option>
+                        <option value="4">Click Through Rate</option>
+                        <option value="5">ROAS</option>
+                    </select>
+                    <canvas id="myChart1" width="600" height="250"></canvas>
+                </div>
+            </div>
+            <div>
+                <div class='grafic'>
+                    <div class ='espacio'></div>
+                    <span class ='title1'>3.09M ^30%</span>
+                    <select class='options'>
+                        <option value='1'>Meses</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                    <select class='options' id='selectMetrica2'>
+                        <option value="0">Gasto Total</option>
+                        <option value="1">Gasto Promedio Diario</option>
+                        <option value="2">Clicks Totales</option>
+                        <option value="3">Costo por Click</option>
+                        <option value="4">Click Through Rate</option>
+                        <option value="5">ROAS</option>
+                    </select>
+                    <canvas id="myChart2" width="600" height="250"></canvas>
+                </div>
+            </div>
+            <div class='dataGrid1'>
+                <div class='data1'>
+                    <div class='space'></div>
+                    <div><span class='smallText'>Inversion</span>
+                        <select class='options2' >
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <select class='options2' id='selectMetrica3'>
+                            <option value="0">Gasto Total</option>
+                            <option value="1">Gasto Promedio Diario</option>
+                            <option value="2">Clicks Totales</option>
+                            <option value="3">Costo por Click</option>
+                            <option value="4">Click Through Rate</option>
+                            <option value="5">ROAS</option>
+                        </select>
+                    </div>
+                    <p>MX ${var}</p>
+                    <div>
+                        {icon} <span class='smallText'>22% Compare: MX {var}</span>
+                    </div>
+                </div>
+                <div class='data2'>
+                    <div class="space"></div>
+                    <div><span class='smallText'>CPM</span>
+                        <select class='options3' >
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <select class='options3' id='selectMetrica4'>
+                            <option value="0">Gasto Total</option>
+                            <option value="1">Gasto Promedio Diario</option>
+                            <option value="2">Clicks Totales</option>
+                            <option value="3">Costo por Click</option>
+                            <option value="4">Click Through Rate</option>
+                            <option value="5">ROAS</option>
+                        </select>
+                    </div>
+                    <p>{var}%</p>
+                    <div>
+                        {icon} 
+                        <span class='smallText'>22% Compare: {var}%</span>
+                    </div>
+                </div>
+                <div class='data2'>
+                    <div class="space"></div>
+                    <div><span class='smallText'>CPM</span>
+                        <select class='options3' >
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <select class='options3' id='selectMetrica5'>
+                            <option value="0">Gasto Total</option>
+                            <option value="1">Gasto Promedio Diario</option>
+                            <option value="2">Clicks Totales</option>
+                            <option value="3">Costo por Click</option>
+                            <option value="4">Click Through Rate</option>
+                            <option value="5">ROAS</option>
+                        </select>
+                    </div>
+                    <p>{var}%</p>
+                    <div>
+                        {icon} 
+                        <span class='smallText'>22% Compare: {var}%</span>
+                    </div>
+                </div>
+                <div class='data1'>
+                    <div class='space'></div>
+                    <div><span class='smallText'>ROAS</span>
+                        <select class='options3' >
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <select class='options2' id='selectMetrica6'>
+                            <option value="0">Gasto Total</option>
+                            <option value="1">Gasto Promedio Diario</option>
+                            <option value="2">Clicks Totales</option>
+                            <option value="3">Costo por Click</option>
+                            <option value="4">Click Through Rate</option>
+                            <option value="5">ROAS</option>
+                        </select>
+                    </div>
+                    <p>{var}</p>
+                    <div>
+                        {icon} <span class='smallText'>22% Compare: {var}</span>
+                    </div>
+                </div>
+                <div class='data2'>
+                    <div class="space"></div>
+                    <div><span class='smallText'>CPM</span>
+                        <select class='options3' >
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <select class='options3' id='selectMetrica7'>
+                            <option value="0">Gasto Total</option>
+                            <option value="1">Gasto Promedio Diario</option>
+                            <option value="2">Clicks Totales</option>
+                            <option value="3">Costo por Click</option>
+                            <option value="4">Click Through Rate</option>
+                            <option value="5">ROAS</option>
+                        </select>
+                    </div>
+                    <p>{var}%</p>
+                    <div>
+                        {icon} 
+                        <span class='smallText'>22% Compare: {var}%</span>
+                    </div>
+                </div>
+                <div class='data2'>
+                    <div class="space"></div>
+                    <div><span class='smallText'>CPM</span>
+                        <select class='options3' >
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <select class='options3' id='selectMetrica8'>
+                            <option value="0">Gasto Total</option>
+                            <option value="1">Gasto Promedio Diario</option>
+                            <option value="2">Clicks Totales</option>
+                            <option value="3">Costo por Click</option>
+                            <option value="4">Click Through Rate</option>
+                            <option value="5">ROAS</option>
+                        </select>
+                    </div>
+                    <p>{var}%</p>
+                    <div>
+                        {icon} 
+                        <span class='smallText'>22% Compare: {var}%</span>
+                    </div>
+                </div>
+            </div>
+            <div class='dataGrid2'>
+                <div class='list'>
+                    <div class="header">
+                        <div class="espacio"></div>
+                        <div>MEJORES CAMPAÑAS</div>
+                        <select name="" id="" class="options4">
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <span>
+                            <select name="" id="selectMetrica9" class="options4">
+                                <option value="0">Gasto Total</option>
+                                <option value="1">Gasto Promedio Diario</option>
+                                <option value="2">Clicks Totales</option>
+                                <option value="3">Costo por Click</option>
+                                <option value="4">Click Through Rate</option>
+                                <option value="5">ROAS</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="listElements">
+                        <p>Hola</p>
+                    </div>
+                </div>
+                <div class='list'>
+                    <div class="header">
+                        <div class="espacio"></div>
+                        <div>MEJORES ADS</div>
+                        <select name="mejoresads" id="mejoresads" class="options4">
+                            <option value='0'>Mes</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                        </select>
+                        <span>
+                            <select name="" id="selectMetrica10" class="options4">
+                                <option value="0">Gasto Total</option>
+                                <option value="1">Gasto Promedio Diario</option>
+                                <option value="2">Clicks Totales</option>
+                                <option value="3">Costo por Click</option>
+                                <option value="4">Click Through Rate</option>
+                                <option value="5">ROAS</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="listElements">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" id='footer'>
+            <button onclick="saveMetrics()" class='save'>Salvar Metricas</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src='./dashboard.js'></script>
+        <script async defer crossorigin="anonymous" src="http://connect.facebook.net/en_US/sdk.js"></script>
+        <script src='./index.js'></script>
+    </body>
 </html>
