@@ -57,7 +57,7 @@ window.fbAsyncInit = function()
                     // Ctr = parseFloat(element.ctr)
                     // Cpc = parseFloat(element.cpc)
                     
-                  });
+                  //});
                   console.log("spend ", Spend)
                   totalSpend += Spend
                   console.log(`totalSpendMoth dentro: ${totalSpendM[0]}`)
