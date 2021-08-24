@@ -31,7 +31,7 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
 
-            console.log(`Campanas: ${response}`)
+            console.log(response)
             const idCampaigns = response.data
             idCampaigns.forEach(element => {
               var months = JSON.parse(localStorage.getItem("filterMonth"))
