@@ -14,7 +14,7 @@ var queries = (totalSpend, mes, element, startDay, endDay) => {
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
         totalSpend += spend1
-        console.log(spend1)
+        console.log(totalSpend)
         localStorage.setItem("Spend_1", JSON.stringify(totalSpend));
       }
     }
