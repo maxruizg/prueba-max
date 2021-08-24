@@ -146,7 +146,7 @@ let readData = JSON.parse(localStorage.getItem("filterData"))
 i = 0
 
 // Cambio de ciclo para condicionar null en readData
-while(i < 10 && readData != null){
+while(i < 10){
     var select = document.getElementById(`selectMetrica${i+1}`)
     var options = select.options
     options[readData[i]].selected = true
@@ -155,7 +155,7 @@ while(i < 10 && readData != null){
 
 readData = JSON.parse(localStorage.getItem("filterMonth"))
 i = 0
-while(i < 10 && readData != null){
+while(i < 10){
     var select = document.getElementById(`selectMonth${i}`)
     var options = select.options
     options[readData[i]].selected = true
