@@ -14,7 +14,7 @@ var queries = (mes, element, startDay, endDay) => {
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
         console.log(spend1)
-        localStorage.setItem("Spend-1", JSON.stringify(spend1));
+        localStorage.setItem("Spend_1", JSON.stringify(spend1));
       }
     }
   );
@@ -58,7 +58,7 @@ window.fbAsyncInit = function()
               
               var mes = parseInt(months[0]) + 1
 
-              queries(mes, element, '1', '8')
+              queries(mes, element, '1', '31')
               
 
               // FB.api(
