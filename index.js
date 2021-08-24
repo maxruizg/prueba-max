@@ -42,10 +42,11 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
+                  console.log(totalSpend)
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
                 }
               );
             });
-            console.log(`${totalSpend}, ${totalClicks}, ${totalImpressions}, ${totalCtr}, ${totalCpc}`)
           }
         );
 
