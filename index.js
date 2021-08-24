@@ -76,9 +76,9 @@ window.fbAsyncInit = function()
                   var data = obj.data
 
                   console.log(data)
-                    var spend = data[0].spend
 
-                  if(data.spend != undefined){
+                  if(data[0].spend != undefined){
+                    var spend = data[0].spend
                     console.log(spend)
                   }
                 }
