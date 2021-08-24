@@ -52,6 +52,7 @@ window.fbAsyncInit = function()
             idCampaigns.forEach(element => {
               var months = JSON.parse(localStorage.getItem("filterMonth"))
               console.log(months)
+              console.log(months[0])
               var mes = parseInt(months[0]) + 1
 
               queries(totalSpend, mes, element, '1', '31')
