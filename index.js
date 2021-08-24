@@ -51,6 +51,7 @@ window.fbAsyncInit = function()
                     totalCpc += parseFloat(element.cpc)
                   });
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
+                  console.log(totalSpend[0])
                 }
               );
 
@@ -67,6 +68,7 @@ window.fbAsyncInit = function()
                     totalCpc += parseFloat(element.cpc)
                   });
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
+                  console.log(totalSpend[1])
                 }
               );
 
@@ -83,6 +85,7 @@ window.fbAsyncInit = function()
                     totalCpc += parseFloat(element.cpc)
                   });
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend[2]))
+                  console.log(totalSpend[2])
                 }
               );
 
@@ -99,6 +102,7 @@ window.fbAsyncInit = function()
                     totalCpc += parseFloat(element.cpc)
                   });
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend[3]))
+                  console.log(totalSpend[3])
                 }
               );
 
