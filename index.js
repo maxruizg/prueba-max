@@ -1,8 +1,8 @@
-let totalSpend = []
-let totalClicks = []
-let totalImpressions = []
-let totalCtr = []
-let totalCpc = []
+let totalSpend = 0
+let totalClicks = 0
+let totalImpressions = 0
+let totalCtr = 0
+let totalCpc = 0
 
 window.fbAsyncInit = function()
 {
@@ -37,8 +37,13 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-06-30'}]"},
                 function(response) {
                     response.data.forEach(element => {
-                    console.log(element.spend)
+                    totalSpend += parseFloat(element.spend)
+                    totalClicks += parseInt(element.clicks)
+                    totalImpressions += parseInt(element.impressions)
+                    totalCtr += parseFloat(element.ctr)
+                    totalCpc += parseFloat(element.cpc)
                   });
+                  console.log(totalSpend, totalClicks, totalImpressions, totalCtr, totalCpc)
                 }
               );
             });
