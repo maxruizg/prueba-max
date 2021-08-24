@@ -30,10 +30,16 @@ window.fbAsyncInit = function()
             const idCampaigns = response.data
             console.log(idCampaigns)
             idCampaigns.forEach(element => {
+              var months = JSON.parse(localStorage.getItem("filterMonth"))
+              if(months[1] == null){
+                actual = new Date()
+                months[1] = actual.getMonth()
+                console.log(months[1])
+              }
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-06-01',until:'2021-06-30'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ months[1] +"-01',until:'2021-06-30'}]"},
                 function(response) {
                     response.data.forEach(element => {
                     totalSpend += parseFloat(element.spend)
@@ -42,7 +48,6 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  console.log(totalSpend)
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
                 }
               );
