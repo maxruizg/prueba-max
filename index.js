@@ -57,6 +57,7 @@ window.fbAsyncInit = function()
               
               var mes = parseInt(months[0]) + 1
 
+              console.log(queries(totalSpend, mes, element, '1', '31'))
               totalSpend += queries(totalSpend, mes, element, '1', '31')
               localStorage.setItem("Spend_1", JSON.stringify(totalSpend));
               
