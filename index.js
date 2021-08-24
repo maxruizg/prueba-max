@@ -26,8 +26,8 @@ var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
         spend1 = 0
       }
 
-      console.log(spend1)
-      console.log(numLocal)
+      // console.log(spend1)
+      // console.log(numLocal)
       totalSpend += spend1
       localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
     }
@@ -68,6 +68,7 @@ window.fbAsyncInit = function()
             idCampaigns.forEach(element => {
 
               totalSpend = 0
+              console.log('Llamado1')
               queries(mes, element, '1', '8', '1', 'Spend')
 
             });
@@ -75,13 +76,16 @@ window.fbAsyncInit = function()
             idCampaigns.forEach(element => {
 
               totalSpend = 0
+              console.log('Llamado2')
               queries(mes, element, '9', '15', '2', 'Spend')
 
             });
 
-            totalSpend = 0
+            
             idCampaigns.forEach(element => {
 
+              totalSpend = 0
+              console.log('Llamado3')
               queries(mes, element, '16', '24', '3', 'Spend')
 
             });
