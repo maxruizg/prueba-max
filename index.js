@@ -45,39 +45,39 @@ window.fbAsyncInit = function()
               totalSpend = 0
               
 
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
-                function(response) {
+              // FB.api(
+              //   '/' + element.id + '/insights',
+              //   'GET',
+              //   {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
+              //   function(response) {
                   
-                }
-              );
-              totalSpend = 0     
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
-                function(response) {
+              //   }
+              // );
+              // totalSpend = 0     
+              // FB.api(
+              //   '/' + element.id + '/insights',
+              //   'GET',
+              //   {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
+              //   function(response) {
                   
-                }
-              );
-              totalSpend = 0
+              //   }
+              // );
+              // totalSpend = 0
+              // FB.api(
+              //   '/' + element.id + '/insights',
+              //   'GET',
+              //   {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-16',until:'2021-"+ mes + "-23'}]"},
+              //   function(response) {
+              //     console.log(response)
+              //   }
+              // );
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-16',until:'2021-"+ mes + "-23'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-31'}]"},
                 function(response) {
-                  console.log(response)
-                }
-              );
-              totalSpend = 0
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-24',until:'2021-"+ mes + "-31'}]"},
-                function(response) {
-                  console.log(response)
+                  var obj = JSON.parse(response.data)
+                  console.log(obj.spend)
                 }
               );
 
