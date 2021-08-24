@@ -48,6 +48,7 @@ window.fbAsyncInit = function()
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
+                    console.log("response: ", response)
                     response.data.forEach(element => {
                     Spend = parseFloat(element.spend)
                     // Clicks = parseInt(element.clicks)
@@ -58,7 +59,7 @@ window.fbAsyncInit = function()
                   });
                   console.log("spend ", Spend)
                   totalSpend += Spend
-                  console.log(`totalSpendMoth dentro: ${totalSpend[0]}`)
+                  console.log(`totalSpendMoth dentro: ${totalSpendM[0]}`)
                   totalSpendM[0]=totalSpend
                   //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
                   ready = "True"
