@@ -1,5 +1,6 @@
 
 
+var totalSpend = []
 window.fbAsyncInit = function()
 {
     FB.init({
@@ -79,7 +80,8 @@ window.fbAsyncInit = function()
 
                   if(data[0] != undefined){
                     var spend = data[0].spend
-                    console.log(spend)
+                    totalSpend += spend
+                    console.log(totalSpend[0])
                   }
                 }
               );
