@@ -76,7 +76,7 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
+                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
                   console.log(totalSpend[1])
                 }
               );
@@ -93,7 +93,7 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[2]))
+                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[2]))
                   console.log(totalSpend[2])
                 }
               );
@@ -110,7 +110,7 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[3]))
+                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[3]))
                   console.log(totalSpend[3])
                 }
               );
