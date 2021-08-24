@@ -38,7 +38,7 @@ window.fbAsyncInit = function()
                 function(response) {
                   const data = response.data
                   // totalSpend[0] += parseInt(data.spend)
-                  console.log(JSON.parse(response.data))
+                  console.log(JSON.parse(response))
                 }
               );
             });
