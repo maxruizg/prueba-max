@@ -22,7 +22,6 @@ window.fbAsyncInit = function()
         FB.api('/me', function(response) {
           console.log('Good to see you, ' + response.name + '.');
         });
-        
         FB.api(
           '/act_1468139590049416/campaigns',
           'GET',
@@ -43,10 +42,10 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  console.log(totalSpend, totalClicks, totalImpressions, totalCtr, totalCpc)
                 }
               );
             });
+            console.log(`${totalSpend}, ${totalClicks}, ${totalImpressions}, ${totalCtr}, ${totalCpc}`)
           }
         );
 
