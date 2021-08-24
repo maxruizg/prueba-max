@@ -70,7 +70,7 @@ window.fbAsyncInit = function()
                 '/' + element.id + '/insights',
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-31'}]"},
-                function(response) {
+                function(response, totalSpend) {
                   var string = JSON.stringify(response)
                   var obj = JSON.parse(string)
                   console.log(obj)
