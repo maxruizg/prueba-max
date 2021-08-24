@@ -39,7 +39,7 @@ window.fbAsyncInit = function()
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ months[0] +"-01',until:'2021-06-30'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ months[0]+1 +"-01',until:'2021-"+ months[0]+1 + "-30'}]"},
                 function(response) {
                     response.data.forEach(element => {
                     totalSpend += parseFloat(element.spend)
