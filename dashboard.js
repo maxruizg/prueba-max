@@ -135,7 +135,7 @@ function saveMetrics() {
     i = 0
     var filters = []
     do{
-        filters[i] = document.getElementById(`selectMonth${i+1}`).value
+        filters[i] = document.getElementById(`selectMonth${i}`).value
         i++
     }while(i < 10)
 
@@ -156,7 +156,7 @@ while(i < 10 && readData != null){
 readData = JSON.parse(localStorage.getItem("filterMonth"))
 i = 0
 while(i < 10 && readData != null){
-    var select = document.getElementById(`selectMonth${i+1}`)
+    var select = document.getElementById(`selectMonth${i}`)
     var options = select.options
     options[readData[i]].selected = true
     i++
