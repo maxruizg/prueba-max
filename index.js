@@ -22,6 +22,7 @@ var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
         var spend1 = parseFloat(spend)
         
         if(spend1 == null || spend1 == undefined || spend1 == ''){
+          spend = 0
           spend1 = 0
         }
 
