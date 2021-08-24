@@ -80,18 +80,18 @@ window.fbAsyncInit = function()
             var mes = parseInt(months[0]) + 1
             var mesAnterior = parseInt(months[0])
 
-            idCampaigns.forEach(element => {
-
-              queries(mes, element, '1', '8', '1', 'Spend')
-
-            });
-
-            // totalSpend = 0
             // idCampaigns.forEach(element => {
 
-            //   queries(mes, element, '9', '15', 2, 'Spend')
+            //   queries(mes, element, '1', '8', '1', 'Spend')
 
             // });
+
+            totalSpend = 0
+            idCampaigns.forEach(element => {
+
+              queries(mes, element, '9', '15', '2', 'Spend')
+
+            });
 
             // totalSpend = 0
             // idCampaigns.forEach(element => {
