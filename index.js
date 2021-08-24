@@ -28,7 +28,6 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
             const idCampaigns = response.data
-            console.log(idCampaigns)
             idCampaigns.forEach(element => {
               var months = JSON.parse(localStorage.getItem("filterMonth"))
               if(months[0] == 0){
@@ -48,6 +47,7 @@ window.fbAsyncInit = function()
                     totalImpressions += parseInt(element.impressions)
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
+                    console.log(totalSpend)
                   });
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
                 }
