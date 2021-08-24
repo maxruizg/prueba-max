@@ -6,10 +6,12 @@ var queries = (mes, element, startDay, endDay) => {
     'GET',
     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
     function(response) {
+      console.log(response)
+      console.log(mes)
       var string = JSON.stringify(response)
       var obj = JSON.parse(string)
       var data = obj.data
-  
+      
       if(data[0] != undefined){
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
