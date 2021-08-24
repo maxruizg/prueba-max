@@ -1,6 +1,6 @@
 var totalSpend = 0
 
-var queries = (totalSpend, mes, element, startDay, endDay) => {
+var queries = (mes, element, startDay, endDay) => {
   FB.api(
     '/' + element.id + '/insights',
     'GET',
@@ -49,11 +49,6 @@ window.fbAsyncInit = function()
             const idCampaigns = response.data
             idCampaigns.forEach(element => {
               var months = JSON.parse(localStorage.getItem("filterMonth"))
-              if(months[0] == 0){
-                actual = new Date()
-                months[0] = actual.getMonth()
-              }
-
               
               var mes = parseInt(months[0]) + 1
 
