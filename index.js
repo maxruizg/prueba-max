@@ -40,6 +40,7 @@ window.fbAsyncInit = function()
 
               var mes = parseInt(months[0]) + 1
               var ready = "False"
+              totalSpend = 0
               
 
               FB.api(
@@ -63,7 +64,7 @@ window.fbAsyncInit = function()
                   
                 }
               );
-                           
+              totalSpend = 0     
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
@@ -82,7 +83,7 @@ window.fbAsyncInit = function()
                   console.log(totalSpend[1])
                 }
               );
-
+              totalSpend = 0
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
@@ -101,7 +102,7 @@ window.fbAsyncInit = function()
                   console.log(totalSpend[2])
                 }
               );
-
+              totalSpend = 0
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
@@ -117,7 +118,7 @@ window.fbAsyncInit = function()
                   totalSpend += Spend
                   totalSpendM[3]=totalSpend
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpendM))
-                  console.log(totalSpend)
+                  console.log(totalSpendM)
                 }
               );
 
