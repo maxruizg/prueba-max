@@ -3,6 +3,7 @@ var totalSpend = 0
 // Semana 1 = 0
 // Semana 2 = 4,305.93
 // Semana 3 = 36,128.34
+// Semana 4 = 25,976.89
 
 var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
   FB.api(
@@ -73,17 +74,19 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
 
+            localStorage.clear()
+
             console.log(response)
             const idCampaigns = response.data
             var months = JSON.parse(localStorage.getItem("filterMonth"))
             var mes = parseInt(months[0]) + 1
             var mesAnterior = parseInt(months[0])
 
-            // idCampaigns.forEach(element => {
+            idCampaigns.forEach(element => {
 
-            //   queries(mes, element, '1', '8', 1, 'Spend')
+              queries(mes, element, '1', '8', 1, 'Spend')
 
-            // });
+            });
 
             // totalSpend = 0
             // idCampaigns.forEach(element => {
@@ -99,12 +102,12 @@ window.fbAsyncInit = function()
 
             // });
 
-            totalSpend = 0
-            idCampaigns.forEach(element => {
+            // totalSpend = 0
+            // idCampaigns.forEach(element => {
 
-              queries(mes, element, '25', '31', 4, 'Spend')
+            //   queries(mes, element, '25', '31', 4, 'Spend')
 
-            });
+            // });
           }
         );
 
