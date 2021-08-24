@@ -34,8 +34,8 @@ window.fbAsyncInit = function()
               if(months[1] == 0){
                 actual = new Date()
                 months[1] = actual.getMonth()
-                console.log(months[1])
               }
+              console.log(months[1])
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
