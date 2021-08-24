@@ -80,7 +80,7 @@ window.fbAsyncInit = function()
 
                   if(data[0] != undefined){
                     var spend = data[0].spend
-                    totalSpend += spend
+                    totalSpend[0] += parseInt(spend)
                     console.log(totalSpend[0])
                   }
                 }
