@@ -74,7 +74,7 @@ window.fbAsyncInit = function()
             }
 
             for(var element of idCampaigns){
-              QuerieQueries(mes, element.id, '9', '15', '2', 'Spend')
+              Queries(mes, element.id, '9', '15', '2', 'Spend')
             }
             
             // totalSpend = 0
