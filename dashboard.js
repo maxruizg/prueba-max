@@ -123,7 +123,7 @@
 
 // Funcion para salvar metricas desde un boton
 function saveMetrics() {
-    i = 0
+    var i = 0
     var filters = []
     do{
         filters[i] = document.getElementById(`selectMetrica${i + 1}`).value
@@ -132,7 +132,7 @@ function saveMetrics() {
 
     localStorage.setItem("filterData", JSON.stringify(filters));
 
-    j = 0
+    var j = 0
     filters = []
     do{
         filters[j] = document.getElementById(`selectMonth${j + 1}`).value
@@ -144,7 +144,7 @@ function saveMetrics() {
 }
 
 let readData = JSON.parse(localStorage.getItem("filterData"))
-i = 0
+var i = 0
 
 // Cambio de ciclo para condicionar null en readData
 while(i < 10){
@@ -155,7 +155,7 @@ while(i < 10){
 }
 
 readData = JSON.parse(localStorage.getItem("filterMonth"))
-j = 0
+var j = 0
 while(j < 10){
     var select = document.getElementById(`selectMonth${j+1}`)
     var options = select.options
