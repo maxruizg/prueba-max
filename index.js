@@ -42,6 +42,7 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
+                  console.log(`${totalSpend}, ${totalClicks}, ${totalImpressions}, ${totalCtr}, ${totalCpc}`)
                 }
               );
             });
@@ -53,5 +54,3 @@ window.fbAsyncInit = function()
       }
     });
 }
-
-console.log(`${totalSpend}, ${totalClicks}, ${totalImpressions}, ${totalCtr}, ${totalCpc}`)
