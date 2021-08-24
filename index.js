@@ -66,7 +66,7 @@ window.fbAsyncInit = function()
           {"fields":"id"},
           function(response) {
 
-            console.log(response)
+            // console.log(response)
             var idCampaigns = response.data
             var months = JSON.parse(localStorage.getItem("filterMonth"))
             var mes = parseInt(months[0]) + 1
