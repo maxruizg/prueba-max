@@ -1,5 +1,5 @@
-let totalSpendMonth = []
-let totalSpend = 0
+
+let totalSpend = []
 let Spend = 0
 let totalClicks = []
 let totalImpressions = []
@@ -55,28 +55,27 @@ window.fbAsyncInit = function()
                     
                   });
                   totalSpend += Spend
-                  console.log(`totalSpendMoth dentro: ${totalSpend}`)
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
+                  console.log(`totalSpendMoth dentro: ${totalSpend[0]}`)
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
                   ready = "True"
                   
                 }
               );
-              console.log(ready)
-              console.log(`totalSpendMoth fuera: ${totalSpendMonth[0]}`)
-                
+                           
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
                 function(response) {
                     response.data.forEach(element => {
-                    totalSpend += parseFloat(element.spend)
-                    totalClicks += parseInt(element.clicks)
-                    totalImpressions += parseInt(element.impressions)
-                    totalCtr += parseFloat(element.ctr)
-                    totalCpc += parseFloat(element.cpc)
+                      Spend = parseFloat(element.spend)
+                    // totalClicks += parseInt(element.clicks)
+                    // totalImpressions += parseInt(element.impressions)
+                    // totalCtr += parseFloat(element.ctr)
+                    // totalCpc += parseFloat(element.cpc)
                   });
-                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
+                  totalSpend += Spend
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
                   console.log(totalSpend[1])
                 }
               );
