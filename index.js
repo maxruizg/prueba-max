@@ -39,7 +39,7 @@ window.fbAsyncInit = function()
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-30'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-07'}]"},
                 function(response) {
                     response.data.forEach(element => {
                     totalSpend += parseFloat(element.spend)
@@ -47,7 +47,6 @@ window.fbAsyncInit = function()
                     totalImpressions += parseInt(element.impressions)
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
-                    console.log(totalSpend)
                   });
                   localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
                 }
