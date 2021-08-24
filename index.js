@@ -6,7 +6,7 @@ var totalSpend = 0
 // Semana 4 = 25,976.89
 
 function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
-  setTimeout(
+  
     FB.api(
      '/' + element.id + '/insights',
      'GET',
@@ -18,27 +18,31 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
        //   {alert("FALLO")}
        // }
        // console.log('querie')
-       console.log(response)
-       var string = JSON.stringify(response)
-       var obj = JSON.parse(string)
-       var data = obj.data
-       
-       if(data[0] != undefined){
-         var spend = data[0].spend
-         var spend1 = parseFloat(spend)
+       try{
+
+         console.log(response)
+         var string = JSON.stringify(response)
+         var obj = JSON.parse(string)
+         var data = obj.data
+         
+         if(data[0] != undefined){
+           var spend = data[0].spend
+           var spend1 = parseFloat(spend)
+         }
+   
+         if(spend1 == null || spend1 == undefined || spend1 == ''){
+           spend1 = 0
+         }
+   
+         // console.log(spend1)
+         console.log(numLocal)
+         totalSpend += spend1
+         localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
+       } catch(error) {
+         console.log(error)
        }
- 
-       if(spend1 == null || spend1 == undefined || spend1 == ''){
-         spend1 = 0
-       }
- 
-       // console.log(spend1)
-       console.log(numLocal)
-       totalSpend += spend1
-       localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
      }
    )
-  , 5000)
 }
 
 const Error = () => {
