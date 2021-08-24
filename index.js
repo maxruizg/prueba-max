@@ -13,11 +13,9 @@ var queries = (totalSpend, mes, element, startDay, endDay) => {
       if(data[0] != undefined){
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
-        totalSpend += spend1
         console.log(spend1)
-        console.log(totalSpend)
-        localStorage.setItem("Spend_1", JSON.stringify(totalSpend));
       }
+      return spend
     }
   );
 }
@@ -59,7 +57,8 @@ window.fbAsyncInit = function()
               
               var mes = parseInt(months[0]) + 1
 
-              queries(totalSpend, mes, element, '1', '31')
+              totalSpend += queries(totalSpend, mes, element, '1', '31')
+              localStorage.setItem("Spend_1", JSON.stringify(totalSpend));
               
 
               // FB.api(
