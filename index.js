@@ -50,7 +50,7 @@ window.fbAsyncInit = function()
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
-                  console.log(`response ${response}`)
+                  console.log(response)
                 }
               );
               totalSpend = 0     
