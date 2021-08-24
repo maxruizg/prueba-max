@@ -66,13 +66,14 @@ window.fbAsyncInit = function()
 
             idCampaigns.forEach(element => {
 
+              totalSpend = 0
               queries(mes, element, '1', '8', '1', 'Spend')
 
             });
 
-            totalSpend = 0
             idCampaigns.forEach(element => {
 
+              totalSpend = 0
               queries(mes, element, '9', '15', '2', 'Spend')
 
             });
