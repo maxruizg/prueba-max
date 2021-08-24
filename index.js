@@ -1,5 +1,6 @@
 
-let totalSpend = []
+let totalSpend = 0
+let totalSpendM =[]
 let Spend = 0
 let totalClicks = []
 let totalImpressions = []
@@ -56,7 +57,8 @@ window.fbAsyncInit = function()
                   });
                   totalSpend += Spend
                   console.log(`totalSpendMoth dentro: ${totalSpend[0]}`)
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
+                  totalSpend[0]=totalSpend
+                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
                   ready = "True"
                   
                 }
@@ -75,7 +77,8 @@ window.fbAsyncInit = function()
                     // totalCpc += parseFloat(element.cpc)
                   });
                   totalSpend += Spend
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
+                  totalSpend[1]=totalSpend
+                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
                   console.log(totalSpend[1])
                 }
               );
@@ -86,12 +89,14 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-16',until:'2021-"+ mes + "-23'}]"},
                 function(response) {
                     response.data.forEach(element => {
-                    totalSpend += parseFloat(element.spend)
-                    totalClicks += parseInt(element.clicks)
-                    totalImpressions += parseInt(element.impressions)
-                    totalCtr += parseFloat(element.ctr)
-                    totalCpc += parseFloat(element.cpc)
+                      Spend = parseFloat(element.spend)
+                    //totalClicks += parseInt(element.clicks)
+                    //totalImpressions += parseInt(element.impressions)
+                    //totalCtr += parseFloat(element.ctr)
+                    //totalCpc += parseFloat(element.cpc)
                   });
+                  totalSpend += Spend
+                  totalSpend[2]=totalSpend
                   //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[2]))
                   console.log(totalSpend[2])
                 }
@@ -103,14 +108,16 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-24',until:'2021-"+ mes + "-31'}]"},
                 function(response) {
                     response.data.forEach(element => {
-                    totalSpend += parseFloat(element.spend)
-                    totalClicks += parseInt(element.clicks)
-                    totalImpressions += parseInt(element.impressions)
-                    totalCtr += parseFloat(element.ctr)
-                    totalCpc += parseFloat(element.cpc)
+                      Spend = parseFloat(element.spend)
+                    //totalClicks += parseInt(element.clicks)
+                    //totalImpressions += parseInt(element.impressions)
+                    //totalCtr += parseFloat(element.ctr)
+                    //totalCpc += parseFloat(element.cpc)
                   });
-                  //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[3]))
-                  console.log(totalSpend[3])
+                  totalSpend += Spend
+                  totalSpend[3]=totalSpend
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
+                  console.log(totalSpend)
                 }
               );
 
