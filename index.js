@@ -1,10 +1,10 @@
 
 
-var queries = (totalSpend, mes, element) => {
+var queries = (mes, element, startDay, endDay) => {
   FB.api(
     '/' + element.id + '/insights',
     'GET',
-    {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-31'}]"},
+    {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
     function(response) {
       var string = JSON.stringify(response)
       var obj = JSON.parse(string)
@@ -12,12 +12,9 @@ var queries = (totalSpend, mes, element) => {
   
       if(data[0] != undefined){
         var spend = data[0].spend
-        var spendNumber = parseFloat(spend)
-        totalSpend[0] += spendNumber
-        console.log(typeof(spendNumber))
-        console.log(spendNumber)
-        console.log(totalSpend[0])
-        console.log(typeof(totalSpend[0]))
+        var spend1 = parseFloat(spend)
+        console.log(spend1)
+        localStorage.setItem("Spend-1", JSON.stringify(spend1));
       }
     }
   );
@@ -61,7 +58,7 @@ window.fbAsyncInit = function()
               
               var mes = parseInt(months[0]) + 1
 
-              queries(totalSpend, mes, element)
+              queries(mes, element, '1', '8')
               
 
               // FB.api(
