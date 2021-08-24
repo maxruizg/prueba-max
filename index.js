@@ -1,6 +1,6 @@
 var totalSpend = 0
 
-var queries = (mes, element, startDay, endDay) => {
+var queries = (mes, element, startDay, endDay, numLocal) => {
   FB.api(
     '/' + element.id + '/insights',
     'GET',
@@ -14,8 +14,7 @@ var queries = (mes, element, startDay, endDay) => {
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
         totalSpend += spend1
-        localStorage.setItem("Spend_1", JSON.stringify(totalSpend));
-        console.log(totalSpend)
+        localStorage.setItem(`Spend_${numLocal}`, JSON.stringify(totalSpend));
       }
     }
   );
@@ -53,39 +52,25 @@ window.fbAsyncInit = function()
 
             idCampaigns.forEach(element => {
 
-              queries(mes, element, '1', '31')
-              // totalSpend += queries(totalSpend, mes, element, '1', '31')
-              // localStorage.setItem("Spend_1", JSON.stringify(totalSpend));
-              
+              queries(mes, element, '1', '8', 1)
 
-              // FB.api(
-              //   '/' + element.id + '/insights',
-              //   'GET',
-              //   {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
-              //   function(response) {
-                  
-              //   }
-              // );
-              // totalSpend = 0     
-              // FB.api(
-              //   '/' + element.id + '/insights',
-              //   'GET',
-              //   {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
-              //   function(response) {
-                  
-              //   }
-              // );
-              // totalSpend = 0
-              // FB.api(
-              //   '/' + element.id + '/insights',
-              //   'GET',
-              //   {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-16',until:'2021-"+ mes + "-23'}]"},
-              //   function(response) {
-              //     console.log(response)
-              //   }
-              // );
+            });
 
-              
+            idCampaigns.forEach(element => {
+
+              queries(mes, element, '9', '15', 2)
+
+            });
+
+            idCampaigns.forEach(element => {
+
+              queries(mes, element, '16', '24', 3)
+
+            });
+
+            idCampaigns.forEach(element => {
+
+              queries(mes, element, '25', '31', 4)
 
             });
           }
