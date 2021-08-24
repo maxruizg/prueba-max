@@ -80,6 +80,7 @@ window.fbAsyncInit = function()
                   var obj = JSON.parse(string)
                   console.log(obj)
                   var data = obj.data
+                  console.log(data)
                   var spend = data.spend
                   console.log(spend)
                 }
