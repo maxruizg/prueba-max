@@ -1,12 +1,12 @@
 var totalSpend = 0
-// 23848541904780038
+
 // Semana 1 = 0
 // Semana 2 = 4,305.93
 // Semana 3 = 36,128.34
 // Semana 4 = 25,976.89
 
-var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
-  FB.api(
+async function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
+   await FB.api(
     '/' + element.id + '/insights',
     'GET',
     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
@@ -69,35 +69,19 @@ window.fbAsyncInit = function()
 
               totalSpend = 0
               console.log('Llamado1')
-              queries(mes, element, '1', '8', '1', 'Spend')
+              Queries(mes, element, '1', '8', '1', 'Spend')
 
             });
-          }
-        );
-
-        FB.api(
-          '/act_1468139590049416/campaigns',
-          'GET',
-          {"fields":"id"},
-          function(response) {
-
-            console.log(response)
-            var idCampaigns = response.data
-            var months = JSON.parse(localStorage.getItem("filterMonth"))
-            var mes = parseInt(months[0]) + 1
-            var mesAnterior = parseInt(months[0])
 
             idCampaigns.forEach(element => {
 
               totalSpend = 0
               console.log('Llamado2')
-              queries(mes, element, '9', '15', '2', 'Spend')
+              Queries(mes, element, '9', '15', '2', 'Spend')
 
             });
           }
         );
-
-
       } else {
        console.log('User cancelled login or did not fully authorize.');
       }
