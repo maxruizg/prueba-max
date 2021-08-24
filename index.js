@@ -81,7 +81,7 @@ window.fbAsyncInit = function()
                   console.log(obj)
                   var data = obj.data
                   console.log(data)
-                  var spend = data.spend
+                  var spend = data[0]
                   console.log(spend)
                 }
               );
