@@ -40,6 +40,7 @@ window.fbAsyncInit = function()
                   // totalSpend[0] += parseInt(data.spend)
                   console.log(response)
                   console.log(response.data)
+                  console.log(data.spend)
                 }
               );
             });
