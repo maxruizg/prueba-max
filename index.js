@@ -1,6 +1,29 @@
 
 
 var totalSpend = []
+
+var queries = (totalSpend) => {
+  FB.api(
+    '/' + element.id + '/insights',
+    'GET',
+    {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-31'}]"},
+    function(response) {
+      var string = JSON.stringify(response)
+      var obj = JSON.parse(string)
+      console.log(obj)
+      var data = obj.data
+  
+      console.log(data)
+  
+      if(data[0] != undefined){
+        var spend = data[0].spend
+        totalSpend[0] += parseInt(spend)
+        console.log(totalSpend[0])
+      }
+    }
+  );
+}
+
 window.fbAsyncInit = function()
 {
     FB.init({
@@ -35,8 +58,8 @@ window.fbAsyncInit = function()
               }
 
               var mes = parseInt(months[0]) + 1
-              var ready = "False"
-              totalSpend = 0
+
+              queries(totalSpend)
               
 
               // FB.api(
@@ -66,25 +89,7 @@ window.fbAsyncInit = function()
               //   }
               // );
 
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-31'}]"},
-                function(response, totalSpend) {
-                  var string = JSON.stringify(response)
-                  var obj = JSON.parse(string)
-                  console.log(obj)
-                  var data = obj.data
-
-                  console.log(data)
-
-                  if(data[0] != undefined){
-                    var spend = data[0].spend
-                    totalSpend[0] += parseInt(spend)
-                    console.log(totalSpend[0])
-                  }
-                }
-              );
+              
 
             });
           }
