@@ -85,7 +85,7 @@ window.fbAsyncInit = function()
 
             totalSpend = 0
             idCampaigns.forEach((element, index) => {
-              console.log('Llamado2')
+              console.log('Llamado3')
               Queries(mes, element, '16', '24', '3', 'Spend')
               console.log(index)
             });
