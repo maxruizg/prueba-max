@@ -50,6 +50,7 @@ window.fbAsyncInit = function()
                 function(response) {
                     console.log("response: ", response.data)
                     temp = (response.data)
+                    console.log("temp: ", temp)
                     Spend = parseInt(temp.spend.value)
                     //response.data.forEach(element => {
                     //Spend = 0
