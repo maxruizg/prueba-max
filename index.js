@@ -1,7 +1,4 @@
 
-
-
-
 var queries = (totalSpend, mes, element) => {
   FB.api(
     '/' + element.id + '/insights',
@@ -10,10 +7,7 @@ var queries = (totalSpend, mes, element) => {
     function(response) {
       var string = JSON.stringify(response)
       var obj = JSON.parse(string)
-      console.log(obj)
       var data = obj.data
-  
-      console.log(data)
   
       if(data[0] != undefined){
         var spend = data[0].spend
