@@ -1,4 +1,5 @@
-let totalSpend = []
+let totalSpendMonth = []
+let totalSpend = 0
 let totalClicks = []
 let totalImpressions = []
 let totalCtr = []
@@ -50,10 +51,11 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
-                  console.log(totalSpend[0])
+                  totalSpendMonth[0] = totalSpend
+                  console.log(totalSpendMonth[0])
                 }
               );
+                console.log(totalSpendMonth[0])
 
               FB.api(
                 '/' + element.id + '/insights',
