@@ -56,6 +56,7 @@ window.fbAsyncInit = function()
                     // Cpc = parseFloat(element.cpc)
                     
                   });
+                  console.log("spend ", Spend)
                   totalSpend += Spend
                   console.log(`totalSpendMoth dentro: ${totalSpend[0]}`)
                   totalSpendM[0]=totalSpend
