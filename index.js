@@ -6,8 +6,6 @@ var queries = (mes, element, startDay, endDay) => {
     'GET',
     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
     function(response) {
-      console.log(response)
-      console.log(mes)
       var string = JSON.stringify(response)
       var obj = JSON.parse(string)
       var data = obj.data
@@ -49,8 +47,10 @@ window.fbAsyncInit = function()
 
             console.log(response)
             const idCampaigns = response.data
+            var months = JSON.parse(localStorage.getItem("filterMonth"))
+
             idCampaigns.forEach(element => {
-              var months = JSON.parse(localStorage.getItem("filterMonth"))
+              
               var mes = parseInt(months[0]) + 1
 
 
