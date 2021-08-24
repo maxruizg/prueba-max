@@ -9,7 +9,7 @@
     var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+        labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
         datasets: [
         {
             label: "Actual",
