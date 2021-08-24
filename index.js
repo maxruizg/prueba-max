@@ -51,6 +51,7 @@ window.fbAsyncInit = function()
                     totalImpressions += parseInt(element.impressions)
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
+                    localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
                   });
                   totalSpendMonth[0] = totalSpend
                   console.log(`totalSpendMoth dentro: ${totalSpendMonth[0]}`)
