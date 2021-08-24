@@ -78,6 +78,7 @@ window.fbAsyncInit = function()
                 function(response) {
                   var string = JSON.stringify(response)
                   var obj = JSON.parse(string)
+                  console.log(obj)
                   console.log(obj[0])
                 }
               );
