@@ -20,15 +20,14 @@ var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
       if(data[0] != undefined){
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
-        
-        if(spend1 == null || spend1 == undefined || spend1 == ''){
-          spend = 0
-          spend1 = 0
-        }
-
-        totalSpend += spend1
-        localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
       }
+
+      if(spend1 == null || spend1 == undefined || spend1 == ''){
+        spend1 = 0
+      }
+
+      totalSpend += spend1
+      localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
     }
   );
 }
