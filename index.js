@@ -52,10 +52,10 @@ window.fbAsyncInit = function()
                     totalCpc += parseFloat(element.cpc)
                   });
                   totalSpendMonth[0] = totalSpend
-                  console.log(totalSpendMonth[0])
+                  console.log(`totalSpendMoth dentro: ${totalSpendMonth[0]}`)
                 }
               );
-                console.log(totalSpendMonth[0])
+                console.log(`totalSpendMonth fuera: ${totalSpendMonth[0]}`)
 
               FB.api(
                 '/' + element.id + '/insights',
