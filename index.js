@@ -31,15 +31,15 @@ window.fbAsyncInit = function()
             console.log(idCampaigns)
             idCampaigns.forEach(element => {
               var months = JSON.parse(localStorage.getItem("filterMonth"))
-              if(months[1] == 0){
+              if(months[0] == 0){
                 actual = new Date()
-                months[1] = actual.getMonth()
+                months[0] = actual.getMonth()
               }
-              console.log(months[1])
+              console.log(months[0])
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ months[1] +"-01',until:'2021-06-30'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ months[0] +"-01',until:'2021-06-30'}]"},
                 function(response) {
                     response.data.forEach(element => {
                     totalSpend += parseFloat(element.spend)
