@@ -48,7 +48,9 @@ window.fbAsyncInit = function()
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
-                    Spend = parsefloat(response.data.spend)
+                    console.log("response: ", response)
+                    temp = (response.data)
+                    Spend = parseInt(temp.spend)
                     //response.data.forEach(element => {
                     //Spend = 0
                     //Spend = parseFloat(element.spend)
