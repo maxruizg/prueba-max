@@ -79,12 +79,12 @@ window.fbAsyncInit = function()
 
             });
 
-            // totalSpend = 0
-            // idCampaigns.forEach(element => {
+            totalSpend = 0
+            idCampaigns.forEach(element => {
 
-            //   queries(mes, element, '16', '24', '3', 'Spend')
+              queries(mes, element, '16', '24', '3', 'Spend')
 
-            // });
+            });
 
             // totalSpend = 0
             // idCampaigns.forEach(element => {
