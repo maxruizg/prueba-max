@@ -72,6 +72,20 @@ window.fbAsyncInit = function()
               queries(mes, element, '1', '8', '1', 'Spend')
 
             });
+          }
+        );
+
+        FB.api(
+          '/act_1468139590049416/campaigns',
+          'GET',
+          {"fields":"id"},
+          function(response) {
+
+            console.log(response)
+            var idCampaigns = response.data
+            var months = JSON.parse(localStorage.getItem("filterMonth"))
+            var mes = parseInt(months[0]) + 1
+            var mesAnterior = parseInt(months[0])
 
             idCampaigns.forEach(element => {
 
@@ -80,24 +94,9 @@ window.fbAsyncInit = function()
               queries(mes, element, '9', '15', '2', 'Spend')
 
             });
-
-            
-            // idCampaigns.forEach(element => {
-
-            //   totalSpend = 0
-            //   console.log('Llamado3')
-            //   queries(mes, element, '16', '24', '3', 'Spend')
-
-            // });
-
-            // totalSpend = 0
-            // idCampaigns.forEach(element => {
-
-            //   queries(mes, element, '25', '31', '4', 'Spend')
-
-            // });
           }
         );
+
 
       } else {
        console.log('User cancelled login or did not fully authorize.');
