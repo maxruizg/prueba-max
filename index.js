@@ -1,31 +1,9 @@
 var totalSpend = 0
 // 23848541904780038
 
-// var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
-//   FB.api(
-//     '/' + element.id + '/insights',
-//     'GET',
-//     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
-//     function(response) {
-//       console.log('querie')
-//       console.log(response)
-//       var string = JSON.stringify(response)
-//       var obj = JSON.parse(string)
-//       var data = obj.data
-      
-//       if(data[0] != undefined){
-//         var spend = data[0].spend
-//         var spend1 = parseFloat(spend)
-//         totalSpend += spend1
-//         localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
-//       }
-//     }
-//   );
-// }
-
-var queries = (mes, startDay, endDay, numLocal, nombreLocal) => {
+var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
   FB.api(
-    '/23848541904780038/insights',
+    '/' + element.id + '/insights',
     'GET',
     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
     function(response) {
@@ -44,6 +22,28 @@ var queries = (mes, startDay, endDay, numLocal, nombreLocal) => {
     }
   );
 }
+
+// var queries = (mes, startDay, endDay, numLocal, nombreLocal) => {
+//   FB.api(
+//     '/23848541904780038/insights',
+//     'GET',
+//     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+//     function(response) {
+//       console.log('querie')
+//       console.log(response)
+//       var string = JSON.stringify(response)
+//       var obj = JSON.parse(string)
+//       var data = obj.data
+      
+//       if(data[0] != undefined){
+//         var spend = data[0].spend
+//         var spend1 = parseFloat(spend)
+//         totalSpend += spend1
+//         localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
+//       }
+//     }
+//   );
+// }
 
 window.fbAsyncInit = function()
 {
@@ -76,13 +76,11 @@ window.fbAsyncInit = function()
             var mes = parseInt(months[0]) + 1
             var mesAnterior = parseInt(months[0])
 
-            queries(mes, '1', '8', 'Spend')
+            idCampaigns.forEach(element => {
 
-            // idCampaigns.forEach(element => {
+              queries(mes, element, '1', '8', 1, 'Spend')
 
-            //   queries(mes, element, '1', '8', 1, 'Spend')
-
-            // });
+            });
 
             // totalSpend = 0
             // idCampaigns.forEach(element => {
