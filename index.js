@@ -15,7 +15,7 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
         {alert("FALLO")}
       }
       // console.log('querie')
-      // console.log(response)
+      console.log(response)
       var string = JSON.stringify(response)
       var obj = JSON.parse(string)
       var data = obj.data
