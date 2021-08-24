@@ -34,12 +34,13 @@ window.fbAsyncInit = function()
               if(months[0] == 0){
                 actual = new Date()
                 months[0] = actual.getMonth()
+                var mes = parseInt(months[0] + 1)
               }
-              console.log(months[0]+1)
+              console.log(mes)
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ months[0]+1 +"-01',until:'2021-"+ months[0]+1 + "-30'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-30'}]"},
                 function(response) {
                     response.data.forEach(element => {
                     totalSpend += parseFloat(element.spend)
