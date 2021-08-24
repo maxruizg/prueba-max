@@ -101,16 +101,11 @@ window.fbAsyncInit = function()
                   }
             
                   // console.log(spend1)
-                  console.log(numLocal)
+                  // console.log(numLocal)
                   totalSpend += spend1
                   localStorage.setItem('Spend_1', JSON.stringify(totalSpend));
                 }
               );
-            }
-
-            for(var element of idCampaigns){ 
-              console.log('2')
-              Queries(mes, element, '9', '15', '2', 'Spend') 
             }
             
             // totalSpend = 0
