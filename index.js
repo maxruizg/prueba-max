@@ -65,30 +65,30 @@ window.fbAsyncInit = function()
             var mes = parseInt(months[0]) + 1
             var mesAnterior = parseInt(months[0])
 
-            idCampaigns.forEach(element => {
+            // idCampaigns.forEach(element => {
 
-              totalSpend = 0
-              console.log('Llamado1')
-              queries(mes, element, '1', '8', '1', 'Spend')
+            //   totalSpend = 0
+            //   console.log('Llamado1')
+            //   queries(mes, element, '1', '8', '1', 'Spend')
 
-            });
+            // });
 
-            idCampaigns.forEach(element => {
+            // idCampaigns.forEach(element => {
 
-              totalSpend = 0
-              console.log('Llamado2')
-              queries(mes, element, '9', '15', '2', 'Spend')
+            //   totalSpend = 0
+            //   console.log('Llamado2')
+            //   queries(mes, element, '9', '15', '2', 'Spend')
 
-            });
+            // });
 
             
-            idCampaigns.forEach(element => {
+            // idCampaigns.forEach(element => {
 
-              totalSpend = 0
-              console.log('Llamado3')
-              queries(mes, element, '16', '24', '3', 'Spend')
+            //   totalSpend = 0
+            //   console.log('Llamado3')
+            //   queries(mes, element, '16', '24', '3', 'Spend')
 
-            });
+            // });
 
             // totalSpend = 0
             // idCampaigns.forEach(element => {
