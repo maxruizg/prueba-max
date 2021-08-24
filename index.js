@@ -26,7 +26,7 @@ var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
         spend1 = 0
       }
 
-      console.log(spend1)
+      // console.log(spend1)
       console.log(numLocal)
       totalSpend += spend1
       localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
