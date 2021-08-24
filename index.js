@@ -1,8 +1,8 @@
-let totalSpend = 0
-let totalClicks = 0
-let totalImpressions = 0
-let totalCtr = 0
-let totalCpc = 0
+let totalSpend = []
+let totalClicks = []
+let totalImpressions = []
+let totalCtr = []
+let totalCpc = []
 
 window.fbAsyncInit = function()
 {
@@ -34,12 +34,14 @@ window.fbAsyncInit = function()
                 actual = new Date()
                 months[0] = actual.getMonth()
               }
+
               var mes = parseInt(months[0]) + 1
               console.log(typeof(months[0]))
+
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-07'}]"},
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
                     response.data.forEach(element => {
                     totalSpend += parseFloat(element.spend)
@@ -48,9 +50,58 @@ window.fbAsyncInit = function()
                     totalCtr += parseFloat(element.ctr)
                     totalCpc += parseFloat(element.cpc)
                   });
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
                 }
               );
+
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
+                function(response) {
+                    response.data.forEach(element => {
+                    totalSpend += parseFloat(element.spend)
+                    totalClicks += parseInt(element.clicks)
+                    totalImpressions += parseInt(element.impressions)
+                    totalCtr += parseFloat(element.ctr)
+                    totalCpc += parseFloat(element.cpc)
+                  });
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
+                }
+              );
+
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-16',until:'2021-"+ mes + "-23'}]"},
+                function(response) {
+                    response.data.forEach(element => {
+                    totalSpend += parseFloat(element.spend)
+                    totalClicks += parseInt(element.clicks)
+                    totalImpressions += parseInt(element.impressions)
+                    totalCtr += parseFloat(element.ctr)
+                    totalCpc += parseFloat(element.cpc)
+                  });
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[2]))
+                }
+              );
+
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-24',until:'2021-"+ mes + "-31'}]"},
+                function(response) {
+                    response.data.forEach(element => {
+                    totalSpend += parseFloat(element.spend)
+                    totalClicks += parseInt(element.clicks)
+                    totalImpressions += parseInt(element.impressions)
+                    totalCtr += parseFloat(element.ctr)
+                    totalCpc += parseFloat(element.cpc)
+                  });
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend[3]))
+                }
+              );
+
             });
           }
         );
