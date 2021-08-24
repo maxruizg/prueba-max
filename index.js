@@ -76,6 +76,7 @@ window.fbAsyncInit = function()
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-31'}]"},
                 function(response) {
+                  JSON.stringify(response)
                   var obj = JSON.parse(response)
                   console.log(obj)
                 }
