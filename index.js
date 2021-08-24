@@ -11,11 +11,11 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
     'GET',
     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
     function(response) {
-      if(response || response.error){
-        console.log(response)
-        console.log(response.error)
-        {alert("FALLO")}
-      }
+      // if(response || response.error){
+      //   console.log(response)
+      //   console.log(response.error)
+      //   {alert("FALLO")}
+      // }
       // console.log('querie')
       console.log(response)
       var string = JSON.stringify(response)
@@ -45,7 +45,6 @@ const Error = () => {
 
 window.fbAsyncInit = function()
 {
-
     FB.init({
         appId   : "1345101055833302",
         cookie  : true,  // enable cookies to allow the server to access
