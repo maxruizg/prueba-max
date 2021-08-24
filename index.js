@@ -37,7 +37,7 @@ window.fbAsyncInit = function()
               }
 
               var mes = parseInt(months[0]) + 1
-              console.log(typeof(months[0]))
+              var listo = "False"
 
               FB.api(
                 '/' + element.id + '/insights',
@@ -53,10 +53,16 @@ window.fbAsyncInit = function()
                   });
                   totalSpendMonth[0] = totalSpend
                   console.log(`totalSpendMoth dentro: ${totalSpendMonth[0]}`)
+                  listo = "True"
                 }
               );
+                do {
+                  if (listo ="True"){ 
                 console.log(`totalSpendMonth fuera: ${totalSpendMonth[0]}`)
-
+                  }
+                }
+                while(listo="False")
+                
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
