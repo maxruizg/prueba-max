@@ -1,8 +1,8 @@
 
 
-var totalSpend = []
 
-var queries = (totalSpend) => {
+
+var queries = (totalSpend, mes) => {
   FB.api(
     '/' + element.id + '/insights',
     'GET',
@@ -57,9 +57,10 @@ window.fbAsyncInit = function()
                 months[0] = actual.getMonth()
               }
 
+              var totalSpend = []
               var mes = parseInt(months[0]) + 1
 
-              queries(totalSpend)
+              queries(totalSpend, mes)
               
 
               // FB.api(
