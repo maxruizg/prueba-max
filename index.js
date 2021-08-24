@@ -11,7 +11,9 @@ var queries = (totalSpend, mes, element) => {
   
       if(data[0] != undefined){
         var spend = data[0].spend
-        totalSpend[0] += parseInt(spend)
+        totalSpend[0] += parseFloat(spend)
+        console.log(typeof(spend))
+        console.log(spend)
         console.log(totalSpend[0])
       }
     }
