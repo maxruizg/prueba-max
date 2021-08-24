@@ -1,5 +1,6 @@
 let totalSpendMonth = []
-let totalSpend = []
+let totalSpend = 0
+let Spend = 0
 let totalClicks = []
 let totalImpressions = []
 let totalCtr = []
@@ -46,15 +47,16 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
                     response.data.forEach(element => {
-                    totalSpend[0] += parseFloat(element.spend)
-                    totalClicks += parseInt(element.clicks)
-                    totalImpressions += parseInt(element.impressions)
-                    totalCtr += parseFloat(element.ctr)
-                    totalCpc += parseFloat(element.cpc)
-                    localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
+                    Spend = parseFloat(element.spend)
+                    // Clicks = parseInt(element.clicks)
+                    // Impressions = parseInt(element.impressions)
+                    // Ctr = parseFloat(element.ctr)
+                    // Cpc = parseFloat(element.cpc)
+                    
                   });
-                  totalSpendMonth[0] = totalSpend
-                  console.log(`totalSpendMoth dentro: ${totalSpendMonth[0]}`)
+                  totalSpend += Spend
+                  console.log(`totalSpendMoth dentro: ${totalSpend}`)
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
                   ready = "True"
                   
                 }
