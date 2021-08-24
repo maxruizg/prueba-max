@@ -1,4 +1,4 @@
-
+var totalSpend = 0
 
 var queries = (totalSpend, mes, element, startDay, endDay) => {
   FB.api(
@@ -24,7 +24,6 @@ var queries = (totalSpend, mes, element, startDay, endDay) => {
 
 window.fbAsyncInit = function()
 {
-  var totalSpend = 0
 
     FB.init({
         appId   : "1345101055833302",
