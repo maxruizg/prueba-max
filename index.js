@@ -56,18 +56,21 @@ window.fbAsyncInit = function()
 
             });
 
+            totalSpend = 0
             idCampaigns.forEach(element => {
 
               queries(mes, element, '9', '15', 2)
 
             });
 
+            totalSpend = 0
             idCampaigns.forEach(element => {
 
               queries(mes, element, '16', '24', 3)
 
             });
 
+            totalSpend = 0
             idCampaigns.forEach(element => {
 
               queries(mes, element, '25', '31', 4)
