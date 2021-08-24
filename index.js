@@ -1,6 +1,6 @@
 var totalSpend = 0
 
-var queries = (mes, element, startDay, endDay, numLocal) => {
+var queries = (mes, element, startDay, endDay, numLocal, nombreLocal) => {
   FB.api(
     '/' + element.id + '/insights',
     'GET',
@@ -14,7 +14,7 @@ var queries = (mes, element, startDay, endDay, numLocal) => {
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
         totalSpend += spend1
-        localStorage.setItem(`Spend_${numLocal}`, JSON.stringify(totalSpend));
+        localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
       }
     }
   );
@@ -49,17 +49,20 @@ window.fbAsyncInit = function()
             const idCampaigns = response.data
             var months = JSON.parse(localStorage.getItem("filterMonth"))
             var mes = parseInt(months[0]) + 1
+            var mesAnterior = parseInt(months[0])
 
             idCampaigns.forEach(element => {
 
               queries(mes, element, '1', '8', 1)
+              queries(mesAnterior, element, '1', '8', 1)
 
             });
 
             totalSpend = 0
             idCampaigns.forEach(element => {
 
-              queries(mes, element, '9', '15', 2)
+              queries(mes, element, '9', '15', 2, 'Spend')
+              queries(mes, element, '9', '15', 2, 'SpendB')
 
             });
 
@@ -72,7 +75,7 @@ window.fbAsyncInit = function()
 
             totalSpend = 0
             idCampaigns.forEach(element => {
-              
+
               queries(mes, element, '25', '31', 4)
 
             });
