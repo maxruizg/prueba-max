@@ -90,6 +90,12 @@ window.fbAsyncInit = function()
               console.log(index)
             });
 
+            totalSpend = 0
+            idCampaigns.forEach((element, index) => {
+              console.log('Llamado4')
+              Queries(mes, element, '25', '31', '4', 'Spend')
+              console.log(index)
+            });
           }
         );
       } else {
