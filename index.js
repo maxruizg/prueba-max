@@ -57,7 +57,7 @@ window.fbAsyncInit = function()
                   });
                   totalSpend += Spend
                   console.log(`totalSpendMoth dentro: ${totalSpend[0]}`)
-                  totalSpend[0]=totalSpend
+                  totalSpendM[0]=totalSpend
                   //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[0]))
                   ready = "True"
                   
@@ -77,7 +77,7 @@ window.fbAsyncInit = function()
                     // totalCpc += parseFloat(element.cpc)
                   });
                   totalSpend += Spend
-                  totalSpend[1]=totalSpend
+                  totalSpendM[1]=totalSpend
                   //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[1]))
                   console.log(totalSpend[1])
                 }
@@ -96,7 +96,7 @@ window.fbAsyncInit = function()
                     //totalCpc += parseFloat(element.cpc)
                   });
                   totalSpend += Spend
-                  totalSpend[2]=totalSpend
+                  totalSpendM[2]=totalSpend
                   //localStorage.setItem("totalSpend", JSON.stringify(totalSpend[2]))
                   console.log(totalSpend[2])
                 }
@@ -115,8 +115,8 @@ window.fbAsyncInit = function()
                     //totalCpc += parseFloat(element.cpc)
                   });
                   totalSpend += Spend
-                  totalSpend[3]=totalSpend
-                  localStorage.setItem("totalSpend", JSON.stringify(totalSpend))
+                  totalSpendM[3]=totalSpend
+                  localStorage.setItem("totalSpend", JSON.stringify(totalSpendM))
                   console.log(totalSpend)
                 }
               );
