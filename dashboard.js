@@ -9,7 +9,7 @@
         datasets: [
         {
             label: "Actual",
-            data: [totalSpend, 19, 3, 5, 2, 3, 5, 4],
+            data: [totalSpend[0], totalSpend[1], totalSpend[2], totalSpend[3]],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
