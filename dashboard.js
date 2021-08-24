@@ -1,7 +1,7 @@
 
 (() => {
     let totalSpend = JSON.parse(localStorage.getItem("totalSpend"))
-    console.log(totalSpend)
+    console.log(typeof(totalSpend))
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
     type: 'line',
