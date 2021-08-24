@@ -31,7 +31,7 @@ window.fbAsyncInit = function()
             console.log(idCampaigns)
             idCampaigns.forEach(element => {
               var months = JSON.parse(localStorage.getItem("filterMonth"))
-              if(months[1] == null){
+              if(months[1] == 0){
                 actual = new Date()
                 months[1] = actual.getMonth()
                 console.log(months[1])
