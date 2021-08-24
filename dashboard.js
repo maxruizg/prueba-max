@@ -156,9 +156,10 @@ while(i < 10){
 
 readData = JSON.parse(localStorage.getItem("filterMonth"))
 j = 0
-while(i < 10){
+while(j < 10){
     var select = document.getElementById(`selectMonth${j+1}`)
     var options = select.options
     options[readData[j]].selected = true
+    console.log(options[readData[j]])
     j++
 }
