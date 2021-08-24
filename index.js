@@ -6,37 +6,39 @@ var totalSpend = 0
 // Semana 4 = 25,976.89
 
 function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
-   FB.api(
-    '/' + element.id + '/insights',
-    'GET',
-    {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
-    function(response) {
-      // if(response || response.error){
-      //   console.log(response)
-      //   console.log(response.error)
-      //   {alert("FALLO")}
-      // }
-      // console.log('querie')
-      console.log(response)
-      var string = JSON.stringify(response)
-      var obj = JSON.parse(string)
-      var data = obj.data
-      
-      if(data[0] != undefined){
-        var spend = data[0].spend
-        var spend1 = parseFloat(spend)
-      }
-
-      if(spend1 == null || spend1 == undefined || spend1 == ''){
-        spend1 = 0
-      }
-
-      // console.log(spend1)
-      console.log(numLocal)
-      totalSpend += spend1
-      localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
-    }
-  );
+  setTimeout(
+    FB.api(
+     '/' + element.id + '/insights',
+     'GET',
+     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+     function(response) {
+       // if(response || response.error){
+       //   console.log(response)
+       //   console.log(response.error)
+       //   {alert("FALLO")}
+       // }
+       // console.log('querie')
+       console.log(response)
+       var string = JSON.stringify(response)
+       var obj = JSON.parse(string)
+       var data = obj.data
+       
+       if(data[0] != undefined){
+         var spend = data[0].spend
+         var spend1 = parseFloat(spend)
+       }
+ 
+       if(spend1 == null || spend1 == undefined || spend1 == ''){
+         spend1 = 0
+       }
+ 
+       // console.log(spend1)
+       console.log(numLocal)
+       totalSpend += spend1
+       localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
+     }
+   )
+  , 5000)
 }
 
 const Error = () => {
@@ -73,89 +75,21 @@ window.fbAsyncInit = function()
             var mes = parseInt(months[0]) + 1
             var mesAnterior = parseInt(months[0])
 
-            for(var element of idCampaigns){
-              console.log('1')
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
-                function(response) {
-                  // if(response || response.error){
-                  //   console.log(response)
-                  //   console.log(response.error)
-                  //   {alert("FALLO")}
-                  // }
-                  // console.log('querie')
-                  console.log(response)
-                  var string = JSON.stringify(response)
-                  var obj = JSON.parse(string)
-                  var data = obj.data
-                  
-                  if(data[0] != undefined){
-                    var spend = data[0].spend
-                    var spend1 = parseFloat(spend)
-                  }
             
-                  if(spend1 == null || spend1 == undefined || spend1 == ''){
-                    spend1 = 0
-                  }
             
-                  // console.log(spend1)
-                  // console.log(numLocal)
-                  totalSpend += spend1
-                  localStorage.setItem('Spend_1', JSON.stringify(totalSpend));
-                }
-              );
-            }
+            totalSpend = 0
+            idCampaigns.forEach((element, index) => {
+              console.log('Llamado1')
+              Queries(mes, element, '1', '8', '1', 'Spend')
+              console.log(index)
+            });
 
-            for(var element of idCampaigns){
-              console.log('1')
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
-                function(response) {
-                  // if(response || response.error){
-                  //   console.log(response)
-                  //   console.log(response.error)
-                  //   {alert("FALLO")}
-                  // }
-                  // console.log('querie')
-                  console.log(response)
-                  var string = JSON.stringify(response)
-                  var obj = JSON.parse(string)
-                  var data = obj.data
-                  
-                  if(data[0] != undefined){
-                    var spend = data[0].spend
-                    var spend1 = parseFloat(spend)
-                  }
-            
-                  if(spend1 == null || spend1 == undefined || spend1 == ''){
-                    spend1 = 0
-                  }
-            
-                  // console.log(spend1)
-                  // console.log(numLocal)
-                  totalSpend += spend1
-                  localStorage.setItem('Spend_2', JSON.stringify(totalSpend));
-                }
-              );
-            }
-            
-            // totalSpend = 0
-            // idCampaigns.forEach((element, index) => {
-            //   console.log('Llamado1')
-            //   Queries(mes, element, '1', '8', '1', 'Spend')
-            //   console.log(index)
-            // });
-
-            // totalSpend = 0
-            // idCampaigns.forEach((element, index) => {
-            //   console.log('Llamado2')
-            //   Queries(mes, element, '9', '15', '2', 'Spend')
-            //   console.log(index)
-            // });
+            totalSpend = 0
+            idCampaigns.forEach((element, index) => {
+              console.log('Llamado2')
+              Queries(mes, element, '9', '15', '2', 'Spend')
+              console.log(index)
+            });
 
             // totalSpend = 0
             // idCampaigns.forEach((element, index) => {
