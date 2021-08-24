@@ -13,7 +13,8 @@ var queries = (mes, element, startDay, endDay) => {
       if(data[0] != undefined){
         var spend = data[0].spend
         var spend1 = parseFloat(spend)
-        console.log(spend1)
+        totalSpend += spend1
+        console.log(totalSpend)
       }
       return spend
     }
@@ -48,11 +49,9 @@ window.fbAsyncInit = function()
             console.log(response)
             const idCampaigns = response.data
             var months = JSON.parse(localStorage.getItem("filterMonth"))
+            var mes = parseInt(months[0]) + 1
 
             idCampaigns.forEach(element => {
-              
-              var mes = parseInt(months[0]) + 1
-
 
               console.log(typeof(queries(mes, element, '1', '31')))
               // totalSpend += queries(totalSpend, mes, element, '1', '31')
