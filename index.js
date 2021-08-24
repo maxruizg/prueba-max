@@ -1,5 +1,5 @@
 let totalSpendMonth = []
-let totalSpend = 0
+let totalSpend = []
 let totalClicks = []
 let totalImpressions = []
 let totalCtr = []
@@ -46,7 +46,7 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
                     response.data.forEach(element => {
-                    totalSpend += parseFloat(element.spend)
+                    totalSpend[0] += parseFloat(element.spend)
                     totalClicks += parseInt(element.clicks)
                     totalImpressions += parseInt(element.impressions)
                     totalCtr += parseFloat(element.ctr)
