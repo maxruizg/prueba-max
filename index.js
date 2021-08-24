@@ -107,6 +107,41 @@ window.fbAsyncInit = function()
                 }
               );
             }
+
+            for(var element of idCampaigns){
+              console.log('1')
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
+                function(response) {
+                  // if(response || response.error){
+                  //   console.log(response)
+                  //   console.log(response.error)
+                  //   {alert("FALLO")}
+                  // }
+                  // console.log('querie')
+                  console.log(response)
+                  var string = JSON.stringify(response)
+                  var obj = JSON.parse(string)
+                  var data = obj.data
+                  
+                  if(data[0] != undefined){
+                    var spend = data[0].spend
+                    var spend1 = parseFloat(spend)
+                  }
+            
+                  if(spend1 == null || spend1 == undefined || spend1 == ''){
+                    spend1 = 0
+                  }
+            
+                  // console.log(spend1)
+                  // console.log(numLocal)
+                  totalSpend += spend1
+                  localStorage.setItem('Spend_2', JSON.stringify(totalSpend));
+                }
+              );
+            }
             
             // totalSpend = 0
             // idCampaigns.forEach((element, index) => {
