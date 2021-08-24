@@ -1,11 +1,4 @@
 
-let totalSpend = 0
-let totalSpendM =[]
-let Spend = 0
-let totalClicks = []
-let totalImpressions = []
-let totalCtr = []
-let totalCpc = []
 
 window.fbAsyncInit = function()
 {
@@ -71,6 +64,7 @@ window.fbAsyncInit = function()
               //     console.log(response)
               //   }
               // );
+
               FB.api(
                 '/' + element.id + '/insights',
                 'GET',
@@ -81,9 +75,10 @@ window.fbAsyncInit = function()
                   console.log(obj)
                   var data = obj.data
 
-                  if(data !== undefined){
-                    console.log(data)
+                  console.log(data)
                     var spend = data[0].spend
+
+                  if(data.spend != undefined){
                     console.log(spend)
                   }
                 }
