@@ -55,18 +55,12 @@ window.fbAsyncInit = function()
 
               queries(mes, element, '1', '8', 1, 'Spend')
 
-              totalSpend = 0
-              queries(mesAnterior, element, '1', '8', 1, 'SpendB')
-
             });
 
             totalSpend = 0
             idCampaigns.forEach(element => {
 
               queries(mes, element, '9', '15', 2, 'Spend')
-
-              totalSpend = 0
-              queries(mesAnterior, element, '9', '15', 2, 'SpendB')
 
             });
 
@@ -75,18 +69,12 @@ window.fbAsyncInit = function()
 
               queries(mes, element, '16', '24', 3, 'Spend')
 
-              totalSpend = 0
-              queries(mesAnterior, element, '16', '24', 3, 'SpendB')
-
             });
 
             totalSpend = 0
             idCampaigns.forEach(element => {
 
               queries(mes, element, '25', '31', 4, 'Spend')
-
-              totalSpend = 0
-              queries(mesAnterior, element, '25', '31', 4, 'SpendB')
 
             });
           }
