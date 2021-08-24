@@ -74,11 +74,12 @@ window.fbAsyncInit = function()
             var mesAnterior = parseInt(months[0])
 
             for(var element of idCampaigns){
-              Queries(mes, element, '1', '8', '1', 'Spend')
+              setInterval(Queries(mes, element, '1', '8', '1', 'Spend'), 500)
             }
 
+
             for(var element of idCampaigns){
-              Queries(mes, element, '9', '15', '2', 'Spend')
+              setInterval(Queries(mes, element, '9', '15', '2', 'Spend'), 500)
             }
             
             // totalSpend = 0
