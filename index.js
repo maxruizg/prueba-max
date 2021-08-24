@@ -1,4 +1,5 @@
 
+
 var queries = (totalSpend, mes, element) => {
   FB.api(
     '/' + element.id + '/insights',
@@ -24,6 +25,8 @@ var queries = (totalSpend, mes, element) => {
 
 window.fbAsyncInit = function()
 {
+  var totalSpend = []
+
     FB.init({
         appId   : "1345101055833302",
         cookie  : true,  // enable cookies to allow the server to access
@@ -55,7 +58,7 @@ window.fbAsyncInit = function()
                 months[0] = actual.getMonth()
               }
 
-              var totalSpend = []
+              
               var mes = parseInt(months[0]) + 1
 
               queries(totalSpend, mes, element)
