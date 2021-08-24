@@ -16,6 +16,7 @@ var queries = (totalSpend, mes, element) => {
         console.log(typeof(spendNumber))
         console.log(spendNumber)
         console.log(totalSpend[0])
+        console.log(typeof(totalSpend[0]))
       }
     }
   );
