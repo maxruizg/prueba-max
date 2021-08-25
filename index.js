@@ -186,7 +186,7 @@ do{
   }else{
     i++
   }
-}while(arreglo1.length != undefine)
+}while(arreglo1.length != undefined)
 console.log(arreglo2[0])
 
 do{
