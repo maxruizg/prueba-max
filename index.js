@@ -9,38 +9,7 @@ var arreglo4 = []
 // Semana 3 = 36,128.34
 // Semana 4 = 25,976.89
 
-async function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
-  
-    FB.api(
-     '/' + element.id + '/insights',
-     'GET',
-     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
-     function(response) {
-       // if(response || response.error){
-       //   console.log(response)
-       //   console.log(response.error)
-       //   {alert("FALLO")}
-       // }
-       // console.log('querie')
-       try{
-         console.log(response)
-         var string = JSON.stringify(response)
-         var obj = JSON.parse(string)
-         var data = obj.data
-         
-         if(data[0] != undefined){
-           var spend = data[0].spend
-           var spend1 = parseFloat(spend)
-
-          switch(numLocal) {
-            case '1': arreglo1.push(spend1)
-            case '2': arreglo2.push(spend1)
-            case '3': arreglo3.push(spend1)
-            case '4': arreglo4.push(spend1)
-          }
-         }
-   
-        //  if(spend1 == null || spend1 == undefined || spend1 == ''){
+//  if(spend1 == null || spend1 == undefined || spend1 == ''){
         //    spend1 = 0
         //  }
    
@@ -48,14 +17,35 @@ async function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
         //  console.log(numLocal)
         //  totalSpend += spend1
         //  localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
-       } 
-       catch(error) 
-       {
-         console.log(error)
-       }
-     }
-   )
-}
+
+  // if(response || response.error){
+       //   console.log(response)
+       //   console.log(response.error)
+       //   {alert("FALLO")}
+       // }
+       // console.log('querie')
+
+// function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
+  
+//     FB.api(
+//      '/' + element.id + '/insights',
+//      'GET',
+//      {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+//      function(response) {
+       
+//         console.log(response)
+//         var string = JSON.stringify(response)
+//         var obj = JSON.parse(string)
+//         var data = obj.data
+        
+//         if(data[0] != undefined){
+//           var spend = data[0].spend
+//           var spend1 = parseFloat(spend)
+//           arreglo1.push(spend1)
+//         }
+//      }
+//    )
+// }
 
 const Error = () => {
   console.log('Error en el foreach')
@@ -93,27 +83,87 @@ window.fbAsyncInit = function()
 
             
             idCampaigns.forEach((element, index) => {
-              // console.log('Llamado1')
-              Queries(mes, element, '1', '8', '1', 'Spend')
-              // console.log(index)
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+                function(response) {
+                  
+                   console.log(response)
+                   var string = JSON.stringify(response)
+                   var obj = JSON.parse(string)
+                   var data = obj.data
+                   
+                   if(data[0] != undefined){
+                     var spend = data[0].spend
+                     var spend1 = parseFloat(spend)
+                     arreglo1.push(spend1)
+                   }
+                }
+              )
             });
 
             idCampaigns.forEach((element, index) => {
-              // console.log('Llamado2')
-              Queries(mes, element, '9', '15', '2', 'Spend')
-              // console.log(index)
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+                function(response) {
+                  
+                   console.log(response)
+                   var string = JSON.stringify(response)
+                   var obj = JSON.parse(string)
+                   var data = obj.data
+                   
+                   if(data[0] != undefined){
+                     var spend = data[0].spend
+                     var spend2 = parseFloat(spend)
+                     arreglo2.push(spend2)
+                   }
+                }
+              )
             });
 
             idCampaigns.forEach((element, index) => {
-              console.log('Llamado3')
-              Queries(mes, element, '16', '24', '3', 'Spend')
-              console.log(index)
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+                function(response) {
+                  
+                   console.log(response)
+                   var string = JSON.stringify(response)
+                   var obj = JSON.parse(string)
+                   var data = obj.data
+                   
+                   if(data[0] != undefined){
+                     var spend = data[0].spend
+                     var spend3 = parseFloat(spend)
+                     arreglo3.push(spend3)
+                   }
+                }
+              )
             });
 
             idCampaigns.forEach((element, index) => {
-              console.log('Llamado4')
-              Queries(mes, element, '25', '31', '4', 'Spend')
-              console.log(index)
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
+                function(response) {
+                  
+                   console.log(response)
+                   var string = JSON.stringify(response)
+                   var obj = JSON.parse(string)
+                   var data = obj.data
+                   
+                   if(data[0] != undefined){
+                     var spend = data[0].spend
+                     var spend4 = parseFloat(spend)
+                     arreglo4.push(spend4)
+                   }
+                }
+              )
             });
 
             console.log(arreglo1, arreglo2, arreglo3, arreglo4)
