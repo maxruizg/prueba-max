@@ -1,3 +1,4 @@
+var arreglo = []
 var arreglo1 = []
 var arreglo2 = []
 var arreglo3 = []
@@ -82,49 +83,48 @@ window.fbAsyncInit = function()
           var mesAnterior = parseInt(months[0])
 
           
-          idCampaigns.forEach((element, index) => {
-            FB.api(
-              '/' + element.id + '/insights',
-              'GET',
-              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
-              function(response) {
+          // idCampaigns.forEach((element, index) => {
+          //   FB.api(
+          //     '/' + element.id + '/insights',
+          //     'GET',
+          //     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
+          //     function(response) {
                 
-                //  console.log(response)
-                 var string = JSON.stringify(response)
-                 var obj = JSON.parse(string)
-                 var data = obj.data
+          //       //  console.log(response)
+          //        var string = JSON.stringify(response)
+          //        var obj = JSON.parse(string)
+          //        var data = obj.data
                  
-                 if(data[0] != undefined){
-                   var spend = data[0].spend
-                   var spend1 = parseFloat(spend)
-                   arreglo1[index] = spend1
-                 }
-              }
-            )
-          });
+          //        if(data[0] != undefined){
+          //          var spend = data[0].spend
+          //          var spend1 = parseFloat(spend)
+          //          arreglo1[index] = spend1
+          //        }
+          //     }
+          //   )
+          // });
             
-            idCampaigns.forEach((element, index) => {
-            FB.api(
-              '/' + element.id + '/insights',
-              'GET',
-              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
-              function(response) {
+          //   idCampaigns.forEach((element, index) => {
+          //   FB.api(
+          //     '/' + element.id + '/insights',
+          //     'GET',
+          //     {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
+          //     function(response) {
                 
-                //  console.log(response)
-                 var string = JSON.stringify(response)
-                 var obj = JSON.parse(string)
-                 var data = obj.data
+          //       //  console.log(response)
+          //        var string = JSON.stringify(response)
+          //        var obj = JSON.parse(string)
+          //        var data = obj.data
                  
-                 if(data[0] != undefined){
-                   var spend = data[0].spend
-                   var spend2 = parseFloat(spend)
-                   arreglo2[index] = spend2
-                 }
-              }
-            )
-          });
+          //        if(data[0] != undefined){
+          //          var spend = data[0].spend
+          //          var spend2 = parseFloat(spend)
+          //          arreglo2[index] = spend2
+          //        }
+          //     }
+          //   )
+          // });
 
-          const hola = 'hola'
 
           idCampaigns.forEach((element, index) => {
             FB.api(
@@ -143,6 +143,13 @@ window.fbAsyncInit = function()
                    var spend3 = parseFloat(spend)
                    arreglo3[index] = spend3
                  }
+
+                var totalSpend3 = 0
+                var i = 0
+                for(var i = 0; i <= arreglo3.length; i++) {
+                  totalSpend3 += parseFloat(arreglo3[i])
+                }
+                localStorage.setItem('Spend_1', JSON.stringify(totalSpend3))
               }
             )
           });
@@ -152,7 +159,7 @@ window.fbAsyncInit = function()
               '/' + element.id + '/insights',
               'GET',
               {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
-              function Hola(response) {
+              function(response) {
                 var string = JSON.stringify(response)
                 var obj = JSON.parse(string)
                 var data = obj.data
@@ -162,6 +169,13 @@ window.fbAsyncInit = function()
                   var spend4 = parseFloat(spend)
                   arreglo4[index] = spend4
                 }
+
+                var totalSpend4 = 0
+                var i = 0
+                for(var i = 0; i <= arreglo4.length; i++) {
+                  totalSpend4 += parseFloat(arreglo4[i])
+                }
+                localStorage.setItem('Spend_1', JSON.stringify(totalSpend4))
               })
           });
         }
@@ -172,31 +186,14 @@ window.fbAsyncInit = function()
   });
 }
 
+// var totalSpend1 = 0
+// var i = 0
+// for(var i = 0; i <= arreglo.length; i++) {
+//   totalSpend1 += parseFloat(arreglo[i])
+// }
+// localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+
+
+Save4(arreglo)
+
 console.log(arreglo1, arreglo2, arreglo3, arreglo4)
-
-var totalSpend1 = 0
-var i = 0
-// do{
-//   if(arreglo1.length != undefined){
-
-//     for(var i = 0; i <= arreglo1.length; i++) {
-//       totalSpend1 += parseFloat(arreglo1[i])
-//     }
-//     localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
-//   }else{
-//     i++
-//   }
-// }while(arreglo1.length != undefined)
-
-// do{
-//   if(arreglo2.length != undefined){
-
-//     var totalSpend2 = 0
-//     for(var element of arreglo2){
-//       totalSpend2 += element
-//       console.log(element)
-//     }
-//     localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
-//   }
-// }while(arreglo2.length != undefined)
-console.log(arreglo2[0])
