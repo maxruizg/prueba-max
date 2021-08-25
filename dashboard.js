@@ -1,6 +1,6 @@
 
 (() => {
-    const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
+    // const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
     const semana2 = JSON.parse(localStorage.getItem("Semana-2"))
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
