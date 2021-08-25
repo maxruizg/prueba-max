@@ -8,6 +8,9 @@
 
     const metrica = JSON.parse(localStorage.getItem("filterData"))
 
+    console.log(metrica[1])
+    console.log(typeof(metrica[1]))
+
     const arreglo = [4]
     switch(metrica[1]){
         case '1': 
