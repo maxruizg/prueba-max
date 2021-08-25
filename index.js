@@ -96,7 +96,7 @@ window.fbAsyncInit = function()
                    if(data[0] != undefined){
                      var spend = data[0].spend
                      var spend1 = parseFloat(spend)
-                     arreglo1.push(spend1)
+                     arreglo1[index] = spend1
                    }
                 }
               )
@@ -117,7 +117,7 @@ window.fbAsyncInit = function()
                    if(data[0] != undefined){
                      var spend = data[0].spend
                      var spend2 = parseFloat(spend)
-                     arreglo2.push(spend2)
+                     arreglo2[index] = spend2
                    }
                 }
               )
@@ -138,7 +138,7 @@ window.fbAsyncInit = function()
                    if(data[0] != undefined){
                      var spend = data[0].spend
                      var spend3 = parseFloat(spend)
-                     arreglo3.push(spend3)
+                     arreglo3[index] = spend3
                    }
                 }
               )
@@ -159,7 +159,7 @@ window.fbAsyncInit = function()
                    if(data[0] != undefined){
                      var spend = data[0].spend
                      var spend4 = parseFloat(spend)
-                     arreglo4.push(spend4)
+                     arreglo4[index] = spend4
                    }
                 }
               )
