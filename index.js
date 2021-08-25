@@ -154,38 +154,33 @@ window.fbAsyncInit = function()
             )
           });
 
-          async function Request4(){
+          idCampaigns.forEach((element, index) => {
+            FB.api(
+              '/' + element.id + '/insights',
+              'GET',
+              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
+              function(response) {
+                
+                //  console.log(response)
+                 var string = JSON.stringify(response)
+                 var obj = JSON.parse(string)
+                 var data = obj.data
+                 
+                //  if(data[0] != undefined){
+                //    var spend = data[0].spend
+                //    var spend3 = parseFloat(spend)
+                //    arreglo3[index] = spend3
+                //  }
 
-            idCampaigns.forEach((element, index) => {
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
-                function Querie4(response) {
-                  var string = JSON.stringify(response)
-                  var obj = JSON.parse(string)
-                  var data = obj.data
-                  return data
-                }
-              )
-                const datos = await Querie4()
-                 async function Sum(data) {
-                  if(data[0] != undefined){
-                    var spend = data[0].spend
-                    var spend4 = parseFloat(spend)
-                    arreglo4[index] = spend4
-                  }
-                  var totalSpend4 = 0
-                  var i = 0
-                  for(var i = 0; i <= arreglo4.length; i++) {
-                    totalSpend4 += parseFloat(arreglo4[i])
-                  }
-                  return totalSpend4
-                }
-                const total = await Sum(datos)
-                localStorage.setItem('Spend_4', JSON.stringify(total))
-            });
-          }
+                // var totalSpend3 = 0
+                // var i = 0
+                // for(var i = 0; i <= arreglo3.length; i++) {
+                //   totalSpend3 += parseFloat(arreglo3[i])
+                // }
+                localStorage.setItem('Spend_3', JSON.stringify(data))
+              }
+            )
+          });
         }
       );
     } else {
