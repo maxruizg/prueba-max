@@ -106,7 +106,7 @@ window.fbAsyncInit = function()
           }
           const array1 = Ciclo1()
 
-          function Ciclo2() {
+          async function Ciclo2() {
             idCampaigns.forEach((element, index) => {
               FB.api(
                 '/' + element.id + '/insights',
@@ -123,7 +123,6 @@ window.fbAsyncInit = function()
                      var spend = data[0].spend
                      var spend2 = parseFloat(spend)
                      arreglo2[index] = spend2
-                     console.log(arreglo2[2])
                    }
                 }
               )
