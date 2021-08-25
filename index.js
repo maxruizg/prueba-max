@@ -166,6 +166,7 @@ window.fbAsyncInit = function()
             });
 
             console.log(arreglo1, arreglo2, arreglo3, arreglo4)
+            console.log(typeof(arreglo2[1]))
             var totalSpend1 = 0
             for(var i = 0; i <= arreglo1.length; i++) {
               totalSpend1 += arreglo1[i]
