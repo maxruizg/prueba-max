@@ -13,8 +13,8 @@
         datasets: [
         {
             label: "Actual",
-            data: [semana1.spend, semana2.spend, semana3.spend, semana4.spend],
-            
+            data: [0, semana2.spend, semana3.spend, semana4.spend],
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
