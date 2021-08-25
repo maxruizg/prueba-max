@@ -164,6 +164,13 @@ window.fbAsyncInit = function()
                 }
               )
             });
+          }
+        );
+      } else {
+       console.log('User cancelled login or did not fully authorize.');
+      }
+    });
+}
 
             console.log(arreglo1, arreglo2, arreglo3, arreglo4)
             console.log(arreglo2.length, arreglo3.length, arreglo4.length)
@@ -180,10 +187,3 @@ window.fbAsyncInit = function()
               console.log(arreglo2[i])
             }
             localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
-          }
-        );
-      } else {
-       console.log('User cancelled login or did not fully authorize.');
-      }
-    });
-}
