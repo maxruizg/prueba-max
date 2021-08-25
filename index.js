@@ -192,8 +192,4 @@ window.fbAsyncInit = function()
 //   totalSpend1 += parseFloat(arreglo[i])
 // }
 // localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
-
-
-Save4(arreglo)
-
 console.log(arreglo1, arreglo2, arreglo3, arreglo4)
