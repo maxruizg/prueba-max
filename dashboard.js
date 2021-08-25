@@ -1,9 +1,39 @@
 
 (() => {
+
     const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
     const semana2 = JSON.parse(localStorage.getItem("Semana-2"))
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
+
+    const metrica = JSON.parse(localStorage.getItem("Semana-4"))
+
+    const arreglo = [4]
+    switch(metrica[1]){
+        case '1': arreglo[1] = semana1.spend
+            arreglo[2] = semana2.spend
+            arreglo[3] = semana3.spend
+            arreglo[4] = semana4.spend
+            break;
+        case '2': arreglo[1] = semana1.clicks
+            arreglo[2] = semana2.clicks
+            arreglo[3] = semana3.clicks
+            arreglo[4] = semana4.clicks
+            break;
+        case '3': arreglo[1] = semana1.impressions
+            arreglo[2] = semana2.impressions
+            arreglo[3] = semana3.impressions
+            arreglo[4] = semana4.impressions
+            break;
+        case '4': arreglo[1] = semana1.ctr
+            arreglo[2] = semana2.ctr
+            arreglo[3] = semana3.ctr
+            arreglo[4] = semana4.ctr
+        case '5': arreglo[1] = semana1.cpc
+            arreglo[2] = semana2.cpc
+            arreglo[3] = semana3.cpc
+            arreglo[4] = semana4.cpc
+    }
 
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
@@ -13,7 +43,7 @@
         datasets: [
         {
             label: "Actual",
-            data: [semana1.spend, semana2.spend, semana3.spend, semana4.spend],
+            data: [0, semana2.spend, semana3.spend, semana4.spend],
 
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

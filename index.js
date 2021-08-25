@@ -76,7 +76,7 @@ window.fbAsyncInit = function()
             if(response.data[0] != undefined){
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
             }else {
-              localStorage.setItem('Semana-1', JSON.stringify(cero))
+              localStorage.setItem('Semana-1', JSON.stringify(0))
             }
           }
         );
