@@ -172,18 +172,18 @@ window.fbAsyncInit = function()
     });
 }
 
-            console.log(arreglo1, arreglo2, arreglo3, arreglo4)
-            console.log(arreglo2.length, arreglo3.length, arreglo4.length)
-            console.log(typeof(arreglo2[1]))
-            var totalSpend1 = 0
-            for(var i = 0; i <= arreglo1.length; i++) {
-              totalSpend1 += parseFloat(arreglo1[i])
-            }
-            localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+console.log(arreglo1, arreglo2, arreglo3, arreglo4)
+console.log(arreglo2[0])
+console.log(typeof(arreglo2[1]))
+var totalSpend1 = 0
+for(var i = 0; i <= arreglo1.length; i++) {
+  totalSpend1 += parseFloat(arreglo1[i])
+}
+localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
 
-            var totalSpend2 = 0
-            for(var i = 0; i <= arreglo2.length; i++){
-              totalSpend2 += parseFloat(arreglo2[i])
-              console.log(arreglo2[i])
-            }
-            localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
+var totalSpend2 = 0
+for(var i = 0; i <= arreglo2.length; i++){
+  totalSpend2 += parseFloat(arreglo2[i])
+  console.log(arreglo2[i])
+}
+localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
