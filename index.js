@@ -67,7 +67,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-16',until:'2021-07-24'}]"},
           function(response) {
-              console.log(response.data)
+              console.log(response.data[0])
           }
         );
       } else {
