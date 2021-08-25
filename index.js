@@ -173,7 +173,7 @@ window.fbAsyncInit = function()
   });
 }
 
-// console.log(arreglo1, arreglo2, arreglo3, arreglo4)
+console.log(arreglo1, arreglo2, arreglo3, arreglo4)
 // console.log(arreglo2[0])
 // console.log(typeof(arreglo2[1]))
 
