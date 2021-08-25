@@ -6,7 +6,7 @@
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
 
-    const metrica = JSON.parse(localStorage.getItem("Semana-4"))
+    const metrica = JSON.parse(localStorage.getItem("filterData"))
 
     const arreglo = [4]
     switch(metrica[1]){
