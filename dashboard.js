@@ -185,24 +185,25 @@ function saveMetrics() {
     }while(j < 10)
 
     localStorage.setItem("filterMonth", JSON.stringify(filters));
+
+    let readData = JSON.parse(localStorage.getItem("filterData"))
+    var i = 0
+    
+    // Cambio de ciclo para condicionar null en readData
+    while(i < 10){
+        var select = document.getElementById(`selectMetrica${i+1}`)
+        var options = select.options
+        options[readData[i]].selected = true
+        i++
+    }
+    
+    readData = JSON.parse(localStorage.getItem("filterMonth"))
+    var j = 0
+    while(j < 10){
+        var select = document.getElementById(`selectMonth${j+1}`)
+        var options = select.options
+        options[readData[j]].selected = true
+        j++
+    }
 }
 
-let readData = JSON.parse(localStorage.getItem("filterData"))
-var i = 0
-
-// Cambio de ciclo para condicionar null en readData
-while(i < 10){
-    var select = document.getElementById(`selectMetrica${i+1}`)
-    var options = select.options
-    options[readData[i]].selected = true
-    i++
-}
-
-readData = JSON.parse(localStorage.getItem("filterMonth"))
-var j = 0
-while(j < 10){
-    var select = document.getElementById(`selectMonth${j+1}`)
-    var options = select.options
-    options[readData[j]].selected = true
-    j++
-}
