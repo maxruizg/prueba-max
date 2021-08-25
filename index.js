@@ -169,7 +169,7 @@ window.fbAsyncInit = function()
                   var spend4 = parseFloat(spend)
                   arreglo4[index] = spend4
                 }
-
+                console.log(arreglo4)
                 var totalSpend4 = 0
                 var i = 0
                 for(var i = 0; i <= arreglo4.length; i++) {
