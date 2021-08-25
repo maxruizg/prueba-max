@@ -12,6 +12,7 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
      'GET',
      {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
      function(response) {
+       console.log(response)
        // if(response || response.error){
        //   console.log(response)
        //   console.log(response.error)
@@ -19,7 +20,6 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
        // }
        // console.log('querie')
        try{
-
          console.log(response)
          var string = JSON.stringify(response)
          var obj = JSON.parse(string)
@@ -35,10 +35,12 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
          }
    
          // console.log(spend1)
-         console.log(numLocal)
+        //  console.log(numLocal)
          totalSpend += spend1
          localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
-       } catch(error) {
+       } 
+       catch(error) 
+       {
          console.log(error)
        }
      }
@@ -83,14 +85,14 @@ window.fbAsyncInit = function()
             
             totalSpend = 0
             idCampaigns.forEach((element, index) => {
-              console.log('Llamado1')
+              // console.log('Llamado1')
               Queries(mes, element, '1', '8', '1', 'Spend')
               console.log(index)
             });
 
             totalSpend = 0
             idCampaigns.forEach((element, index) => {
-              console.log('Llamado2')
+              // console.log('Llamado2')
               Queries(mes, element, '9', '15', '2', 'Spend')
               console.log(index)
             });
