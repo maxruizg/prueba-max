@@ -183,7 +183,9 @@ setTimeout(() => {
     totalSpend1 += parseFloat(arreglo1[i])
   }
   localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
-}, 2000)
+  console.log(arreglo2[0])
+  console.log(typeof(arreglo2[1]))
+}, 10000)
 
 
 var totalSpend2 = 0
