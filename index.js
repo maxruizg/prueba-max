@@ -1,11 +1,13 @@
 var totalSpend = 0
+var arreglo1 = []
+var arreglo2 = []
 
 // Semana 1 = 0
 // Semana 2 = 4,305.93
 // Semana 3 = 36,128.34
 // Semana 4 = 25,976.89
 
-function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
+async function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
   
     FB.api(
      '/' + element.id + '/insights',
@@ -28,16 +30,21 @@ function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
          if(data[0] != undefined){
            var spend = data[0].spend
            var spend1 = parseFloat(spend)
+
+          switch(numLocal) {
+            case '1': arreglo1.push(spend1)
+            case '2': arreglo2.push(spend1)
+          }
          }
    
-         if(spend1 == null || spend1 == undefined || spend1 == ''){
-           spend1 = 0
-         }
+        //  if(spend1 == null || spend1 == undefined || spend1 == ''){
+        //    spend1 = 0
+        //  }
    
          // console.log(spend1)
         //  console.log(numLocal)
-         totalSpend += spend1
-         localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
+        //  totalSpend += spend1
+        //  localStorage.setItem(`${nombreLocal}_${numLocal}`, JSON.stringify(totalSpend));
        } 
        catch(error) 
        {
@@ -87,15 +94,17 @@ window.fbAsyncInit = function()
             idCampaigns.forEach((element, index) => {
               // console.log('Llamado1')
               Queries(mes, element, '1', '8', '1', 'Spend')
-              console.log(index)
+              // console.log(index)
             });
 
             totalSpend = 0
             idCampaigns.forEach((element, index) => {
               // console.log('Llamado2')
               Queries(mes, element, '9', '15', '2', 'Spend')
-              console.log(index)
+              // console.log(index)
             });
+
+            console.log(arreglo1, arreglo2)
 
             // totalSpend = 0
             // idCampaigns.forEach((element, index) => {
