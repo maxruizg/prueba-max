@@ -131,7 +131,12 @@ window.fbAsyncInit = function()
             return arreglo2
           }
           const array2 = Ciclo2()
-          console.log(array2)
+          let suma2 = 0
+          array2.forEach(element => {
+            suma2 += element
+            console.log(element)
+          });
+          localStorage.setItem('Spend_2', JSON.stringify(suma2))
 
           idCampaigns.forEach((element, index) => {
             FB.api(
