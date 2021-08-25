@@ -155,20 +155,20 @@ window.fbAsyncInit = function()
           });
 
           async function Request4(){
-            var data = {}
 
             idCampaigns.forEach((element, index) => {
-              await FB.api(
+              FB.api(
                 '/' + element.id + '/insights',
                 'GET',
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
                 function Querie4(response) {
                   var string = JSON.stringify(response)
                   var obj = JSON.parse(string)
-                  data = obj.data
+                  var data = obj.data
+                  return data
                 }
               )
-
+                const datos = await Querie4()
                  async function Sum(data) {
                   if(data[0] != undefined){
                     var spend = data[0].spend
@@ -182,11 +182,10 @@ window.fbAsyncInit = function()
                   }
                   return totalSpend4
                 }
-                const total = await Sum(data)
+                const total = await Sum(datos)
                 localStorage.setItem('Spend_4', JSON.stringify(total))
             });
           }
-          Request4()
         }
       );
     } else {
