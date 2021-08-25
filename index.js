@@ -65,6 +65,24 @@ window.fbAsyncInit = function()
         FB.api(
           '/act_1468139590049416/insights',
           'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-01',until:'2021-07-08'}]"},
+          function(response) {
+              localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+          }
+        );
+
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-09',until:'2021-07-15'}]"},
+          function(response) {
+              localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+          }
+        );
+
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-16',until:'2021-07-24'}]"},
           function(response) {
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
