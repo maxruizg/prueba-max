@@ -167,16 +167,16 @@ window.fbAsyncInit = function()
 
             console.log(arreglo1, arreglo2, arreglo3, arreglo4)
             var totalSpend1 = 0
-            arreglo1.forEach(element => {
-              totalSpend1 += element
-            });
+            for(var i = 0; i <= arreglo1.length; i++) {
+              totalSpend1 += arreglo1[i]
+            }
             localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
 
             var totalSpend2 = 0
-            arreglo2.forEach(element => {
-              totalSpend2 += element
-              console.log(element)
-            });
+            for(var i = 0; i <= arreglo2.length; i++){
+              totalSpend2 += arreglo2[i]
+              console.log(arreglo2[i])
+            }
             localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
           }
         );
