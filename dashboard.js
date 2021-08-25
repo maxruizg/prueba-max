@@ -36,6 +36,8 @@
             if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[4] = 0 }else {arreglo[4] = semana4.ctc}
     }
 
+    console.log(arreglo)
+
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
     type: 'line',
