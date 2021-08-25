@@ -1,6 +1,8 @@
 var totalSpend = 0
 var arreglo1 = []
 var arreglo2 = []
+var arreglo3 = []
+var arreglo4 = []
 
 // Semana 1 = 0
 // Semana 2 = 4,305.93
@@ -14,7 +16,6 @@ async function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
      'GET',
      {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-"+ startDay +"',until:'2021-"+ mes + "-"+ endDay +"'}]"},
      function(response) {
-       console.log(response)
        // if(response || response.error){
        //   console.log(response)
        //   console.log(response.error)
@@ -34,6 +35,8 @@ async function Queries (mes, element, startDay, endDay, numLocal, nombreLocal) {
           switch(numLocal) {
             case '1': arreglo1.push(spend1)
             case '2': arreglo2.push(spend1)
+            case '3': arreglo3.push(spend1)
+            case '4': arreglo4.push(spend1)
           }
          }
    
@@ -89,36 +92,31 @@ window.fbAsyncInit = function()
             var mesAnterior = parseInt(months[0])
 
             
-            
-            totalSpend = 0
             idCampaigns.forEach((element, index) => {
               // console.log('Llamado1')
               Queries(mes, element, '1', '8', '1', 'Spend')
               // console.log(index)
             });
 
-            totalSpend = 0
             idCampaigns.forEach((element, index) => {
               // console.log('Llamado2')
               Queries(mes, element, '9', '15', '2', 'Spend')
               // console.log(index)
             });
 
-            console.log(arreglo1, arreglo2)
+            idCampaigns.forEach((element, index) => {
+              console.log('Llamado3')
+              Queries(mes, element, '16', '24', '3', 'Spend')
+              console.log(index)
+            });
 
-            // totalSpend = 0
-            // idCampaigns.forEach((element, index) => {
-            //   console.log('Llamado3')
-            //   Queries(mes, element, '16', '24', '3', 'Spend')
-            //   console.log(index)
-            // });
+            idCampaigns.forEach((element, index) => {
+              console.log('Llamado4')
+              Queries(mes, element, '25', '31', '4', 'Spend')
+              console.log(index)
+            });
 
-            // totalSpend = 0
-            // idCampaigns.forEach((element, index) => {
-            //   console.log('Llamado4')
-            //   Queries(mes, element, '25', '31', '4', 'Spend')
-            //   console.log(index)
-            // });
+            console.log(arreglo1, arreglo2, arreglo3, arreglo4)
           }
         );
       } else {
