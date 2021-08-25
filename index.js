@@ -173,23 +173,21 @@ window.fbAsyncInit = function()
 }
 
 console.log(arreglo1, arreglo2, arreglo3, arreglo4)
+
+// var totalSpend1 = 0
+// var i = 0
+// do{
+//   if(arreglo1.length != undefined){
+
+//     for(var i = 0; i <= arreglo1.length; i++) {
+//       totalSpend1 += parseFloat(arreglo1[i])
+//     }
+//     localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+//   }else{
+//     i++
+//   }
+// }while(arreglo1.length != undefined)
 // console.log(arreglo2[0])
-// console.log(typeof(arreglo2[1]))
-
-var totalSpend1 = 0
-var i = 0
-do{
-  if(arreglo1.length != undefined){
-
-    for(var i = 0; i <= arreglo1.length; i++) {
-      totalSpend1 += parseFloat(arreglo1[i])
-    }
-    localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
-  }else{
-    i++
-  }
-}while(arreglo1.length != undefined)
-console.log(arreglo2[0])
 
 do{
   if(arreglo2.length != undefined){
