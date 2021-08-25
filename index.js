@@ -137,6 +137,7 @@ window.fbAsyncInit = function()
             let suma2 = 0
             for(var element of array2){
               suma2 += element
+              console.log(element)
             }
             localStorage.setItem('Spend_2', JSON.stringify(suma2))
           }
