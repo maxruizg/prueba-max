@@ -8,9 +8,10 @@
 
     const metrica = JSON.parse(localStorage.getItem("filterData"))
 
-    console.log(metrica[1])
-    console.log(typeof(metrica[1]))
-    console.log(semana2)
+    console.log(semana1.clicks)
+    // console.log(metrica[1])
+    // console.log(typeof(metrica[1]))
+    // console.log(semana2)
 
     const arreglo = [4]
     switch(metrica[1]){
