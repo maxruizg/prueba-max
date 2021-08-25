@@ -70,6 +70,16 @@ window.fbAsyncInit = function()
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
           }
         );
+
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-25',until:'2021-07-31'}]"},
+          function(response) {
+              localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+          }
+        );
+
       } else {
        console.log('User cancelled login or did not fully authorize.');
       }
