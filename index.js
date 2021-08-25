@@ -46,6 +46,7 @@ var arreglo4 = []
 //    )
 // }
 
+
 const Error = () => {
   console.log('Error en el foreach')
 }
@@ -80,49 +81,57 @@ window.fbAsyncInit = function()
           var mes = parseInt(months[0]) + 1
           var mesAnterior = parseInt(months[0])
 
-          
-          idCampaigns.forEach((element, index) => {
-            FB.api(
-              '/' + element.id + '/insights',
-              'GET',
-              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
-              function(response) {
-                
-                //  console.log(response)
-                 var string = JSON.stringify(response)
-                 var obj = JSON.parse(string)
-                 var data = obj.data
-                 
-                 if(data[0] != undefined){
-                   var spend = data[0].spend
-                   var spend1 = parseFloat(spend)
-                   arreglo1[index] = spend1
-                 }
-              }
-            )
-          });
+          async function Ciclo1() {
+            idCampaigns.forEach((element, index) => {
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
+                function(response) {
+                  
+                  //  console.log(response)
+                   var string = JSON.stringify(response)
+                   var obj = JSON.parse(string)
+                   var data = obj.data
+                   
+                   if(data[0] != undefined){
+                     var spend = data[0].spend
+                     var spend1 = parseFloat(spend)
+                     arreglo1[index] = spend1
+                   }
+                }
+              )
+            });
+            return arreglo1
+          }
+          const array1 = Ciclo1()
 
-          idCampaigns.forEach((element, index) => {
-            FB.api(
-              '/' + element.id + '/insights',
-              'GET',
-              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
-              function(response) {
-                
-                //  console.log(response)
-                 var string = JSON.stringify(response)
-                 var obj = JSON.parse(string)
-                 var data = obj.data
-                 
-                 if(data[0] != undefined){
-                   var spend = data[0].spend
-                   var spend2 = parseFloat(spend)
-                   arreglo2[index] = spend2
-                   console.log(arreglo2[2])
-                 }
-              }
-            )
-          });
+          async function Ciclo2() {
+            idCampaigns.forEach((element, index) => {
+              FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
+                function(response) {
+                  
+                  //  console.log(response)
+                   var string = JSON.stringify(response)
+                   var obj = JSON.parse(string)
+                   var data = obj.data
+                   
+                   if(data[0] != undefined){
+                     var spend = data[0].spend
+                     var spend2 = parseFloat(spend)
+                     arreglo2[index] = spend2
+                     console.log(arreglo2[2])
+                   }
+                }
+              )
+            });
+            return arreglo2
+          }
+          const array2 = Ciclo2()
+          console.log(array2)
 
           idCampaigns.forEach((element, index) => {
             FB.api(
@@ -150,20 +159,17 @@ window.fbAsyncInit = function()
               '/' + element.id + '/insights',
               'GET',
               {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
-              function(response) {
-                
-                //  console.log(response)
-                 var string = JSON.stringify(response)
-                 var obj = JSON.parse(string)
-                 var data = obj.data
-                 
-                 if(data[0] != undefined){
-                   var spend = data[0].spend
-                   var spend4 = parseFloat(spend)
-                   arreglo4[index] = spend4
-                 }
-              }
-            )
+              function Hola(response) {
+                var string = JSON.stringify(response)
+                var obj = JSON.parse(string)
+                var data = obj.data
+               
+                if(data[0] != undefined){
+                  var spend = data[0].spend
+                  var spend4 = parseFloat(spend)
+                  arreglo4[index] = spend4
+                }
+              })
           });
         }
       );
