@@ -86,7 +86,11 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-09',until:'2021-07-15'}]"},
           function(response) {
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-2', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-2', JSON.stringify(0))
+            }
           }
         );
 
@@ -95,7 +99,11 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-16',until:'2021-07-24'}]"},
           function(response) {
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-3', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-3', JSON.stringify(0))
+            }
           }
         );
 
@@ -104,7 +112,11 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-25',until:'2021-07-31'}]"},
           function(response) {
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-4', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-4', JSON.stringify(0))
+            }
           }
         );
 

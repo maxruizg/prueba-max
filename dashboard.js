@@ -10,29 +10,30 @@
 
     const arreglo = [4]
     switch(metrica[1]){
-        case '1': arreglo[1] = semana1.spend
-            arreglo[2] = semana2.spend
-            arreglo[3] = semana3.spend
-            arreglo[4] = semana4.spend
+        case '1': 
+            if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana1.spend}
+            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana1.spend}
+            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana1.spend}
+            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[4] = 0 }else {arreglo[4] = semana1.spend}
+        case '2': if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana1.clicks}
+            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana1.clicks}
+            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana1.clicks}
+            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[4] = 0 }else {arreglo[4] = semana1.clicks}
             break;
-        case '2': arreglo[1] = semana1.clicks
-            arreglo[2] = semana2.clicks
-            arreglo[3] = semana3.clicks
-            arreglo[4] = semana4.clicks
+        case '3': if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana1.impressions}
+            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana1.impressions}
+            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana1.impressions}
+            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[4] = 0 }else {arreglo[4] = semana1.impressions}
             break;
-        case '3': arreglo[1] = semana1.impressions
-            arreglo[2] = semana2.impressions
-            arreglo[3] = semana3.impressions
-            arreglo[4] = semana4.impressions
+        case '4': if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana1.ctr}
+            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana1.ctr}
+            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana1.ctr}
+            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[4] = 0 }else {arreglo[4] = semana1.ctr}
             break;
-        case '4': arreglo[1] = semana1.ctr
-            arreglo[2] = semana2.ctr
-            arreglo[3] = semana3.ctr
-            arreglo[4] = semana4.ctr
-        case '5': arreglo[1] = semana1.cpc
-            arreglo[2] = semana2.cpc
-            arreglo[3] = semana3.cpc
-            arreglo[4] = semana4.cpc
+        case '5': if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana1.ctc}
+            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana1.ctc}
+            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana1.ctc}
+            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[4] = 0 }else {arreglo[4] = semana1.ctc}
     }
 
     var ctx = document.getElementById('myChart1');
