@@ -1,4 +1,10 @@
-
+const cero = {
+  spend: 0,
+  clicks: 0,
+  impressions: 0,
+  ctr: 0,
+  cpc: 0
+}
 
 // Semana 1 = 0
 // Semana 2 = 4,305.93
@@ -67,7 +73,11 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-01',until:'2021-07-08'}]"},
           function(response) {
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-1', JSON.stringify(cero))
+            }
           }
         );
 
