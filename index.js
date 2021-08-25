@@ -149,7 +149,7 @@ window.fbAsyncInit = function()
                 for(var i = 0; i <= arreglo3.length; i++) {
                   totalSpend3 += parseFloat(arreglo3[i])
                 }
-                localStorage.setItem('Spend_1', JSON.stringify(totalSpend3))
+                localStorage.setItem('Spend_3', JSON.stringify(totalSpend3))
               }
             )
           });
@@ -175,7 +175,7 @@ window.fbAsyncInit = function()
                 for(var i = 0; i <= arreglo4.length; i++) {
                   totalSpend4 += parseFloat(arreglo4[i])
                 }
-                localStorage.setItem('Spend_1', JSON.stringify(totalSpend4))
+                localStorage.setItem('Spend_4', JSON.stringify(totalSpend4))
               })
           });
         }
