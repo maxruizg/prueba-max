@@ -130,7 +130,7 @@ window.fbAsyncInit = function()
             });
             return arreglo2
           }
-          const array2 = Ciclo2()
+          const array2 = await Ciclo2()
           console.log(array2)
           let suma2 = 0
           // for(var element of array2){
