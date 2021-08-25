@@ -1,9 +1,9 @@
 
 (() => {
-    let spend1 = JSON.parse(localStorage.getItem("Spend_1"))
-    let spend2 = JSON.parse(localStorage.getItem("Spend_2"))
-    let spend3 = JSON.parse(localStorage.getItem("Spend_3"))
-    let spend4 = JSON.parse(localStorage.getItem("Spend_4"))
+    const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
+    const semana2 = JSON.parse(localStorage.getItem("Semana-2"))
+    const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
+    const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
 
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
@@ -13,7 +13,8 @@
         datasets: [
         {
             label: "Actual",
-            data: [spend1, spend2, spend3, spend4],
+            data: [semana1.spend, semana2.spend, semana3.spend, semana4.spend],
+            
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
