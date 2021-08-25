@@ -154,35 +154,39 @@ window.fbAsyncInit = function()
             )
           });
 
-          idCampaigns.forEach((element, index) => {
-            FB.api(
-              '/' + element.id + '/insights',
-              'GET',
-              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
-              function(response) {
-                var string = JSON.stringify(response)
-                var obj = JSON.parse(string)
-                var data = obj.data
-               
-                if(data[0] != undefined){
-                  var spend = data[0].spend
-                  var spend4 = parseFloat(spend)
-                  arreglo4[index] = spend4
+          async function Request4(){
+            var data = {}
+
+            idCampaigns.forEach((element, index) => {
+              await FB.api(
+                '/' + element.id + '/insights',
+                'GET',
+                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
+                function Querie4(response) {
+                  var string = JSON.stringify(response)
+                  var obj = JSON.parse(string)
+                  data = obj.data
                 }
-                console.log(arreglo4.length)
-                console.log(arreglo4)
-                var totalSpend4 = 0
-                var i = 0
-                for(var i = 0; i <= arreglo4.length; i++) {
-                  if(typeof(arreglo4[i]) == Number){
-                    totalSpend4 += parseFloat(arreglo4[i])
-                  } 
-                  if (i==arreglo4.length){ 
-                    localStorage.setItem('Spend_4', JSON.stringify(totalSpend4))
+              )
+
+                 async function Sum(data) {
+                  if(data[0] != undefined){
+                    var spend = data[0].spend
+                    var spend4 = parseFloat(spend)
+                    arreglo4[index] = spend4
                   }
+                  var totalSpend4 = 0
+                  var i = 0
+                  for(var i = 0; i <= arreglo4.length; i++) {
+                    totalSpend4 += parseFloat(arreglo4[i])
+                  }
+                  return totalSpend4
                 }
-              })
-          });
+                const total = await Sum(data)
+                localStorage.setItem('Spend_4', JSON.stringify(total))
+            });
+          }
+          Request4()
         }
       );
     } else {
