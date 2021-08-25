@@ -178,10 +178,13 @@ console.log(arreglo1, arreglo2, arreglo3, arreglo4)
 // console.log(typeof(arreglo2[1]))
 
 var totalSpend1 = 0
-for(var i = 0; i <= arreglo1.length; i++) {
-  totalSpend1 += parseFloat(arreglo1[i])
-}
-localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+setTimeout(() => {
+  for(var i = 0; i <= arreglo1.length; i++) {
+    totalSpend1 += parseFloat(arreglo1[i])
+  }
+  localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+}, 2000)
+
 
 var totalSpend2 = 0
 for(var i = 0; i <= arreglo2.length; i++){
