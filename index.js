@@ -67,6 +67,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-07-01',until:'2021-07-08'}]"},
           function(response) {
+            response.data[0].spend
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
           }
         );
