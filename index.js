@@ -175,6 +175,7 @@ window.fbAsyncInit = function()
             var totalSpend2 = 0
             arreglo2.forEach(element => {
               totalSpend2 += element
+              console.log(element)
             });
             localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
           }
