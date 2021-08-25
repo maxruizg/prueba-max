@@ -1,4 +1,3 @@
-var totalSpend = 0
 var arreglo1 = []
 var arreglo2 = []
 var arreglo3 = []
@@ -167,6 +166,17 @@ window.fbAsyncInit = function()
             });
 
             console.log(arreglo1, arreglo2, arreglo3, arreglo4)
+            var totalSpend1 = 0
+            for(var element of arreglo1){
+              totalSpend1 += element
+            }
+            localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+
+            var totalSpend2 = 0
+            for(var element of arreglo2){
+              totalSpend2 += element
+            }
+            localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
           }
         );
       } else {
