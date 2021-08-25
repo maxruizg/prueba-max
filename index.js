@@ -88,7 +88,7 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
                 function(response) {
                   
-                   console.log(response)
+                  //  console.log(response)
                    var string = JSON.stringify(response)
                    var obj = JSON.parse(string)
                    var data = obj.data
@@ -109,7 +109,7 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
                 function(response) {
                   
-                   console.log(response)
+                  //  console.log(response)
                    var string = JSON.stringify(response)
                    var obj = JSON.parse(string)
                    var data = obj.data
@@ -130,7 +130,7 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-16',until:'2021-"+ mes + "-24'}]"},
                 function(response) {
                   
-                   console.log(response)
+                  //  console.log(response)
                    var string = JSON.stringify(response)
                    var obj = JSON.parse(string)
                    var data = obj.data
@@ -151,7 +151,7 @@ window.fbAsyncInit = function()
                 {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-25',until:'2021-"+ mes + "-31'}]"},
                 function(response) {
                   
-                   console.log(response)
+                  //  console.log(response)
                    var string = JSON.stringify(response)
                    var obj = JSON.parse(string)
                    var data = obj.data
@@ -167,15 +167,15 @@ window.fbAsyncInit = function()
 
             console.log(arreglo1, arreglo2, arreglo3, arreglo4)
             var totalSpend1 = 0
-            for(var element of arreglo1){
+            arreglo1.forEach(element => {
               totalSpend1 += element
-            }
+            });
             localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
 
             var totalSpend2 = 0
-            for(var element of arreglo2){
+            arreglo2.forEach(element => {
               totalSpend2 += element
-            }
+            });
             localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
           }
         );
