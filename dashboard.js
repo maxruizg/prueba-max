@@ -8,7 +8,7 @@
 
     const metrica = JSON.parse(localStorage.getItem("filterData"))
 
-    console.log(semana2.clicks)
+    console.log(semana2)
     // console.log(metrica[1])
     // console.log(typeof(metrica[1]))
     // console.log(semana2)
@@ -36,10 +36,10 @@
             if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3.ctr}
             if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4.ctr}
             break;
-        case '4': if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1.ctc}
-            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2.ctc}
-            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3.ctc}
-            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4.ctc}
+        case '4': if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1.cpc}
+            if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2.cpc}
+            if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3.cpc}
+            if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4.cpc}
             break;
     }
 
