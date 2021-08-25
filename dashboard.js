@@ -14,7 +14,7 @@
     // console.log(semana2)
 
     const arreglo = [4]
-    switch(metrica[1]){
+    switch(metrica[0]){
         case '0': 
             if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1.spend}
             if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2.spend}
