@@ -1,6 +1,6 @@
 
 (() => {
-    // const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
+    const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
     const semana2 = JSON.parse(localStorage.getItem("Semana-2"))
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
@@ -13,7 +13,7 @@
         datasets: [
         {
             label: "Actual",
-            data: [0, semana2.spend, semana3.spend, semana4.spend],
+            data: [semana1.spend, semana2.spend, semana3.spend, semana4.spend],
 
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
