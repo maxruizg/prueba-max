@@ -185,7 +185,7 @@ setTimeout(() => {
   localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
   console.log(arreglo2[0])
   console.log(typeof(arreglo2[1]))
-}, 10000)
+}, 20000)
 
 
 var totalSpend2 = 0
