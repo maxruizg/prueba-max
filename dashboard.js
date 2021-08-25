@@ -8,7 +8,7 @@
 
     const metrica = JSON.parse(localStorage.getItem("filterData"))
 
-    console.log(semana1.clicks)
+    console.log(semana2.clicks)
     // console.log(metrica[1])
     // console.log(typeof(metrica[1]))
     // console.log(semana2)
