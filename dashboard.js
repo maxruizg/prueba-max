@@ -196,7 +196,7 @@ function saveMetrics() {
         options[readData[i]].selected = true
         i++
     }
-    
+
     readData = JSON.parse(localStorage.getItem("filterMonth"))
     var j = 0
     while(j < 10){
@@ -206,4 +206,3 @@ function saveMetrics() {
         j++
     }
 }
-
