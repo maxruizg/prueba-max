@@ -81,66 +81,48 @@ window.fbAsyncInit = function()
           var mes = parseInt(months[0]) + 1
           var mesAnterior = parseInt(months[0])
 
-          async function Ciclo1() {
+          
+          idCampaigns.forEach((element, index) => {
+            FB.api(
+              '/' + element.id + '/insights',
+              'GET',
+              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
+              function(response) {
+                
+                //  console.log(response)
+                 var string = JSON.stringify(response)
+                 var obj = JSON.parse(string)
+                 var data = obj.data
+                 
+                 if(data[0] != undefined){
+                   var spend = data[0].spend
+                   var spend1 = parseFloat(spend)
+                   arreglo1[index] = spend1
+                 }
+              }
+            )
+          });
+            
             idCampaigns.forEach((element, index) => {
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-01',until:'2021-"+ mes + "-08'}]"},
-                function(response) {
-                  
-                  //  console.log(response)
-                   var string = JSON.stringify(response)
-                   var obj = JSON.parse(string)
-                   var data = obj.data
-                   
-                   if(data[0] != undefined){
-                     var spend = data[0].spend
-                     var spend1 = parseFloat(spend)
-                     arreglo1[index] = spend1
-                   }
-                }
-              )
-            });
-            return arreglo1
-          }
-          const array1 = Ciclo1()
-
-          async function Ciclo2() {
-            idCampaigns.forEach((element, index) => {
-              FB.api(
-                '/' + element.id + '/insights',
-                'GET',
-                {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
-                function(response) {
-                  
-                  //  console.log(response)
-                   var string = JSON.stringify(response)
-                   var obj = JSON.parse(string)
-                   var data = obj.data
-                   
-                   if(data[0] != undefined){
-                     var spend = data[0].spend
-                     var spend2 = parseFloat(spend)
-                     arreglo2[index] = spend2
-                   }
-                }
-              )
-            });
-            return arreglo2
-          }
-
-          async function Suma2() {
-            const array2 = await Ciclo2()
-            console.log(array2)
-            let suma2 = 0
-            for(var element of array2){
-              suma2 += element
-              console.log(element)
-            }
-            localStorage.setItem('Spend_2', JSON.stringify(suma2))
-          }
-          Suma2()
+            FB.api(
+              '/' + element.id + '/insights',
+              'GET',
+              {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mes +"-09',until:'2021-"+ mes + "-15'}]"},
+              function(response) {
+                
+                //  console.log(response)
+                 var string = JSON.stringify(response)
+                 var obj = JSON.parse(string)
+                 var data = obj.data
+                 
+                 if(data[0] != undefined){
+                   var spend = data[0].spend
+                   var spend2 = parseFloat(spend)
+                   arreglo2[index] = spend2
+                 }
+              }
+            )
+          });
 
           idCampaigns.forEach((element, index) => {
             FB.api(
@@ -193,17 +175,28 @@ console.log(arreglo1, arreglo2, arreglo3, arreglo4)
 // console.log(typeof(arreglo2[1]))
 
 var totalSpend1 = 0
-for(var i = 0; i <= arreglo1.length; i++) {
-  totalSpend1 += parseFloat(arreglo1[i])
-}
-localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+var i = 0
+do{
+  if(arreglo1.length != undefined){
+
+    for(var i = 0; i <= arreglo1.length; i++) {
+      totalSpend1 += parseFloat(arreglo1[i])
+    }
+    localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+  }else{
+    i++
+  }
+}while(arreglo1.length != undefine)
 console.log(arreglo2[0])
-console.log(typeof(arreglo2[1]))
 
+do{
+  if(arreglo2.length != undefined){
 
-var totalSpend2 = 0
-for(var i = 0; i <= arreglo2.length; i++){
-  totalSpend2 += parseFloat(arreglo2[i])
-  // console.log(arreglo2[i])
-}
-localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
+    var totalSpend2 = 0
+    for(var element of array2){
+      totalSpend2 += element
+      console.log(element)
+    }
+    localStorage.setItem('Spend_2', JSON.stringify(totalSpend2))
+  }
+}while(arreglo2.length != undefined)
