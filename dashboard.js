@@ -10,6 +10,7 @@
 
     console.log(metrica[1])
     console.log(typeof(metrica[1]))
+    console.log(semana2)
 
     const arreglo = [4]
     switch(metrica[1]){
