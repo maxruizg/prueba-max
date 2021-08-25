@@ -124,6 +124,8 @@ window.fbAsyncInit = function()
             )
           });
 
+          const hola = 'hola'
+
           idCampaigns.forEach((element, index) => {
             FB.api(
               '/' + element.id + '/insights',
