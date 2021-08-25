@@ -68,7 +68,7 @@ window.fbAsyncInit = function()
       FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
       });
-      await FB.api(
+      FB.api(
         '/act_1468139590049416/campaigns',
         'GET',
         {"fields":"id"},
