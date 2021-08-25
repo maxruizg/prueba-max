@@ -74,6 +74,61 @@ window.fbAsyncInit = function()
           }
         );
 
+
+        // Mes anterior
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior + "-01',until:'2021-"+ mesAnterior +"-08'}]"},
+          function(response) {
+            if(response.data[0] != undefined){
+              localStorage.setItem('Semana-1a', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-1a', JSON.stringify(0))
+            }
+          }
+        );
+
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-09',until:'2021-"+ mesAnterior +"-15'}]"},
+          function(response) {
+            if(response.data[0] != undefined){
+              localStorage.setItem('Semana-2a', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-2a', JSON.stringify(0))
+            }
+          }
+        );
+
+        
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-16',until:'2021-0"+ mesAnterior +"-24'}]"},
+          function(response) {
+            if(response.data[0] != undefined){
+              localStorage.setItem('Semana-3a', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-3a', JSON.stringify(0))
+            }
+          }
+        );
+
+        FB.api(
+          '/act_1468139590049416/insights',
+          'GET',
+          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-25',until:'2021-"+ mesAnterior +"-31'}]"},
+          function(response) {
+            if(response.data[0] != undefined){
+              localStorage.setItem('Semana-4a', JSON.stringify(response.data[0]))
+            }else {
+              localStorage.setItem('Semana-4a', JSON.stringify(0))
+            }
+          }
+        );
+
       } else {
        console.log('User cancelled login or did not fully authorize.');
       }

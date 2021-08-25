@@ -8,11 +8,6 @@
 
     const metrica = JSON.parse(localStorage.getItem("filterData"))
 
-    console.log(semana2)
-    // console.log(metrica[1])
-    // console.log(typeof(metrica[1]))
-    // console.log(semana2)
-
     const arreglo = [4]
     switch(metrica[0]){
         case '0': 
@@ -43,7 +38,42 @@
             break;
     }
 
-    console.log(arreglo[0], arreglo[1], arreglo[2], arreglo[3])
+    const semana1a = JSON.parse(localStorage.getItem("Semana-1"))
+    const semana2a = JSON.parse(localStorage.getItem("Semana-2"))
+    const semana3a = JSON.parse(localStorage.getItem("Semana-3"))
+    const semana4a = JSON.parse(localStorage.getItem("Semana-4"))
+
+    const metricaA = JSON.parse(localStorage.getItem("filterData"))
+
+    const arregloA = [4]
+    switch(metricaA[0]){
+        case '0': 
+            if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.spend}
+            if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.spend}
+            if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.spend}
+            if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.spend}
+            break;
+        case '1': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.clicks}
+            if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.clicks}
+            if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.clicks}
+            if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.clicks}
+            break;
+        case '2': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.impressions}
+            if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.impressions}
+            if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.impressions}
+            if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.impressions}
+            break;
+        case '3': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.ctr}
+            if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.ctr}
+            if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.ctr}
+            if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.ctr}
+            break;
+        case '4': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.cpc}
+            if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.cpc}
+            if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.cpc}
+            if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.cpc}
+            break;
+    }
 
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
@@ -75,7 +105,7 @@
         },
         {
             label: "Anterior",
-            data: [4, 5, 3, 2, 5, 3, 12, 22],
+            data: arregloA,
             backgroundColor: [
                 // 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
