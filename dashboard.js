@@ -39,6 +39,7 @@
             if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[1] = 0 }else {arreglo[2] = semana2.ctc}
             if(semana3 == undefined || semana3 == 0 || semana3 == '0'){ arreglo[2] = 0 }else {arreglo[3] = semana3.ctc}
             if(semana4 == undefined || semana4 == 0 || semana4 == '0'){ arreglo[3] = 0 }else {arreglo[4] = semana4.ctc}
+            break;
     }
 
     console.log(arreglo[0], arreglo[1], arreglo[2], arreglo[3])
