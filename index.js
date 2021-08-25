@@ -175,6 +175,7 @@ window.fbAsyncInit = function()
                 for(var i = 0; i <= arreglo4.length; i++) {
                   totalSpend4 += parseFloat(arreglo4[i])
                 }
+                console.log(totalSpend4)
                 localStorage.setItem('Spend_4', JSON.stringify(totalSpend4))
               })
           });
