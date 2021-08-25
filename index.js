@@ -174,7 +174,9 @@ window.fbAsyncInit = function()
                 var totalSpend4 = 0
                 var i = 0
                 for(var i = 0; i <= arreglo4.length; i++) {
-                  totalSpend4 += parseFloat(arreglo4[i])
+                  if(typeof(arreglo4[i]) == Number){
+                    totalSpend4 += parseFloat(arreglo4[i])
+                  } 
                   if (i==arreglo4.length){ 
                     localStorage.setItem('Spend_4', JSON.stringify(totalSpend4))
                   }
