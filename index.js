@@ -132,10 +132,9 @@ window.fbAsyncInit = function()
           }
           const array2 = Ciclo2()
           let suma2 = 0
-          array2.forEach(element => {
+          for(var element of array2){
             suma2 += element
-            console.log(element)
-          });
+          }
           localStorage.setItem('Spend_2', JSON.stringify(suma2))
 
           idCampaigns.forEach((element, index) => {
