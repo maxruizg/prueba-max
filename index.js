@@ -106,7 +106,7 @@ window.fbAsyncInit = function()
           }
           const array1 = Ciclo1()
 
-          async function Ciclo2() {
+          function Ciclo2() {
             idCampaigns.forEach((element, index) => {
               FB.api(
                 '/' + element.id + '/insights',
@@ -194,14 +194,12 @@ console.log(arreglo1, arreglo2, arreglo3, arreglo4)
 // console.log(typeof(arreglo2[1]))
 
 var totalSpend1 = 0
-setTimeout(() => {
-  for(var i = 0; i <= arreglo1.length; i++) {
-    totalSpend1 += parseFloat(arreglo1[i])
-  }
-  localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
-  console.log(arreglo2[0])
-  console.log(typeof(arreglo2[1]))
-}, 20000)
+for(var i = 0; i <= arreglo1.length; i++) {
+  totalSpend1 += parseFloat(arreglo1[i])
+}
+localStorage.setItem('Spend_1', JSON.stringify(totalSpend1))
+console.log(arreglo2[0])
+console.log(typeof(arreglo2[1]))
 
 
 var totalSpend2 = 0
