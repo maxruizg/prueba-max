@@ -6,7 +6,12 @@
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
 
-    let metrica = JSON.parse(localStorage.getItem("filterData"))
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
 
     const arreglo = [0, 0, 0, 0]
     switch(metrica[0]){
@@ -44,7 +49,12 @@
     const semana3a = JSON.parse(localStorage.getItem("Semana-3a"))
     const semana4a = JSON.parse(localStorage.getItem("Semana-4a"))
 
-    let metricaA = JSON.parse(localStorage.getItem("filterData"))
+    let metricaA = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metricaA[0] = 0
+    }else {
+        metricaA = JSON.parse(localStorage.getItem("filterData"))
+    }
 
     const arregloA = [0, 0, 0, 0]
     switch(metricaA[0]){
