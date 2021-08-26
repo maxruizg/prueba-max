@@ -19,8 +19,9 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   }
 }
 
-var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth")))
-console.log(aux)
+var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth"))) + 1
+var h = aux.toString()
+console.log(h)
 console.log(mesActual)
 console.log(mesAnterior)
 
