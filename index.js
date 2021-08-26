@@ -2,26 +2,12 @@ const mesesActual = JSON.parse(localStorage.getItem("filterMonth"))
 let mesActual = ''
 let mesAnterior = ''
 
-switch(mesesActual[0]) {
-  case '0': mesActual = '1'; mesAnterior = '12'; break
-  case '1': mesActual = '2'; mesAnterior = '1'; break
-  case '2': mesActual = '3'; mesAnterior = '2'; break
-  case '3': mesActual = '4'; mesAnterior = '3'; break
-  case '4': mesActual = '5'; mesAnterior = '4'; break
-  case '5': mesActual = '6'; mesAnterior = '5'; break
-  case '6': mesActual = '7'; mesAnterior = '6'; break
-  case '7': mesActual = '8'; mesAnterior = '7'; break
-  case '8': mesActual = '9'; mesAnterior = '8'; break
-  case '9': mesActual = '10'; mesAnterior = '9'; break
-  case '10': mesActual = '11'; mesAnterior= '10'; break
-  case '11': mesActual = '12'; mesAnterior = '11'; break
+mesActual = toString(parseInt(mesesActual[0]) + 1)
+if(mesActual == '1'){
+  mesAnterior = '12'
+}else {
+  mesAnterior = mesesActual[0]
 }
-
-console.log(mesActual)
-console.log(typeof(mesActual))
-console.log(mesAnterior)
-console.log(typeof(mesAnterior))
-
 
 window.fbAsyncInit = function()
 {
