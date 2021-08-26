@@ -7,7 +7,8 @@ if(mesActual == 1){
   mesAnterior = mesActual - 1
 }
 
-
+console.log(mesActual)
+console.log(typeof(mesActual))
 console.log(mesAnterior)
 
 
