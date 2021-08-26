@@ -12,7 +12,7 @@
         for(var i = 0; i < 4; i++){
             metrica[i] = 0
         }
-        const arreglo = [4]
+        const arreglo = [0, 0, 0, 0]
         switch(metrica[0]){
             case '0': 
                 if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1.spend}
@@ -42,7 +42,7 @@
                 break;
         }
     }else {
-        const arreglo = [4]
+        const arreglo = [0, 0, 0, 0, 0]
         switch(metrica[0]){
             case '0': 
                 if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1.spend}
@@ -86,7 +86,7 @@
             metricaA[i] = 0
         }
 
-        const arregloA = [4]
+        const arregloA = [0, 0, 0, 0]
         switch(metricaA[0]){
             case '0': 
                 if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.spend}
@@ -117,7 +117,7 @@
         }
     }else {
 
-        const arregloA = [4]
+        const arregloA = [0, 0, 0, 0]
         switch(metricaA[0]){
             case '0': 
                 if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.spend}
