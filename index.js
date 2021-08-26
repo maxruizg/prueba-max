@@ -44,6 +44,7 @@ window.fbAsyncInit = function()
          console.log('Good to see you, ' + response.name + '.');
        });
 
+       //Datos mes actual
         FB.api(
           '/act_1468139590049416/insights',
           'GET',
@@ -99,7 +100,7 @@ window.fbAsyncInit = function()
         );
 
 
-        // Mes anterior
+        // Datos mes anterior
         FB.api(
           '/act_1468139590049416/insights',
           'GET',
