@@ -219,12 +219,10 @@ function saveMetrics() {
         filters[i] = document.getElementById(`selectMetrica${i + 1}`).value
         i++
     }while(i < 10)
-
     localStorage.setItem("filterData", JSON.stringify(filters));
 
     //Guardar valor de month localstorage
     var month = document.getElementById(`selectMonth`).value
-
     localStorage.setItem("filterMonth", JSON.stringify(month));
 }
 
