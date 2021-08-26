@@ -3,8 +3,13 @@ let mesActual = ''
 let mesAnterior = ''
 
 if(mesesActual == null){
-  mesActual = '2'
-  mesAnterior = '1'
+  var d = new Date()
+  mesActual = toString(d.getMonth())
+  if(mesActual == '1'){
+    mesAnterior = '12'
+  }else {
+    mesAnterior = toString(parseInt(mesActual) - 1)
+  }
 }else {
   mesActual = toString(parseInt(mesesActual[0]) + 1)
   if(mesActual == '1'){
@@ -13,6 +18,7 @@ if(mesesActual == null){
     mesAnterior = mesesActual[0]
   }
 }
+
 
 
 window.fbAsyncInit = function()

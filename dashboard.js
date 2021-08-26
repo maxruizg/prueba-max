@@ -210,6 +210,7 @@
 })();
 
 // Funcion para salvar metricas desde un boton
+// iteradores = 10
 function saveMetrics() {
     var i = 0
     var filters = []
@@ -230,9 +231,28 @@ function saveMetrics() {
     localStorage.setItem("filterMonth", JSON.stringify(filters));
 }
 
-let readData = JSON.parse(localStorage.getItem("filterData"))
-var i = 0
 // Cambio de ciclo para condicionar null en readData
+let readData = []
+if(JSON.parse(localStorage.getItem("filterData")) == null){
+    var i = 0
+while(i < 10){
+    var select = document.getElementById(`selectMetrica${i+1}`)
+    var options = select.options
+    options[0].selected = true
+    i++
+}
+}else {
+    readData = JSON.parse(localStorage.getItem("filterData"))
+    var i = 0
+    while(i < 10){
+    var select = document.getElementById(`selectMetrica${i+1}`)
+    var options = select.options
+    options[readData[i]].selected = true
+    i++
+}
+}
+
+var i = 0
 while(i < 10){
     var select = document.getElementById(`selectMetrica${i+1}`)
     var options = select.options
