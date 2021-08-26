@@ -18,6 +18,9 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   }
 }
 
+var aux = JSON.parse(localStorage.getItem("filterMonth"))
+console.log(aux)
+console.log(typeof(aux))
 console.log(mesActual)
 console.log(mesAnterior)
 
