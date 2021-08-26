@@ -225,7 +225,7 @@ function saveMetrics() {
     //Guardar valor de month localstorage
     var month = document.getElementById(`selectMonth`).value
 
-    localStorage.setItem("filterMonth", JSON.stringify(filters));
+    localStorage.setItem("filterMonth", JSON.stringify(month));
 }
 
 // Cambio de ciclo para condicionar null en readData
@@ -255,7 +255,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null) {
     options[0].selected = true
 }else {
     readData = JSON.parse(localStorage.getItem("filterMonth"))
-    var select = document.getElementById(`selectMonth${j+1}`)
+    var select = document.getElementById(`selectMonth`)
     var options = select.options
     options[month].selected = true
 }
