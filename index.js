@@ -1,8 +1,8 @@
 const mesesActual = JSON.parse(localStorage.getItem("filterMonth"))
-const mesActual = mesesActual[0]
+const mesActual = mesesActual[0] + 1
 let mesAnterior = 0
 if(mesActual == 0){
-  mesAnterior = 11
+  mesAnterior = 12
 }else {
   mesAnterior = mesActual - 1
 }
