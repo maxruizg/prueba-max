@@ -2,13 +2,17 @@ const mesesActual = JSON.parse(localStorage.getItem("filterMonth"))
 let mesActual = ''
 let mesAnterior = ''
 
+var q = new Date()
+var e = q.getMonth()
+console.log(e)
+
 if(mesesActual == null){
   var d = new Date()
   mesActual = toString(d.getMonth())
   if(mesActual == '1'){
     mesAnterior = '12'
   }else {
-    mesAnterior = toString(parseInt(mesActual) - 1)
+    mesAnterior = toString(mesActual - 1)
   }
 }else {
   mesActual = toString(parseInt(mesesActual[0]) + 1)
