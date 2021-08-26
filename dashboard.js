@@ -6,13 +6,14 @@
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4 = JSON.parse(localStorage.getItem("Semana-4"))
 
-    let metrica = JSON.parse(localStorage.getItem("filterData"))
+    let metrica = []
 
     if(metrica == null){
         for(var i = 0; i < 4; i++){
             metrica[i] = 0
         }
     }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
         const arreglo = [4]
         switch(metrica[0]){
             case '0': 
@@ -50,40 +51,42 @@
     const semana3a = JSON.parse(localStorage.getItem("Semana-3"))
     const semana4a = JSON.parse(localStorage.getItem("Semana-4"))
 
-    let metricaA = JSON.parse(localStorage.getItem("filterData"))
+    let metricaA = []
 
     if(metricaA == null){
         for(var i = 0; i < 4; i++){
             metricaA[i] = 0
         }
     }else {
+        metricaA = JSON.parse(localStorage.getItem("filterData"))
+
         const arregloA = [4]
         switch(metricaA[0]){
             case '0': 
-                if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.spend}
-                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.spend}
-                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.spend}
-                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.spend}
+                if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.spend}
+                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arregloA[1] = 0 }else {arregloA[1] = semana2a.spend}
+                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arregloA[2] = 0 }else {arregloA[2] = semana3a.spend}
+                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arregloA[3] = 0 }else {arregloA[3] = semana4a.spend}
                 break;
-            case '1': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.clicks}
-                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.clicks}
-                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.clicks}
-                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.clicks}
+            case '1': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.clicks}
+                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arregloA[1] = 0 }else {arregloA[1] = semana2a.clicks}
+                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arregloA[2] = 0 }else {arregloA[2] = semana3a.clicks}
+                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arregloA[3] = 0 }else {arregloA[3] = semana4a.clicks}
                 break;
-            case '2': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.impressions}
-                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.impressions}
-                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.impressions}
-                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.impressions}
+            case '2': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.impressions}
+                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arregloA[1] = 0 }else {arregloA[1] = semana2a.impressions}
+                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arregloA[2] = 0 }else {arregloA[2] = semana3a.impressions}
+                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arregloA[3] = 0 }else {arregloA[3] = semana4a.impressions}
                 break;
-            case '3': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.ctr}
-                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.ctr}
-                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.ctr}
-                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.ctr}
+            case '3': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.ctr}
+                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arregloA[1] = 0 }else {arregloA[1] = semana2a.ctr}
+                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arregloA[2] = 0 }else {arregloA[2] = semana3a.ctr}
+                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arregloA[3] = 0 }else {arregloA[3] = semana4a.ctr}
                 break;
-            case '4': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1a.cpc}
-                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2a.cpc}
-                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arreglo[2] = 0 }else {arreglo[2] = semana3a.cpc}
-                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arreglo[3] = 0 }else {arreglo[3] = semana4a.cpc}
+            case '4': if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.cpc}
+                if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arregloA[1] = 0 }else {arregloA[1] = semana2a.cpc}
+                if(semana3a == undefined || semana3a == 0 || semana3a == '0'){ arregloA[2] = 0 }else {arregloA[2] = semana3a.cpc}
+                if(semana4a == undefined || semana4a == 0 || semana4a == '0'){ arregloA[3] = 0 }else {arregloA[3] = semana4a.cpc}
                 break;
         }
     }
