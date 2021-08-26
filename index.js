@@ -2,14 +2,18 @@ const mesesActual = JSON.parse(localStorage.getItem("filterMonth"))
 let mesActual = ''
 let mesAnterior = ''
 
-console.log(mesesActual)
-
-mesActual = toString(parseInt(mesesActual[0]) + 1)
-if(mesActual == '1'){
-  mesAnterior = '12'
+if(mesesActual == null){
+  mesActual = '2'
+  mesAnterior = '1'
 }else {
-  mesAnterior = mesesActual[0]
+  mesActual = toString(parseInt(mesesActual[0]) + 1)
+  if(mesActual == '1'){
+    mesAnterior = '12'
+  }else {
+    mesAnterior = mesesActual[0]
+  }
 }
+
 
 window.fbAsyncInit = function()
 {
