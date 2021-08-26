@@ -33,7 +33,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual + "-01',until:'2021-"+ mesActual +"-08'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-1', JSON.stringify(0))
@@ -46,7 +46,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual +"-09',until:'2021-"+ mesActual +"-15'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-2', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-2', JSON.stringify(0))
@@ -59,7 +59,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual +"-16',until:'2021-0"+ mesActual +"-24'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-3', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-3', JSON.stringify(0))
@@ -72,7 +72,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual +"-25',until:'2021-"+ mesActual +"-31'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-4', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-4', JSON.stringify(0))
@@ -87,7 +87,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior + "-01',until:'2021-"+ mesAnterior +"-08'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-1a', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-1a', JSON.stringify(0))
@@ -100,7 +100,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-09',until:'2021-"+ mesAnterior +"-15'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-2a', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-2a', JSON.stringify(0))
@@ -115,7 +115,7 @@ window.fbAsyncInit = function()
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-16',until:'2021-0"+ mesAnterior +"-24'}]"},
           function(response) {
             console.log(response)
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-3a', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-3a', JSON.stringify(0))
@@ -128,7 +128,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-25',until:'2021-"+ mesAnterior +"-31'}]"},
           function(response) {
-            if(response != undefined || response.data != undefined || response.data[0] != undefined){
+            if(response.data[0] != undefined){
               localStorage.setItem('Semana-4a', JSON.stringify(response.data[0]))
             }else {
               localStorage.setItem('Semana-4a', JSON.stringify(0))
