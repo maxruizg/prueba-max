@@ -4,7 +4,7 @@ let mesAnterior = ''
 
 var q = new Date()
 var e = q.getMonth()
-console.log(e.toString)
+console.log(e.toString())
 
 if(mesesActual == null){
   var d = new Date()
