@@ -253,7 +253,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null) {
     var options = select.options
     options[0].selected = true
 }else {
-    readData = JSON.parse(localStorage.getItem("filterMonth"))
+    month = JSON.parse(localStorage.getItem("filterMonth"))
     var select = document.getElementById(`selectMonth`)
     var options = select.options
     options[month].selected = true
