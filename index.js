@@ -10,7 +10,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
 }else {
-  mesActual = parseInt(JSON.parse(localStorage.getItem("filterMonth")) + 1).toString
+  mesActual = parseInt(JSON.parse(localStorage.getItem("filterMonth")) + 1).toString()
   if(mesActual == '1'){
     mesAnterior = '12'
   }else {
