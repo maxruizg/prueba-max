@@ -23,6 +23,8 @@ if(mesesActual == null){
   }
 }
 
+console.log(mesActual)
+console.log(mesAnterior)
 
 
 window.fbAsyncInit = function()
