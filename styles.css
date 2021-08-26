@@ -34,8 +34,17 @@ body {
     background-color: var(--colorExterno);
     border-radius: 0px 0px 10px 10px;
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
+}
+.optionsM {
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.optionsY {
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 .save {
     background-color: var(--colorSelect);

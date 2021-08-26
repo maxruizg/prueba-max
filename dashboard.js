@@ -212,6 +212,7 @@
 // Funcion para salvar metricas desde un boton
 // iteradores = 10
 function saveMetrics() {
+    // Guardar valores metricas en localstorage
     var i = 0
     var filters = []
     do{
@@ -221,12 +222,8 @@ function saveMetrics() {
 
     localStorage.setItem("filterData", JSON.stringify(filters));
 
-    var j = 0
-    filters = []
-    do{
-        filters[j] = document.getElementById(`selectMonth${j + 1}`).value
-        j++
-    }while(j < 10)
+    //Guardar valor de month localstorage
+    var month = document.getElementById(`selectMonth`).value
 
     localStorage.setItem("filterMonth", JSON.stringify(filters));
 }
@@ -253,20 +250,12 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
 }
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null) {
-    var j = 0
-    while(j < 10){
-        var select = document.getElementById(`selectMonth${j+1}`)
-        var options = select.options
-        options[0].selected = true
-        j++
-    }
+    var select = document.getElementById(`selectMonth`)
+    var options = select.options
+    options[0].selected = true
 }else {
     readData = JSON.parse(localStorage.getItem("filterMonth"))
-    var j = 0
-    while(j < 10){
-        var select = document.getElementById(`selectMonth${j+1}`)
-        var options = select.options
-        options[readData[j]].selected = true
-        j++
-    }
+    var select = document.getElementById(`selectMonth${j+1}`)
+    var options = select.options
+    options[month].selected = true
 }
