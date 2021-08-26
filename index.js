@@ -1,5 +1,5 @@
 
-let mesActual = JSON.parse(localStorage.getItem("filterMonth"))
+let mesActual = parseInt(JSON.parse(localStorage.getItem("filterMonth")) + 1).toString()
 let mesAnterior = ''
 
 if(mesActual == null){
