@@ -10,6 +10,7 @@
     metrica = JSON.parse(localStorage.getItem("filterData"))
 
     if(metrica == null){
+        var metrica = []
         for(var i = 0; i < 4; i++){
             metrica[i] = 0
         }
@@ -84,6 +85,7 @@
     metricaA = JSON.parse(localStorage.getItem("filterData"))
 
     if(metricaA == null){
+        let metricaA = []
         for(var i = 0; i < 4; i++){
             metricaA[i] = 0
         }
