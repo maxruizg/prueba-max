@@ -223,6 +223,7 @@ function saveMetrics() {
 
     //Guardar valor de month localstorage
     var month = document.getElementById(`selectMonth`).value
+    console.log(month)
     localStorage.setItem("filterMonth", JSON.stringify(month));
 }
 
