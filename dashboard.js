@@ -10,12 +10,12 @@
     metrica = JSON.parse(localStorage.getItem("filterData"))
 
     if(metrica == null){
-        var metrica = []
+        var metrica1 = []
         for(var i = 0; i < 4; i++){
-            metrica[i] = 0
+            metrica1[i] = 0
         }
         const arreglo = [0, 0, 0, 0]
-        switch(metrica[0]){
+        switch(metrica1[0]){
             case '0': 
                 if(semana1 == undefined || semana1 == 0 || semana1 == '0'){ arreglo[0] = 0 }else {arreglo[0] = semana1.spend}
                 if(semana2 == undefined || semana2 == 0 || semana2 == '0'){ arreglo[1] = 0 }else {arreglo[1] = semana2.spend}
@@ -85,13 +85,13 @@
     metricaA = JSON.parse(localStorage.getItem("filterData"))
 
     if(metricaA == null){
-        let metricaA = []
+        let metricaA1 = []
         for(var i = 0; i < 4; i++){
-            metricaA[i] = 0
+            metricaA1[i] = 0
         }
 
         const arregloA = [0, 0, 0, 0]
-        switch(metricaA[0]){
+        switch(metricaA1[0]){
             case '0': 
                 if(semana1a == undefined || semana1a == 0 || semana1a == '0'){ arregloA[0] = 0 }else {arregloA[0] = semana1a.spend}
                 if(semana2a == undefined || semana2a == 0 || semana2a == '0'){ arregloA[1] = 0 }else {arregloA[1] = semana2a.spend}
