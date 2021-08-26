@@ -1,6 +1,6 @@
 const mesesActual = JSON.parse(localStorage.getItem("filterMonth"))
-const mesActual = ''
-const mesAnterior = ''
+let mesActual = ''
+let mesAnterior = ''
 
 switch(mesesActual[0]) {
   case '0': mesActual = '1'; mesAnterior = '12'; break
