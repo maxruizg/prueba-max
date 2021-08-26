@@ -10,6 +10,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
 }else {
+  var aux = JSON.parse(localStorage.getItem("filterMonth"))
   mesActual = parseInt(JSON.parse(localStorage.getItem("filterMonth")) + 1).toString()
   if(mesActual == '1'){
     mesAnterior = '12'
@@ -18,9 +19,8 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   }
 }
 
-var aux = JSON.parse(localStorage.getItem("filterMonth"))
+var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth")) + 1).toString()
 console.log(aux)
-console.log(typeof(aux))
 console.log(mesActual)
 console.log(mesAnterior)
 
