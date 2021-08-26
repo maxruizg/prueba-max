@@ -2,6 +2,8 @@ const mesesActual = JSON.parse(localStorage.getItem("filterMonth"))
 let mesActual = ''
 let mesAnterior = ''
 
+console.log(mesesActual)
+
 mesActual = toString(parseInt(mesesActual[0]) + 1)
 if(mesActual == '1'){
   mesAnterior = '12'
@@ -114,7 +116,6 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-16',until:'2021-0"+ mesAnterior +"-24'}]"},
           function(response) {
-            console.log(response)
             if(response.data[0] != undefined){
               localStorage.setItem('Semana-3a', JSON.stringify(response.data[0]))
             }else {
