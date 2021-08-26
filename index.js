@@ -8,7 +8,8 @@ if(mesesActual == null){
   if(mesActual == '1'){
     mesAnterior = '12'
   }else {
-    mesAnterior = toString(mesActual - 1)
+    var mesAnteriorNum = mesActual - 1
+    mesAnterior = mesAnteriorNum.toString()
   }
 }else {
   var mesActualNum = parseInt(mesesActual[0]) + 1
