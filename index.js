@@ -1,5 +1,6 @@
 let mesActual = ''
 let mesAnterior = ''
+console.log("hola")
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   var d = new Date()
