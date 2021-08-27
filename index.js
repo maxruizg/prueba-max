@@ -19,9 +19,6 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   }
 }
 
-console.log(mesActual)
-console.log(mesAnterior)
-
 
 window.fbAsyncInit = function()
 {
