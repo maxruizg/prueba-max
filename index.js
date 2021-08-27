@@ -48,7 +48,6 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual + "-01',until:'2021-"+ mesActual +"-08'}]"},
           function(response) {
-            console.log(response)
             if(response.data[0] != undefined){
               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
             }else {
@@ -88,7 +87,6 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual +"-25',until:'2021-"+ mesActual +"-31'}]"},
           function(response) {
-            console.log(response)
             if(response.data[0] != undefined){
               localStorage.setItem('Semana-4', JSON.stringify(response.data[0]))
             }else {
