@@ -14,7 +14,7 @@ body {
     justify-content: center;
     flex-direction: column;
     color: black;
-    background-color: black;
+    background-color: gray;
 }
 .grid {
     border-radius: 10px 10px 0px 0px;
