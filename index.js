@@ -113,6 +113,7 @@ window.fbAsyncInit = function()
           'GET',
           {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesAnterior +"-09',until:'2021-"+ mesAnterior +"-15'}]"},
           function(response) {
+            console.log(response)
             if(response.data[0] != undefined){
               localStorage.setItem('Semana-2a', JSON.stringify(response.data[0]))
             }else {
