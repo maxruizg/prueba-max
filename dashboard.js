@@ -1,6 +1,7 @@
 
 (() => {
 
+    console.log("user.ini")
     const semana1 = JSON.parse(localStorage.getItem("Semana-1"))
     const semana2 = JSON.parse(localStorage.getItem("Semana-2"))
     const semana3 = JSON.parse(localStorage.getItem("Semana-3"))
