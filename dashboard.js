@@ -15,7 +15,8 @@ const semanasA = [
 let metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica[0] = 0
-    metrica[1] = 0 
+    metrica[1] = 0
+    metrica[2] = 0
 }else {
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
@@ -240,5 +241,12 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 }
 
 // Cuadrante inferior izquierdo
-const options2 = ArregloDatos()
-document.getElementById('resultado1').innerHTML = '2,300'
+const options2 = ArregloDatos(metrica[2], semanas)
+let sumOptions2 = 0
+
+options2.forEach(element => {
+    element = parseInt(element)
+    sumOptions2 += element 
+});
+
+document.getElementById('suma1').innerHTML = sumOptions2
