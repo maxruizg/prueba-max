@@ -1,61 +1,59 @@
+const semanas = [
+    JSON.parse(localStorage.getItem("Semana-1")), 
+    JSON.parse(localStorage.getItem("Semana-2")), 
+    JSON.parse(localStorage.getItem("Semana-3")),
+    JSON.parse(localStorage.getItem("Semana-4"))
+]
+
+const semanasA = [
+    JSON.parse(localStorage.getItem("Semana-1a")), 
+    JSON.parse(localStorage.getItem("Semana-2a")), 
+    JSON.parse(localStorage.getItem("Semana-3a")),
+    JSON.parse(localStorage.getItem("Semana-4a"))
+]
+
+let metrica = []
+if(JSON.parse(localStorage.getItem("filterData")) == null){
+    metrica[0] = 0
+    metrica[1] = 0 
+}else {
+    metrica = JSON.parse(localStorage.getItem("filterData"))
+}
+
+function ArregloDatos(metrica, semanas){
+    const arreglo = [0, 0, 0, 0]
+    switch(metrica){
+        case '0': 
+            if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].spend}
+            if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].spend}
+            if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].spend}
+            if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].spend}
+            break;
+        case '1': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].clicks}
+            if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].clicks}
+            if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].clicks}
+            if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].clicks}
+            break;
+        case '2': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].impressions}
+            if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].impressions}
+            if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].impressions}
+            if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].impressions}
+            break;
+        case '3': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].ctr}
+            if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].ctr}
+            if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].ctr}
+            if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].ctr}
+            break;
+        case '4': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].cpc}
+            if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].cpc}
+            if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].cpc}
+            if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].cpc}
+            break;
+    }
+    return arreglo
+}
 
 (() => {
-
-    const semanas = [
-        JSON.parse(localStorage.getItem("Semana-1")), 
-        JSON.parse(localStorage.getItem("Semana-2")), 
-        JSON.parse(localStorage.getItem("Semana-3")),
-        JSON.parse(localStorage.getItem("Semana-4"))
-    ]
-
-    const semanasA = [
-        JSON.parse(localStorage.getItem("Semana-1a")), 
-        JSON.parse(localStorage.getItem("Semana-2a")), 
-        JSON.parse(localStorage.getItem("Semana-3a")),
-        JSON.parse(localStorage.getItem("Semana-4a"))
-    ]
-
-    let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0 
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-    
-    function ArregloDatos(metrica, semanas){
-        const arreglo = [0, 0, 0, 0]
-        switch(metrica){
-            case '0': 
-                if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].spend}
-                if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].spend}
-                if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].spend}
-                if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].spend}
-                break;
-            case '1': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].clicks}
-                if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].clicks}
-                if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].clicks}
-                if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].clicks}
-                break;
-            case '2': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].impressions}
-                if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].impressions}
-                if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].impressions}
-                if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].impressions}
-                break;
-            case '3': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].ctr}
-                if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].ctr}
-                if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].ctr}
-                if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].ctr}
-                break;
-            case '4': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].cpc}
-                if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].cpc}
-                if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].cpc}
-                if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].cpc}
-                break;
-        }
-        return arreglo
-    }
-
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
     type: 'line',
@@ -242,5 +240,5 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 }
 
 // Cuadrante inferior izquierdo
-
+const options2 = ArregloDatos()
 document.getElementById('resultado1').innerHTML = '2,300'
