@@ -2,6 +2,10 @@ let mesActual = ''
 let mesAnterior = ''
 var d = new Date()
 let year = ''
+let sinceDay = ''
+let untilDay = ''
+
+console.log(d.getMonth())
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
@@ -52,8 +56,19 @@ window.fbAsyncInit = function()
         });
 
        //Datos mes actual
-        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+        if(parseInt(mesActual) == d.getMonth() && 8 > d.getDate()){
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual + "-01',until:'"+ year +"-"+ mesActual +"-08'}]"},
+            function(response) {
+              if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
+                localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-1', JSON.stringify(0))
+              }
+            }
+          );
         }else {
           FB.api(
             '/act_704269000261751/insights',
@@ -69,7 +84,7 @@ window.fbAsyncInit = function()
           );
         }
 
-        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+        if((parseInt(mesActual) == d.getMonth() && 9 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
           localStorage.setItem('Semana-2', JSON.stringify(0))
         }else {
           FB.api(
