@@ -242,6 +242,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 
 // Cuadrante inferior izquierdo
 const options2 = ArregloDatos(metrica[2], semanas)
+console.log(options2)
 let sumOptions2 = 0
 
 options2.forEach(element => {
