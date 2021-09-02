@@ -25,9 +25,9 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
 }else {
   const yearValue = JSON.parse(localStorage.getItem("filterYear"))
   switch(yearValue){
-    case '1': year = 2019; break
-    case '2': year = 2020; break
-    case '3': year = 2021; break
+    case '0': year = 2019; break
+    case '1': year = 2020; break
+    case '2': year = 2021; break
   }
 }
 
