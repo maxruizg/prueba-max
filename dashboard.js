@@ -242,19 +242,34 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 
 // Cuadrante inferior izquierdo
 const options2 = ArregloDatos(metrica[2], semanas)
-console.log(options2)
+const options2A = ArregloDatos(metrica[2], semanasA)
 let sumOptions2 = 0
+let sumOptions2A = 0
+const porcentaje = 0
 
 options2.forEach(element => {
     element = parseFloat(element)
     sumOptions2 += element 
 });
 
+options2A.forEach(element => {
+    element = parseFloat(element)
+    sumOptions2A += element
+});
+
 var myNumeral = numeral (sumOptions2);
-console.log(metrica[2])
 if(metrica[2] == '0' || metrica[2] == '4'){
     var currencyString = myNumeral.format('$0,0.00');
 }else {
     var currencyString = myNumeral.format('0,0');
 }
 document.getElementById('suma1').innerHTML = currencyString
+
+if(sumOptions2A != 0){
+    porcentaje = (sumOptions2A * 100) / sumOptions2
+}else {
+    porcentaje = 0
+}
+myNumeral = numeral (porcentaje)
+var currencyString = myNumeral.format('0.0%')
+document.getElementById('porcentaje1').innerHTML = currencyString
