@@ -271,5 +271,5 @@ if(sumOptions2A != 0){
     porcentaje = 0
 }
 myNumeral = numeral (porcentaje)
-var currencyString = myNumeral.format('0.0%')
+var currencyString = myNumeral.format('0.00%')
 document.getElementById('porcentaje1').innerHTML = currencyString
