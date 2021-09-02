@@ -245,7 +245,7 @@ const options2 = ArregloDatos(metrica[2], semanas)
 const options2A = ArregloDatos(metrica[2], semanasA)
 let sumOptions2 = 0
 let sumOptions2A = 0
-const porcentaje = 0
+let porcentaje = 0
 
 options2.forEach(element => {
     element = parseFloat(element)
