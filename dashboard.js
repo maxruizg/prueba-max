@@ -178,7 +178,7 @@
     myChart.resize(20, 20)
 })();
 
-// Funcion para salvar metricas desde un boton
+// Funcion para salvar metricas desde un el boton salvar filtros
 // iteradores = 10
 function saveMetrics() {
     // Guardar valores metricas en localstorage
@@ -194,16 +194,10 @@ function saveMetrics() {
     var month = document.getElementById(`selectMonth`).value
     localStorage.setItem("filterMonth", JSON.stringify(month));
 
-    var year = document.getElementById('selectYear').value
-    console.log(year)
-    console.log(typeof(year))
-    // switch(year){
-    //     case '1': localStorage.setItem("filterYear", JSON.stringify(2019)); break
-    //     case '2': localStorage.setItem("filterYear", JSON.stringify(2020)); break
-    //     case '3': localStorage.setItem("filterYear", JSON.stringify(2021)); break
-    // }
+    // Guardar valor del año
+    var yearValue = document.getElementById('selectYear').value
+    localStorage.setItem("filterYear", JSON.stringify(yearValue))
 }
-
 
 let readData = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
@@ -230,8 +224,19 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null) {
     var options = select.options
     options[0].selected = true
 }else {
-    month = JSON.parse(localStorage.getItem("filterMonth"))
+    var month = JSON.parse(localStorage.getItem("filterMonth"))
     var select = document.getElementById(`selectMonth`)
     var options = select.options
     options[month].selected = true
+}
+
+if(JSON.parse(localStorage.getItem("filterYear")) == null) {
+    var select = document.getElementById(`selectYear`)
+    var options = select.options
+    options[0].selected = true
+}else {
+    var yearValue = JSON.parse(localStorage.getItem("filterYear"))
+    var select = document.getElementById(`selectYear`)
+    var options = select.options
+    options[yearValue].selected = true
 }
