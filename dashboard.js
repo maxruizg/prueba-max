@@ -277,7 +277,6 @@ if(sumOptions2A != 0){
 }else {
     porcentaje = 0
 }
-console.log(porcentaje)
 myNumeral = numeral (porcentaje)
 var currencyString = myNumeral.format('0.00%')
 document.getElementById('porcentaje1').innerHTML = currencyString

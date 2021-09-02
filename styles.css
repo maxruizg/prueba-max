@@ -149,7 +149,7 @@ select:hover {
     margin: 10px;
 }
 .smallText {
-    font-size: 11px;
+    font-size: 25px;
 }
 button {
     transition-duration: 0.4s;
