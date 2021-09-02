@@ -233,11 +233,11 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null) {
 if(JSON.parse(localStorage.getItem("filterYear")) == null) {
     var select = document.getElementById(`selectYear`)
     var options = select.options
-    options[0].selected = true
+    options[2].selected = true
 }else {
     var yearValue = JSON.parse(localStorage.getItem("filterYear"))
     var select = document.getElementById(`selectYear`)
     var options = select.options
     console.log(yearValue)
-    options[yearValue].selected = true
+    options[parseInt(yearValue)].selected = true
 }
