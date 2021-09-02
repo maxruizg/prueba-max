@@ -251,7 +251,7 @@ options2.forEach(element => {
 });
 
 var myNumeral = numeral (sumOptions2);
-console.log(metrica[2].value)
+console.log(metrica[2])
 if(metrica[2].value == 0 || metrica[2].value == 4){
     var currencyString = myNumeral.format('$0,0.00');
 }else {
