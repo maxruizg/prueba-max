@@ -267,7 +267,7 @@ document.getElementById('suma1').innerHTML = currencyString
 
 if((sumOptions2 - sumOptions2A) < 0){
     // Color Rojo
-    document.getElementById('icono1').innerHTML('<i class="fas fa-sort-up"></i>')
+    // document.getElementById('icono1').innerHTML('<i class="fas fa-sort-up"></i>')
 }else {
     // Color Verde
 }
