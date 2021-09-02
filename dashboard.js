@@ -266,7 +266,7 @@ if(metrica[2] == '0' || metrica[2] == '4'){
 document.getElementById('suma1').innerHTML = currencyString
 
 if(sumOptions2A != 0){
-    porcentaje = (sumOptions2A * 100) / sumOptions2
+    porcentaje = sumOptions2A / sumOptions2
 }else {
     porcentaje = 0
 }
