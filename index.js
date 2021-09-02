@@ -1,7 +1,7 @@
 let mesActual = ''
 let mesAnterior = ''
 var d = new Date()
-console.log(d.getDate())
+console.log(d.getDate)
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
@@ -44,7 +44,9 @@ window.fbAsyncInit = function()
         });
 
        //Datos mes actual
-        // if(parseInt(mesActual) )
+        // if(parseInt(mesActual) == d.getMonth() && 8 > d.getDate()){
+
+        // }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
