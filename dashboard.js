@@ -196,6 +196,7 @@ function saveMetrics() {
 
     var year = document.getElementById('selectYear').value
     console.log(year)
+    console.log(typeof(year))
     // switch(year){
     //     case '1': localStorage.setItem("filterYear", JSON.stringify(2019)); break
     //     case '2': localStorage.setItem("filterYear", JSON.stringify(2020)); break
