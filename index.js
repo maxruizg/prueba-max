@@ -1,7 +1,8 @@
 let mesActual = ''
 let mesAnterior = ''
 var d = new Date()
-console.log(d.getDate)
+const year = d.getFullYear()
+console.log(year)
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
@@ -44,22 +45,28 @@ window.fbAsyncInit = function()
         });
 
        //Datos mes actual
-        // if(parseInt(mesActual) == d.getMonth() && 8 > d.getDate()){
-
-        // }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual + "-01',until:'2021-"+ mesActual +"-08'}]"},
-          function(response) {
-            if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
-              localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-1', JSON.stringify(0))
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'2021-"+ mesActual + "-01',until:'2021-"+ mesActual +"-08'}]"},
+            function(response) {
+              if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
+                localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-1', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        } 
         FB.api(
           '/act_704269000261751/insights',
           'GET',
@@ -73,6 +80,11 @@ window.fbAsyncInit = function()
           }
         );
 
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
@@ -86,6 +98,11 @@ window.fbAsyncInit = function()
           }
         );
 
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
@@ -101,6 +118,12 @@ window.fbAsyncInit = function()
 
 
         // Datos mes anterior
+
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
@@ -114,6 +137,11 @@ window.fbAsyncInit = function()
           }
         );
 
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
@@ -128,7 +156,11 @@ window.fbAsyncInit = function()
           }
         );
 
-        
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
@@ -142,6 +174,11 @@ window.fbAsyncInit = function()
           }
         );
 
+        if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
+          localStorage.setItem('Semana-1', JSON.stringify(0))
+        }else {
+          
+        }
         FB.api(
           '/act_704269000261751/insights',
           'GET',
