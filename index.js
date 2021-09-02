@@ -70,135 +70,128 @@ window.fbAsyncInit = function()
         }
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-2', JSON.stringify(0))
         }else {
-          
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-09',until:'"+ year +"-"+ mesActual +"-15'}]"},
+            function(response) {
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-2', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-2', JSON.stringify(0))
+              }
+            }
+          );
         } 
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-09',until:'"+ year +"-"+ mesActual +"-15'}]"},
-          function(response) {
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-2', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-2', JSON.stringify(0))
-            }
-          }
-        );
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-3', JSON.stringify(0))
         }else {
-          
-        }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-0"+ mesActual +"-24'}]"},
-          function(response) {
-            console.log(response)
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-3', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-3', JSON.stringify(0))
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-0"+ mesActual +"-24'}]"},
+            function(response) {
+              console.log(response)
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-3', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-3', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-4', JSON.stringify(0))
         }else {
-          
-        }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-25',until:'"+ year +"-"+ mesActual +"-31'}]"},
-          function(response) {
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-4', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-4', JSON.stringify(0))
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-25',until:'"+ year +"-"+ mesActual +"-31'}]"},
+            function(response) {
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-4', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-4', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
 
         // Datos mes anterior
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-1a', JSON.stringify(0))
         }else {
-          
-        }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior + "-01',until:'"+ year +"-"+ mesAnterior +"-08'}]"},
-          function(response) {
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-1a', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-1a', JSON.stringify(0))
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior + "-01',until:'"+ year +"-"+ mesAnterior +"-08'}]"},
+            function(response) {
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-1a', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-1a', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-2a', JSON.stringify(0))
         }else {
-          
-        }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-09',until:'"+ year +"-"+ mesAnterior +"-15'}]"},
-          function(response) {
-            console.log(response)
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-2a', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-2a', JSON.stringify(0))
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-09',until:'"+ year +"-"+ mesAnterior +"-15'}]"},
+            function(response) {
+              console.log(response)
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-2a', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-2a', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-3a', JSON.stringify(0))
         }else {
-          
-        }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-16',until:'"+ year +"-0"+ mesAnterior +"-24'}]"},
-          function(response) {
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-3a', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-3a', JSON.stringify(0))
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-16',until:'"+ year +"-0"+ mesAnterior +"-24'}]"},
+            function(response) {
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-3a', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-3a', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
         if((parseInt(mesActual) == d.getMonth() && 8 > d.getDate()) || parseInt(mesActual) > d.getMonth()){
-          localStorage.setItem('Semana-1', JSON.stringify(0))
+          localStorage.setItem('Semana-4a', JSON.stringify(0))
         }else {
-          
-        }
-        FB.api(
-          '/act_704269000261751/insights',
-          'GET',
-          {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-25',until:'"+ year +"-"+ mesAnterior +"-31'}]"},
-          function(response) {
-            if(response.data[0] != undefined){
-              localStorage.setItem('Semana-4a', JSON.stringify(response.data[0]))
-            }else {
-              localStorage.setItem('Semana-4a', JSON.stringify(0))
+          FB.api(
+            '/act_704269000261751/insights',
+            'GET',
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-25',until:'"+ year +"-"+ mesAnterior +"-31'}]"},
+            function(response) {
+              if(response.data[0] != undefined){
+                localStorage.setItem('Semana-4a', JSON.stringify(response.data[0]))
+              }else {
+                localStorage.setItem('Semana-4a', JSON.stringify(0))
+              }
             }
-          }
-        );
+          );
+        }
 
       } else {
        console.log('User cancelled login or did not fully authorize.');
