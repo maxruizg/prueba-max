@@ -238,5 +238,6 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
     var yearValue = JSON.parse(localStorage.getItem("filterYear"))
     var select = document.getElementById(`selectYear`)
     var options = select.options
+    console.log(yearValue)
     options[yearValue].selected = true
 }
