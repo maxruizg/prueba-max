@@ -246,7 +246,7 @@ console.log(options2)
 let sumOptions2 = 0
 
 options2.forEach(element => {
-    element = parseInt(element)
+    element = parseFloat(element)
     sumOptions2 += element 
 });
 
