@@ -249,4 +249,8 @@ options2.forEach(element => {
     sumOptions2 += element 
 });
 
-document.getElementById('suma1').innerHTML = sumOptions2
+var number = 1000;
+var myNumeral = numeral (number);
+var currencyString = myNumeral.format('$0,0.00');
+
+document.getElementById('suma1').innerHTML = currencyString
