@@ -192,11 +192,18 @@ function saveMetrics() {
 
     //Guardar valor de month localstorage
     var month = document.getElementById(`selectMonth`).value
-    console.log(month)
     localStorage.setItem("filterMonth", JSON.stringify(month));
+
+    var year = document.getElementById('selectYear').value
+    console.log(year)
+    // switch(year){
+    //     case '1': localStorage.setItem("filterYear", JSON.stringify(2019)); break
+    //     case '2': localStorage.setItem("filterYear", JSON.stringify(2020)); break
+    //     case '3': localStorage.setItem("filterYear", JSON.stringify(2021)); break
+    // }
 }
 
-// Cambio de ciclo para condicionar null en readData
+
 let readData = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     var i = 0
