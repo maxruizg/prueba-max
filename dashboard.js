@@ -156,7 +156,7 @@
         datasets: [
         {
             label: "Actual",
-            data: [12, 19, 3, 5, 2, 3, 5, 4],
+            data: arreglo,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
@@ -177,7 +177,7 @@
         },
         {
             label: "Anterior",
-            data: [8, 12, 23, 16 , 17, 20, 3, 4],
+            data: arregloA,
             backgroundColor: [
                 // 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
