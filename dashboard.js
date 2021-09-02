@@ -240,4 +240,3 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
     var options = select.options
     options[yearValue].selected = true
 }
-
