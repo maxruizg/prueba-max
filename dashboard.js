@@ -240,3 +240,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
     var options = select.options
     options[yearValue].selected = true
 }
+
+// Cuadrante inferior izquierdo
+
+document.getElementById('resultado1').innerHTML = '2,300'
