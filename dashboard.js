@@ -265,6 +265,13 @@ if(metrica[2] == '0' || metrica[2] == '4'){
 }
 document.getElementById('suma1').innerHTML = currencyString
 
+if((sumOptions2 - sumOptions2A) < 0){
+    // Color Rojo
+    document.getElementById()
+}else {
+    // Color Verde
+}
+
 if(sumOptions2A != 0){
     porcentaje = sumOptions2A / sumOptions2
 }else {
