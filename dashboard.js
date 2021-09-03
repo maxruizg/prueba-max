@@ -262,12 +262,20 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     let porcentaje = 0
 
     options.forEach(element => {
-        element = parseFloat(element)
+        if(element != undefined){
+            element = parseFloat(element)
+        }else {
+            element = 0
+        }
         sumOptions += element 
     });
     
     optionsA.forEach(element => {
-        element = parseFloat(element)
+        if(element != undefined){
+            element = parseFloat(element)
+        }else {
+            element = 0
+        }
         sumOptionsA += element
     });
     
@@ -289,8 +297,6 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     
     if(sumOptionsA != 0){
         porcentaje = sumOptionsA / sumOptions
-
-
     }else {
         porcentaje = 0
     }
