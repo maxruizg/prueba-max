@@ -280,7 +280,7 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
         // Color Verde
     }
     
-    if(sumOptions2A != 0){
+    if(sumOptionsA != 0){
         porcentaje = sumOptionsA / sumOptions
     }else {
         porcentaje = 0
