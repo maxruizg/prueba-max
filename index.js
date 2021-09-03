@@ -201,7 +201,7 @@ window.fbAsyncInit = function()
           {"fields":"name,id,insights{spend,clicks,cpc,ctr,frequency}"},
           function(response) {
               localStorage.setItem('Campaigns', JSON.stringify(response))
-              console.log(response.data[0].name)
+              console.log(response.data[1].name)
           }
         );
 
