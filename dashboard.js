@@ -22,6 +22,8 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica[5] = 0
     metrica[6] = 0
     metrica[7] = 0
+    metrica[8] = 0
+    metrica[9] = 0
 }else {
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
@@ -312,12 +314,21 @@ Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
 Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
+const objCampaigns = {}
 const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
-console.log(JSON.parse(localStorage.getItem("Campaigns")).data[0].id)
-
-const nombreCampaigns = []
+const idCampaigns = []
 
 for(var i = 0; i < campaigns.length; i++){
-    nombreCampaigns.push(campaigns[i].id)
+    idCampaigns.push(campaigns[i].id)
 }
-console.log(nombreCampaigns)
+
+objCampaigns = {
+    cero: ['1234', 'Hola', '12.34'],
+    uno: ['2341', 'Adios', '43.67']
+}
+
+console.log(objCampaigns)
+
+// idCampaigns.forEach((element,index) => {
+//     objCampaigns.id
+// });
