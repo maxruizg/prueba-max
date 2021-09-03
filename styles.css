@@ -149,7 +149,7 @@ select:hover {
     margin: 10px;
 }
 .smallText {
-    font-size: 25px;
+    font-size: 20px;
 }
 button {
     transition-duration: 0.4s;
@@ -159,6 +159,9 @@ button:hover {
     background-color: #212529;
     color: white;
 }
-.icono1 {
-    font-size: 30px;
+.resultado {
+    font-size: 25px;
+}
+.icono {
+    font-size: 20px;
 }
