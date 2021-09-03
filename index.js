@@ -23,9 +23,6 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   }
 }
 
-console.log(mesActual)
-console.log(mesAnterior)
-
 if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = d.getFullYear().toString()
 }else {
@@ -198,6 +195,15 @@ window.fbAsyncInit = function()
             }
           );
         }
+
+        FB.api(
+          '/act_704269000261751/campaigns',
+          'GET',
+          {"fields":"name,id,insights{spend,clicks,cpc,ctr,frequency}"},
+          function(response) {
+              localStorage.setItem('Campaigns', JSON.stringify(response))
+          }
+        );
 
       } else {
        console.log('User cancelled login or did not fully authorize.');
