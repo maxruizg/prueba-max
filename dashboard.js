@@ -316,6 +316,7 @@ Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 let objCampaigns = {}
 const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
+console.log(campaigns)
 const idCampaigns = []
 
 for(var i = 0; i < campaigns.length; i++){
