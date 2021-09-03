@@ -298,9 +298,9 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     document.getElementById(`${idPorcentaje}`).innerHTML = currencyString
 }
 
-Datos(metrica, 2, 'suma1', 'porcentaje1')
-Datos(metrica, 3, 'suma2', 'porcentaje2')
-Datos(metrica, 4, 'suma3', 'porcentaje3')
-Datos(metrica, 5, 'suma4', 'porcentaje4')
-Datos(metrica, 6, 'suma5', 'porcentaje5')
-Datos(metrica, 7, 'suma6', 'porcentaje6')
+Datos(metrica, 2, 'suma1', 'porcentaje1', 'icono1')
+Datos(metrica, 3, 'suma2', 'porcentaje2', 'icono2')
+Datos(metrica, 4, 'suma3', 'porcentaje3', 'icono3')
+Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
+Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
+Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
