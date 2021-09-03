@@ -58,6 +58,8 @@ window.fbAsyncInit = function()
 
        //Datos mes actual
        if(parseInt(mesActual) >= d.getMonth()){
+         console.log(mesActual)
+         console.log(d.getMonth())
         localStorage.setItem('Semana-1', JSON.stringify(0))
        }else {
          FB.api(
