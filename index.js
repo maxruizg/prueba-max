@@ -7,6 +7,8 @@ let untilDay = ''
 
 console.log(d)
 console.log(d.getMonth())
+console.log(mesActual)
+console.log(mesAnterior)
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
