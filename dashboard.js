@@ -321,6 +321,7 @@ const nombreCampaigns = []
 //     nombreCampaigns.push(element[index].name)
 // });
 
-console.log(campaigns.length)
 
-// for(var i = 0; i < campaigns.lenght)
+for(var i = 0; i < campaigns.length; i++){
+    nombreCampaigns.push(campaigns[i].name)
+}
