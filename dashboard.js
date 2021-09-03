@@ -316,6 +316,7 @@ const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
 const nombreCampaigns = []
 campaigns.forEach((element, index) => {
     nombreCampaigns.push(element[index].name)
+    console.log(index)
 });
 
 console.log(nombreCampaigns)
