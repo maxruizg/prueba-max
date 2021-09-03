@@ -162,7 +162,11 @@ button:hover {
 .resultado {
     font-size: 25px;
 }
+.iconos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 i {
     font-size: 25px;
-    height: 25px;
 }
