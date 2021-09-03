@@ -22,7 +22,6 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica[5] = 0
     metrica[6] = 0
     metrica[7] = 0
-    metrica[8] = 0
 }else {
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
@@ -292,3 +291,8 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
 }
 
 Datos(metrica, 2, 'suma1', 'porcentaje1')
+Datos(metrica, 3, 'suma2', 'porcentaje2')
+Datos(metrica, 4, 'suma3', 'porcentaje3')
+Datos(metrica, 5, 'suma4', 'porcentaje4')
+Datos(metrica, 6, 'suma5', 'porcentaje5')
+Datos(metrica, 7, 'suma6', 'porcentaje6')
