@@ -313,11 +313,11 @@ Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
-console.log(JSON.parse(localStorage.getItem("Campaigns")).data[0].name)
+console.log(JSON.parse(localStorage.getItem("Campaigns")).data[0].id)
 
 const nombreCampaigns = []
 
 for(var i = 0; i < campaigns.length; i++){
-    nombreCampaigns.push(campaigns[i].name)
+    nombreCampaigns.push(campaigns[i].id)
 }
 console.log(nombreCampaigns)
