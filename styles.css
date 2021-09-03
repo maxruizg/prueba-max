@@ -166,6 +166,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 i {
     font-size: 25px;
