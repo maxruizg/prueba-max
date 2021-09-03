@@ -247,7 +247,6 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 }
 
 // Cuadrante inferior izquierdo
-
 function Datos(metrica, idMetrica, idSuma, idPorcentaje){
     const options2 = ArregloDatos(metrica[idMetrica], semanas)
     const options2A = ArregloDatos(metrica[idMetrica], semanasA)
@@ -289,6 +288,7 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
     myNumeral = numeral (porcentaje)
     var currencyString = myNumeral.format('0.00%')
     document.getElementById(`${idPorcentaje}`).innerHTML = currencyString
+    console.log(porcentaje)
 }
 
 Datos(metrica, 2, 'suma1', 'porcentaje1')
