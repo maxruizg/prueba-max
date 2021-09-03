@@ -55,6 +55,11 @@ function ArregloDatos(metrica, semanas){
             if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].cpc}
             if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].cpc}
             break;
+        case '5': if(semanas[0] == undefined || semanas[0] == 0 || semanas[0] == '0'){ arreglo[0] = 0 }else {arreglo[0] = semanas[0].frequency}
+            if(semanas[1] == undefined || semanas[1] == 0 || semanas[1] == '0'){ arreglo[1] = 0 }else {arreglo[1] = semanas[1].frequency}
+            if(semanas[2] == undefined || semanas[2] == 0 || semanas[2] == '0'){ arreglo[2] = 0 }else {arreglo[2] = semanas[2].frequency}
+            if(semanas[3] == undefined || semanas[3] == 0 || semanas[3] == '0'){ arreglo[3] = 0 }else {arreglo[3] = semanas[3].frequency}
+            break;
     }
     return arreglo
 }
@@ -216,11 +221,11 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     readData = JSON.parse(localStorage.getItem("filterData"))
     var i = 0
     while(i < 10){
-    var select = document.getElementById(`selectMetrica${i+1}`)
-    var options = select.options
-    options[readData[i]].selected = true
-    i++
-}
+        var select = document.getElementById(`selectMetrica${i+1}`)
+        var options = select.options
+        options[readData[i]].selected = true
+        i++
+    }
 }
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null) {
@@ -247,19 +252,19 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 
 // Cuadrante inferior izquierdo
 function Datos(metrica, idMetrica, idSuma, idPorcentaje){
-    const options2 = ArregloDatos(metrica[idMetrica], semanas)
-    const options2A = ArregloDatos(metrica[idMetrica], semanasA)
+    const options = ArregloDatos(metrica[idMetrica], semanas)
+    const optionsA = ArregloDatos(metrica[idMetrica], semanasA)
 
     let sumOptions = 0
     let sumOptionsA = 0
     let porcentaje = 0
 
-    options2.forEach(element => {
+    options.forEach(element => {
         element = parseFloat(element)
         sumOptions += element 
     });
     
-    options2A.forEach(element => {
+    optionsA.forEach(element => {
         element = parseFloat(element)
         sumOptionsA += element
     });
@@ -287,7 +292,6 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
     myNumeral = numeral (porcentaje)
     var currencyString = myNumeral.format('0.00%')
     document.getElementById(`${idPorcentaje}`).innerHTML = currencyString
-    console.log(porcentaje)
 }
 
 Datos(metrica, 2, 'suma1', 'porcentaje1')
