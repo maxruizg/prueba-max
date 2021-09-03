@@ -316,7 +316,11 @@ const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
 console.log(JSON.parse(localStorage.getItem("Campaigns")).data[0].name)
 
 const nombreCampaigns = []
-campaigns.forEach((element, index) => {
-    console.log(index)
-    nombreCampaigns.push(element[index].name)
-});
+// campaigns.forEach((element, index) => {
+//     console.log(index)
+//     nombreCampaigns.push(element[index].name)
+// });
+
+console.log(campaigns.lenght())
+
+// for(var i = 0; i < campaigns.lenght)
