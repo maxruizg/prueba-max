@@ -315,8 +315,8 @@ Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
 const nombreCampaigns = []
 campaigns.forEach((element, index) => {
-    nombreCampaigns.push(element[index].name)
     console.log(index)
+    nombreCampaigns.push(element[index].name)
 });
 
 console.log(nombreCampaigns)
