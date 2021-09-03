@@ -201,8 +201,6 @@ window.fbAsyncInit = function()
           {"fields":"name,id,insights{spend,clicks,cpc,ctr,frequency}"},
           function(response) {
               localStorage.setItem('Campaigns', JSON.stringify(response))
-              console.log(response.data[3].name)
-              // c037_EC_WK_Trébol_Torreón_MensajesCMM
           }
         );
 
