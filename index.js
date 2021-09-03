@@ -5,6 +5,9 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
+console.log(d)
+console.log(d.getMonth())
+
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
   if(mesActual == '1'){
@@ -32,10 +35,6 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
     case '2': year = 2021; break
   }
 }
-
-console.log(mesActual)
-console.log(mesAnterior)
-console.log(year)
 
 window.fbAsyncInit = function()
 {
