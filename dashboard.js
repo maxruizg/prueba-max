@@ -312,5 +312,10 @@ Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
 Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
-const prueba = JSON.parse(localStorage.getItem("Campaigns")).data[0].name
-console.log(JSON.parse(localStorage.getItem("Campaigns")).data)
+const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
+const nombreCampaigns = []
+campaigns.forEach((element, index) => {
+    nombreCampaigns.push(element[index].name)
+});
+
+console.log(nombreCampaigns)
