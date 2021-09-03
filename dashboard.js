@@ -265,7 +265,7 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
     });
     
     var myNumeral = numeral (sumOptions);
-    if(metrica[2] == '0' || metrica[2] == '4'){
+    if(metrica[idMetrica] == '0' || metrica[idMetrica] == '4'){
         var currencyString = myNumeral.format('$0,0.00');
     }else {
         var currencyString = myNumeral.format('0,0');
