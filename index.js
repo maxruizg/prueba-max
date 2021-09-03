@@ -5,8 +5,6 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
-console.log(d)
-console.log(d.getMonth())
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
@@ -59,7 +57,7 @@ window.fbAsyncInit = function()
         });
 
        //Datos mes actual
-       if(parseInt(mesActual) >= d.getMonth()){
+       if(parseInt(mesActual) > d.getMonth()){
          console.log(mesActual)
          console.log(d.getMonth())
         localStorage.setItem('Semana-1', JSON.stringify(0))
