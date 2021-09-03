@@ -35,6 +35,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
 
 console.log(mesActual)
 console.log(mesAnterior)
+console.log(year)
 
 window.fbAsyncInit = function()
 {
