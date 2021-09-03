@@ -290,9 +290,11 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     if((sumOptions - sumOptionsA) < 0){
         // Color Rojo
         document.getElementById(`${idIcono}`).className = "fas fa-sort-down"
+        document.getElementById(`${idIcono}`).style = "color='red'"
     }else {
         // Color Verde
         document.getElementById(`${idIcono}`).className = "fas fa-sort-up"
+        document.getElementById(`${idIcono}`).style = "color='green'"
     }
     
     if(sumOptionsA != 0){
