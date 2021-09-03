@@ -273,7 +273,7 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
     }
     document.getElementById(`${idSuma}`).innerHTML = currencyString
     
-    if((sumOptions - sumOptions2) < 0){
+    if((sumOptions - sumOptionsA) < 0){
         // Color Rojo
         // document.getElementById('icono').innerHTML('<i class="fas fa-sort-up"></i>')
     }else {
