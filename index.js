@@ -198,7 +198,7 @@ window.fbAsyncInit = function()
         FB.api(
           '/act_704269000261751/campaigns',
           'GET',
-          {"fields":"name,id,insights{spend,clicks,cpc,ctr,frequency}"},
+          {"fields":"name,insights{spend,clicks,cpc,ctr,frequency}"},
           function(response) {
               localStorage.setItem('Campaigns', JSON.stringify(response))
           }
