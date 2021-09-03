@@ -328,7 +328,7 @@ objCampaigns = {
 }
 
 console.log(objCampaigns)
-
+console.log(objCampaigns.cero)
 // idCampaigns.forEach((element,index) => {
 //     objCampaigns.id
 // });
