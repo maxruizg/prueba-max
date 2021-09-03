@@ -17,6 +17,12 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica[0] = 0
     metrica[1] = 0
     metrica[2] = 0
+    metrica[3] = 0
+    metrica[4] = 0
+    metrica[5] = 0
+    metrica[6] = 0
+    metrica[7] = 0
+    metrica[8] = 0
 }else {
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
@@ -241,42 +247,48 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 }
 
 // Cuadrante inferior izquierdo
-const options2 = ArregloDatos(metrica[2], semanas)
-const options2A = ArregloDatos(metrica[2], semanasA)
-let sumOptions2 = 0
-let sumOptions2A = 0
-let porcentaje = 0
 
-options2.forEach(element => {
-    element = parseFloat(element)
-    sumOptions2 += element 
-});
+function Datos(metrica, idMetrica, idSuma, idPorcentaje){
+    const options2 = ArregloDatos(metrica[idMetrica], semanas)
+    const options2A = ArregloDatos(metrica[idMetrica], semanasA)
 
-options2A.forEach(element => {
-    element = parseFloat(element)
-    sumOptions2A += element
-});
+    let sumOptions = 0
+    let sumOptionsA = 0
+    let porcentaje = 0
 
-var myNumeral = numeral (sumOptions2);
-if(metrica[2] == '0' || metrica[2] == '4'){
-    var currencyString = myNumeral.format('$0,0.00');
-}else {
-    var currencyString = myNumeral.format('0,0');
+    options2.forEach(element => {
+        element = parseFloat(element)
+        sumOptions += element 
+    });
+    
+    options2A.forEach(element => {
+        element = parseFloat(element)
+        sumOptionsA += element
+    });
+    
+    var myNumeral = numeral (sumOptions);
+    if(metrica[2] == '0' || metrica[2] == '4'){
+        var currencyString = myNumeral.format('$0,0.00');
+    }else {
+        var currencyString = myNumeral.format('0,0');
+    }
+    document.getElementById(`${idSuma}`).innerHTML = currencyString
+    
+    if((sumOptions - sumOptions2) < 0){
+        // Color Rojo
+        // document.getElementById('icono').innerHTML('<i class="fas fa-sort-up"></i>')
+    }else {
+        // Color Verde
+    }
+    
+    if(sumOptions2A != 0){
+        porcentaje = sumOptionsA / sumOptions
+    }else {
+        porcentaje = 0
+    }
+    myNumeral = numeral (porcentaje)
+    var currencyString = myNumeral.format('0.00%')
+    document.getElementById(`${idPorcentaje}`).innerHTML = currencyString
 }
-document.getElementById('suma1').innerHTML = currencyString
 
-if((sumOptions2 - sumOptions2A) < 0){
-    // Color Rojo
-    document.getElementById('icono1').innerHTML('<i class="fas fa-sort-up"></i>')
-}else {
-    // Color Verde
-}
-
-if(sumOptions2A != 0){
-    porcentaje = sumOptions2A / sumOptions2
-}else {
-    porcentaje = 0
-}
-myNumeral = numeral (porcentaje)
-var currencyString = myNumeral.format('0.00%')
-document.getElementById('porcentaje1').innerHTML = currencyString
+Datos(metrica, 2, 'suma1', 'porcentaje1')
