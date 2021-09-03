@@ -251,7 +251,8 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 }
 
 // Cuadrante inferior izquierdo
-function Datos(metrica, idMetrica, idSuma, idPorcentaje){
+// Funcion para darle formato y sacar los porcentajes
+function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     const options = ArregloDatos(metrica[idMetrica], semanas)
     const optionsA = ArregloDatos(metrica[idMetrica], semanasA)
 
@@ -279,13 +280,16 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje){
     
     if((sumOptions - sumOptionsA) < 0){
         // Color Rojo
-        // document.getElementById('icono').innerHTML('<i class="fas fa-sort-up"></i>')
+        document.getElementById(`${idIcono}`).className = "fas fa-sort-down"
     }else {
         // Color Verde
+        document.getElementById(`${idIcono}`).className = "fas fa-sort-up"
     }
     
     if(sumOptionsA != 0){
         porcentaje = sumOptionsA / sumOptions
+
+
     }else {
         porcentaje = 0
     }
