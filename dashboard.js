@@ -325,3 +325,4 @@ const nombreCampaigns = []
 for(var i = 0; i < campaigns.length; i++){
     nombreCampaigns.push(campaigns[i].name)
 }
+console.log(nombreCampaigns)
