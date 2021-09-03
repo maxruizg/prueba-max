@@ -7,8 +7,6 @@ let untilDay = ''
 
 console.log(d)
 console.log(d.getMonth())
-console.log(mesActual)
-console.log(mesAnterior)
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
@@ -26,6 +24,9 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
 }
+
+console.log(mesActual)
+console.log(mesAnterior)
 
 if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = d.getFullYear().toString()
