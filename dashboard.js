@@ -322,9 +322,3 @@ const idCampaigns = []
 for(var i = 0; i < campaigns.length; i++){
     idCampaigns.push(campaigns[i].id)
 }
-
-console.log(objCampaigns)
-console.log(objCampaigns.cero)
-// idCampaigns.forEach((element,index) => {
-//     objCampaigns.id
-// });
