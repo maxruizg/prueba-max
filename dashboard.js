@@ -330,6 +330,7 @@ switch(metrica[8]){
             }else {
                 campaigns.push([campaignsData[i].name, campaignsData[i].insights.data[0].spend])
             }
+            console.log(campaigns)
             console.log(i)
         }
 }
