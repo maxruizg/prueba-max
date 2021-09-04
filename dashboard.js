@@ -325,8 +325,11 @@ console.log(campaignsData[0].insights.data[0].spend)
 switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
-            campaigns.push([campaignsData[i].name, campaignsData[i].insights.data[0].spend])
-            console.log(i)
+            if(campaignsData[i].insights.data[0].spend == undefined){
+                campaigns.push([campaignsData[i].name, 0])    
+            }else {
+                campaigns.push([campaignsData[i].name, campaignsData[i].insights.data[0].spend])
+            }
         }
 }
 console.log(campaigns)
