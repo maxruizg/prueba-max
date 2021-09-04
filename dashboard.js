@@ -322,7 +322,7 @@ const campaigns = []
 switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
-            campaigns.push([campaigns[i].name], [campaigns[i].spend])
+            campaigns.push([campaignsData[i].name], [campaignsData[i].spend])
         }
 }
 console.log(campaigns)
