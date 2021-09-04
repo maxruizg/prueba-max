@@ -326,12 +326,11 @@ switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
             if(campaignsData[i].insights == undefined){
-                campaigns.push([campaignsData[i].name, 0])    
+                campaigns.push({name: campaignsData[i].name, value: '0'})    
             }else {
-                campaigns.push([campaignsData[i].name, campaignsData[i].insights.data[0].spend])
+                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].spend})
             }
-            console.log(campaigns)
-            console.log(i)
         }
 }
+
 console.log(campaigns)
