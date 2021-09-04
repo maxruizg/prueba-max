@@ -319,10 +319,11 @@ const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
 // console.log(campaigns)
 const campaigns = []
 
+console.log(campaignsData)
+
 switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
             campaigns.push([campaignsData[i].name], [campaignsData[i].spend])
         }
 }
-console.log(campaigns)
