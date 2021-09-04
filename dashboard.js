@@ -323,6 +323,5 @@ for(var i = 0; i < campaigns.length; i++){
     idCampaigns.push(campaigns[i].id)
 }
 
-console.log(matrizCampaigns)
-console.log('cambio')
-console.log("cambio100")
+let array = [[1,2] [2,1]]
+console.log(array)
