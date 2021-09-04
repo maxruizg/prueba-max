@@ -315,13 +315,14 @@ Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 let matrizCampaigns = []
-const campaigns = JSON.parse(localStorage.getItem("Campaigns")).data
+const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
 // console.log(campaigns)
-const idCampaigns = []
+const campaigns = []
 
-for(var i = 0; i < campaigns.length; i++){
-    idCampaigns.push(campaigns[i].id)
+switch(metrica[8]){
+    case '0': 
+        for(var i = 0; i < campaignsData.length; i++){
+            campaigns.push([campaigns[i].name], [campaigns[i].spend])
+        }
 }
-
-let array = [[1,2], [2,1]]
-console.log(array)
+console.log(campaigns)
