@@ -325,4 +325,4 @@ for(var i = 0; i < campaigns.length; i++){
 
 console.log(matrizCampaigns)
 console.log('cambio')
-console.log("cambio1")
+console.log("cambio100")
