@@ -334,3 +334,9 @@ switch(metrica[8]){
 }
 
 console.log(campaigns)
+campaigns.sort((a, b) => {
+    let valorA = parseFloat(a.value)
+    let valorB = parseFloat(b.value)
+    return valorA - valorB
+})
+console.log(campaigns)
