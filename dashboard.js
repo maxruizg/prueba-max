@@ -324,6 +324,8 @@ console.log(campaignsData)
 switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
-            campaigns.push([campaignsData[i].name], [campaignsData[i].spend])
+            campaigns.push([campaignsData[i].name], [campaignsData[i].insights.data.spend])
         }
 }
+
+console.log(campaigns)
