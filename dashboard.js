@@ -323,5 +323,5 @@ for(var i = 0; i < campaigns.length; i++){
     idCampaigns.push(campaigns[i].id)
 }
 
-let array = [[1,2] [2,1]]
+let array = [[1,2], [2,1]]
 console.log(array)
