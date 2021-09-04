@@ -330,3 +330,4 @@ console.log(campaignsData[0].insights.data[0].spend)
 // }
 
 campaigns.push(['hola', 203.4])
+console.log(campaigns)
