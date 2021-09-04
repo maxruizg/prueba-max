@@ -328,4 +328,4 @@ switch(metrica[8]){
         }
 }
 
-console.log(campaigns)
+console.log(campaignsData[0].insights)
