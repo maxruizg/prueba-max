@@ -322,3 +322,5 @@ const idCampaigns = []
 for(var i = 0; i < campaigns.length; i++){
     idCampaigns.push(campaigns[i].id)
 }
+
+console.log(matrizCampaigns)
