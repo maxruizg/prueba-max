@@ -316,8 +316,6 @@ Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 let matrizCampaigns = []
 const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
-console.log(campaignsData)
-console.log(metrica[8])
 const campaigns = []
 
 switch(metrica[8]){
@@ -384,7 +382,8 @@ campaigns.sort((a, b) => {
     return valorA - valorB
 })
 
-console.log(campaigns)
+console.log(campaigns[0].name)
+console.log(document.getElementById(`nombreCampaign1`).innerHTML)
 let j = 1
 for(var i = campaigns.length; i < (campaigns.length - 5); i--){
     document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i].name
