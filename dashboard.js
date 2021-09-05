@@ -420,6 +420,8 @@ function Actualizacion3(){
 
     metrica[3] = valorMetrica
 
+    console.log(valorMetrica)
+
     Datos(metrica, 3, 'suma1', 'porcentaje1', 'icono1')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
