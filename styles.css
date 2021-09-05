@@ -156,7 +156,7 @@ select:hover {
     grid-template-columns: 75% 25%;
 }
 .nombreCampaign {
-    font-size: 12px;
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,6 +164,9 @@ select:hover {
 .valorCampaign {
     font-size: 14px;
     text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .smallText {
     font-size: 20px;
