@@ -382,13 +382,17 @@ campaigns.sort((a, b) => {
     return valorA - valorB
 })
 
-console.log(campaigns[0].name)
-console.log(document.getElementById(`nombreCampaign1`))
+console.log(campaigns)
+// console.log(campaigns[0].name)
+// console.log(document.getElementById(`nombreCampaign1`))
 let j = 1
-for(var i = campaigns.length; i > (campaigns.length - 5); i--){
-    document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i].name
-    document.getElementById(`valorCampaign${j}`).innerHTML = campaigns[i].value
-    j++
-}
+// for(var i = campaigns.length; i > (campaigns.length - 5); i--){
+//     document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i].name
+//     if(campaigns[i].value == undefined){
+//         document.getElementById(`valorCampaign${j}`).innerHTML = 0    
+//     }
+//     document.getElementById(`valorCampaign${j}`).innerHTML = campaigns[i].value
+//     j++
+// }
 
 // document.getElementById(`nombreCampaign1`).innerHTML = campaigns[0].name
