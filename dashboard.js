@@ -388,7 +388,15 @@ console.log(campaigns)
 let j = 1
 for(var i = campaigns.length; i > (campaigns.length - 5); i--){
     document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i - 1].name
-    document.getElementById(`valorCampaign${j}`).innerHTML = campaigns[i - 1].value
+    
+    var myNumeral = numeral (campaigns[i - 1].value);
+    if(metrica[8] == '0' || metrica[8] == '4'){
+        var currencyString = myNumeral.format('$0,0.00');
+        document.getElementById(`valorCampaign${j}`).innerHTML = currencyString
+    }else {
+        var currencyString = myNumeral.format('0,0');
+        document.getElementById(`valorCampaign${j}`).innerHTML = currencyString
+    }
     j++
 }
 
