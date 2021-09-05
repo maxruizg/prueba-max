@@ -388,9 +388,6 @@ console.log(campaigns)
 let j = 1
 for(var i = campaigns.length; i > (campaigns.length - 5); i--){
     document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[j].name
-    if(campaigns[i].value == undefined){
-        document.getElementById(`valorCampaign${j}`).innerHTML = 0    
-    }
     document.getElementById(`valorCampaign${j}`).innerHTML = campaigns[j].value
     j++
 }
