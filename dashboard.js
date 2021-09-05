@@ -383,7 +383,7 @@ campaigns.sort((a, b) => {
 })
 
 console.log(campaigns[0].name)
-console.log(document.getElementById(`nombreCampaign1`).innerHTML)
+console.log(document.getElementById(`nombreCampaign1`))
 let j = 1
 for(var i = campaigns.length; i < (campaigns.length - 5); i--){
     document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i].name
