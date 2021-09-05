@@ -141,12 +141,19 @@ select:hover {
     margin: 5px;
     text-align: center;
 }
-.listElements {
+.top {
     border: solid var(--colorExterno) 1px;
-    display: flexP;
-    width: 370px;
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    width: 365px;
     height: 315px;
     margin: 10px;
+}
+.campaign {
+    border: 1px solid var(--colorExterno);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
 }
 .smallText {
     font-size: 20px;
