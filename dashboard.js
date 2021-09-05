@@ -316,7 +316,7 @@ Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 let matrizCampaigns = []
 const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
-// console.log(campaigns)
+console.log(campaignsData)
 const campaigns = []
 
 switch(metrica[8]){
