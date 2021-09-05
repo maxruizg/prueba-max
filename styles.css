@@ -137,7 +137,7 @@ select:hover {
 .list {
     background-color: var(--colorInterno);
     height: 390px;
-    width: 390px;
+    width: 400px;
     margin: 5px;
     text-align: center;
 }
