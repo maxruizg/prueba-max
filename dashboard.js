@@ -338,6 +338,7 @@ switch(metrica[8]){
                 campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].clicks})
             }
         }
+        break;
     case '2': 
         for(var i = 0; i < campaignsData.length; i++){
             if(campaignsData[i].insights == undefined){
@@ -346,6 +347,7 @@ switch(metrica[8]){
                 campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].impressions})
             }
         }
+        break;
     case '3':
         for(var i = 0; i < campaignsData.length; i++){
             if(campaignsData[i].insights == undefined){
@@ -354,6 +356,7 @@ switch(metrica[8]){
                 campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].ctr})
             }
         }
+        break;
     case '4':
         for(var i = 0; i < campaignsData.length; i++){
             if(campaignsData[i].insights == undefined){
@@ -362,6 +365,7 @@ switch(metrica[8]){
                 campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].cpc})
             }
         }
+        break;
     case '5':
         for(var i = 0; i < campaignsData.length; i++){
             if(campaignsData[i].insights == undefined){
@@ -370,6 +374,7 @@ switch(metrica[8]){
                 campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].frequency})
             }
         }
+        break;
 }
 
 // Ordenamos las campanas con sus valores para mejores campanas
