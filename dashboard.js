@@ -387,8 +387,8 @@ console.log(campaigns)
 // console.log(document.getElementById(`nombreCampaign1`))
 let j = 1
 for(var i = campaigns.length; i > (campaigns.length - 5); i--){
-    document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[j].name
-    document.getElementById(`valorCampaign${j}`).innerHTML = campaigns[j].value
+    document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i - 1].name
+    document.getElementById(`valorCampaign${j}`).innerHTML = campaigns[i - 1].value
     j++
 }
 
