@@ -427,7 +427,7 @@ DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 //     localStorage.setItem('filterData', JSON.stringify(metrica))
 // }
 
-const selectElement = document.getElementById('selectMetrica')
+const selectElement = document.getElementById('selectMetrica3')
 
 selectElement.addEventListener('change', (event) => {
     const valorMetrica = document.getElementById('selectMetrica3').value
