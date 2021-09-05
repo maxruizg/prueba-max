@@ -157,6 +157,9 @@ select:hover {
 }
 .nombreCampaign {
     font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .valorCampaign {
     font-size: 14px;
