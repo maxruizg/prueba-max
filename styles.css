@@ -160,6 +160,7 @@ select:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 .valorCampaign {
     font-size: 14px;
