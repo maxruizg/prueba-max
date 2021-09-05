@@ -204,6 +204,15 @@ window.fbAsyncInit = function()
           }
         );
 
+        FB.api(
+          '/act_704269000261751/ads',
+          'GET',
+          {"fields":"name,id,insights{spend,impressions,clicks,cpc,ctr,frequency}"},
+          function(response) {
+              localStorage.setItem('Ads', JSON.stringify(response))
+          }
+        );
+
       } else {
        console.log('User cancelled login or did not fully authorize.');
       }

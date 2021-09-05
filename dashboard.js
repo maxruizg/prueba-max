@@ -318,6 +318,7 @@ let matrizCampaigns = []
 const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
 const campaigns = []
 
+
 switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
@@ -382,13 +383,10 @@ campaigns.sort((a, b) => {
     return valorA - valorB
 })
 
-console.log(campaigns)
-// console.log(campaigns[0].name)
-// console.log(document.getElementById(`nombreCampaign1`))
 let j = 1
 for(var i = campaigns.length; i > (campaigns.length - 5); i--){
     document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i - 1].name
-    
+
     var myNumeral = numeral (campaigns[i - 1].value);
     if(metrica[8] == '0' || metrica[8] == '4'){
         var currencyString = myNumeral.format('$0,0.00');
@@ -399,5 +397,3 @@ for(var i = campaigns.length; i > (campaigns.length - 5); i--){
     }
     j++
 }
-
-// document.getElementById(`nombreCampaign1`).innerHTML = campaigns[0].name
