@@ -156,7 +156,7 @@ select:hover {
     grid-template-columns: 70% 30%;
 }
 .nombreCampaign {
-    font-size: 8px;
+    font-size: 16px;
 }
 .smallText {
     font-size: 20px;
