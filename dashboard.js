@@ -314,86 +314,88 @@ Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
 Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
-let matrizCampaigns = []
 const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
-const campaigns = []
+const adsData = JSON.parse(localStorage.getItem("Ads")).data
 
-
-switch(metrica[8]){
-    case '0': 
-        for(var i = 0; i < campaignsData.length; i++){
-            if(campaignsData[i].insights == undefined){
-                campaigns.push({name: campaignsData[i].name, value: '0'})    
-            }else {
-                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].spend})
+function DatosTop(metrica, idMetrica, data, nombre, valor) {
+    const arregloTop = []
+    switch(metrica[idMetrica]){
+        case '0': 
+            for(var i = 0; i < data.length; i++){
+                if(data[i].insights == undefined){
+                    arregloTop.push({name: data[i].name, value: '0'})    
+                }else {
+                    arregloTop.push({name: data[i].name, value: data[i].insights.data[0].spend})
+                }
             }
-        }
-        break;
-    case '1': 
-        for(var i = 0; i < campaignsData.length; i++){
-            if(campaignsData[i].insights == undefined){
-                campaigns.push({name: campaignsData[i].name, value: '0'})    
-            }else {
-                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].clicks})
+            break;
+        case '1': 
+            for(var i = 0; i < data.length; i++){
+                if(data[i].insights == undefined){
+                    arregloTop.push({name: data[i].name, value: '0'})    
+                }else {
+                    arregloTop.push({name: data[i].name, value: data[i].insights.data[0].clicks})
+                }
             }
-        }
-        break;
-    case '2': 
-        for(var i = 0; i < campaignsData.length; i++){
-            if(campaignsData[i].insights == undefined){
-                campaigns.push({name: campaignsData[i].name, value: '0'})    
-            }else {
-                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].impressions})
+            break;
+        case '2': 
+            for(var i = 0; i < data.length; i++){
+                if(data[i].insights == undefined){
+                    arregloTop.push({name: data[i].name, value: '0'})    
+                }else {
+                    arregloTop.push({name: data[i].name, value: data[i].insights.data[0].impressions})
+                }
             }
-        }
-        break;
-    case '3':
-        for(var i = 0; i < campaignsData.length; i++){
-            if(campaignsData[i].insights == undefined){
-                campaigns.push({name: campaignsData[i].name, value: '0'})    
-            }else {
-                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].ctr})
+            break;
+        case '3':
+            for(var i = 0; i < data.length; i++){
+                if(data[i].insights == undefined){
+                    arregloTop.push({name: data[i].name, value: '0'})    
+                }else {
+                    arregloTop.push({name: data[i].name, value: data[i].insights.data[0].ctr})
+                }
             }
-        }
-        break;
-    case '4':
-        for(var i = 0; i < campaignsData.length; i++){
-            if(campaignsData[i].insights == undefined){
-                campaigns.push({name: campaignsData[i].name, value: '0'})    
-            }else {
-                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].cpc})
+            break;
+        case '4':
+            for(var i = 0; i < data.length; i++){
+                if(data[i].insights == undefined){
+                    arregloTop.push({name: data[i].name, value: '0'})    
+                }else {
+                    arregloTop.push({name: data[i].name, value: data[i].insights.data[0].cpc})
+                }
             }
-        }
-        break;
-    case '5':
-        for(var i = 0; i < campaignsData.length; i++){
-            if(campaignsData[i].insights == undefined){
-                campaigns.push({name: campaignsData[i].name, value: '0'})    
-            }else {
-                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].frequency})
+            break;
+        case '5':
+            for(var i = 0; i < data.length; i++){
+                if(data[i].insights == undefined){
+                    arregloTop.push({name: data[i].name, value: '0'})    
+                }else {
+                    arregloTop.push({name: data[i].name, value: data[i].insights.data[0].frequency})
+                }
             }
-        }
-        break;
-}
-
-// Ordenamos las campanas con sus valores para mejores campanas
-campaigns.sort((a, b) => {
-    let valorA = parseFloat(a.value)
-    let valorB = parseFloat(b.value)
-    return valorA - valorB
-})
-
-let j = 1
-for(var i = campaigns.length; i > (campaigns.length - 5); i--){
-    document.getElementById(`nombreCampaign${j}`).innerHTML = campaigns[i - 1].name
-
-    var myNumeral = numeral (campaigns[i - 1].value);
-    if(metrica[8] == '0' || metrica[8] == '4'){
-        var currencyString = myNumeral.format('$0,0.00');
-        document.getElementById(`valorCampaign${j}`).innerHTML = currencyString
-    }else {
-        var currencyString = myNumeral.format('0,0');
-        document.getElementById(`valorCampaign${j}`).innerHTML = currencyString
+            break;
     }
-    j++
+    arregloTop.sort((a, b) => {
+        let valorA = parseFloat(a.value)
+        let valorB = parseFloat(b.value)
+        return valorA - valorB
+    })
+    
+    let j = 1
+    for(var i = arregloTop.length; i > (arregloTop.length - 5); i--){
+        document.getElementById(`${nombre}${j}`).innerHTML = arregloTop[i - 1].name
+    
+        var myNumeral = numeral (campaigns[i - 1].value);
+        if(metrica[idMetrica] == '0' || metrica[idMetrica] == '4'){
+            var currencyString = myNumeral.format('$0,0.00');
+            document.getElementById(`${valor}${j}`).innerHTML = currencyString
+        }else {
+            var currencyString = myNumeral.format('0,0');
+            document.getElementById(`${valor}${j}`).innerHTML = currencyString
+        }
+        j++
+    }
 }
+
+DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
+DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
