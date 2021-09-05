@@ -319,9 +319,6 @@ const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
 // console.log(campaigns)
 const campaigns = []
 
-console.log(campaignsData)
-
-console.log(campaignsData[0].insights.data[0].spend)
 switch(metrica[8]){
     case '0': 
         for(var i = 0; i < campaignsData.length; i++){
@@ -331,12 +328,52 @@ switch(metrica[8]){
                 campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].spend})
             }
         }
+        break;
+    case '1': 
+        for(var i = 0; i < campaignsData.length; i++){
+            if(campaignsData[i].insights == undefined){
+                campaigns.push({name: campaignsData[i].name, value: '0'})    
+            }else {
+                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].clicks})
+            }
+        }
+    case '2': 
+        for(var i = 0; i < campaignsData.length; i++){
+            if(campaignsData[i].insights == undefined){
+                campaigns.push({name: campaignsData[i].name, value: '0'})    
+            }else {
+                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].impressions})
+            }
+        }
+    case '3':
+        for(var i = 0; i < campaignsData.length; i++){
+            if(campaignsData[i].insights == undefined){
+                campaigns.push({name: campaignsData[i].name, value: '0'})    
+            }else {
+                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].ctr})
+            }
+        }
+    case '4':
+        for(var i = 0; i < campaignsData.length; i++){
+            if(campaignsData[i].insights == undefined){
+                campaigns.push({name: campaignsData[i].name, value: '0'})    
+            }else {
+                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].cpc})
+            }
+        }
+    case '5':
+        for(var i = 0; i < campaignsData.length; i++){
+            if(campaignsData[i].insights == undefined){
+                campaigns.push({name: campaignsData[i].name, value: '0'})    
+            }else {
+                campaigns.push({name: campaignsData[i].name, value: campaignsData[i].insights.data[0].frequency})
+            }
+        }
 }
 
-console.log(campaigns)
+// Ordenamos las campanas con sus valores para mejores campanas
 campaigns.sort((a, b) => {
     let valorA = parseFloat(a.value)
     let valorB = parseFloat(b.value)
     return valorA - valorB
 })
-console.log(campaigns)
