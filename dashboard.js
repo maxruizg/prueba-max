@@ -377,3 +377,5 @@ campaigns.sort((a, b) => {
     let valorB = parseFloat(b.value)
     return valorA - valorB
 })
+
+console.log(campaigns)
