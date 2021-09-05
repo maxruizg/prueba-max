@@ -385,7 +385,7 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
     for(var i = arregloTop.length; i > (arregloTop.length - 5); i--){
         document.getElementById(`${nombre}${j}`).innerHTML = arregloTop[i - 1].name
     
-        var myNumeral = numeral (campaigns[i - 1].value);
+        var myNumeral = numeral (arregloTop[i - 1].value);
         if(metrica[idMetrica] == '0' || metrica[idMetrica] == '4'){
             var currencyString = myNumeral.format('$0,0.00');
             document.getElementById(`${valor}${j}`).innerHTML = currencyString
