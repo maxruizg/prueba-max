@@ -158,6 +158,10 @@ select:hover {
 .nombreCampaign {
     font-size: 12px;
 }
+.valorCampaign {
+    font-size: 14px;
+    text-align: left;
+}
 .smallText {
     font-size: 20px;
 }
