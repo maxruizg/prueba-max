@@ -615,8 +615,8 @@ function ActualizacionAds() {
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
 
-const selectMonth = document.getElementById('selectMonth')
-selectMonth.addEventListener('onchange', (event) => {
+const selectMes = document.getElementById('selectMonth')
+selectMes.addEventListener('onchange', (event) => {
   const valorMonth = event.value
   localStorage.setItem('filterMonth', JSON.stringify(valorMonth))
   location.reload()
