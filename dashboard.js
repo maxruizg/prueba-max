@@ -413,7 +413,7 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
 console.log(JSON.parse(localStorage.getItem("Campaigns")))
 console.log(JSON.parse(localStorage.getItem("Campaigns")).data)
 
-if(JSON.parse(localStorage.getItem("Campaigns")).data != undefined || JSON.parse(localStorage.getItem("Ads")).data != undefined){
+if(JSON.parse(localStorage.getItem("Campaigns")).data != null && JSON.parse(localStorage.getItem("Ads")).data != null){
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
     const adsData = JSON.parse(localStorage.getItem("Ads")).data
     
