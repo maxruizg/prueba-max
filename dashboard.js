@@ -332,7 +332,6 @@ Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 
 function DatosTop(metrica, idMetrica, data, nombre, valor) {
-    console.log()
     const arregloTop = []
     switch(metrica[idMetrica]){
         case '0': 
@@ -398,19 +397,21 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
 
     console.log(arregloTop)
     
-    let j = 1
-    for(var i = arregloTop.length; i > (arregloTop.length - 5); i--){
-        document.getElementById(`${nombre}${j}`).innerHTML = arregloTop[i - 1].name
-    
-        var myNumeral = numeral (arregloTop[i - 1].value);
-        if(metrica[idMetrica] == '0' || metrica[idMetrica] == '4'){
-            var currencyString = myNumeral.format('$0,0.00');
-            document.getElementById(`${valor}${j}`).innerHTML = currencyString
-        }else {
-            var currencyString = myNumeral.format('0,0');
-            document.getElementById(`${valor}${j}`).innerHTML = currencyString
+    if(arregloTop.length > 0){
+        let j = 1
+        for(var i = arregloTop.length; i > (arregloTop.length - 5); i--){
+            document.getElementById(`${nombre}${j}`).innerHTML = arregloTop[i - 1].name
+        
+            var myNumeral = numeral (arregloTop[i - 1].value);
+            if(metrica[idMetrica] == '0' || metrica[idMetrica] == '4'){
+                var currencyString = myNumeral.format('$0,0.00');
+                document.getElementById(`${valor}${j}`).innerHTML = currencyString
+            }else {
+                var currencyString = myNumeral.format('0,0');
+                document.getElementById(`${valor}${j}`).innerHTML = currencyString
+            }
+            j++
         }
-        j++
     }
 }
 
