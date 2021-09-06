@@ -410,12 +410,12 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
     }
 }
 
-if(JSON.parse(localStorage.getItem("Campaigns")) != null){
+if(JSON.parse(localStorage.getItem("Campaigns")) != null && JSON.parse(localStorage.getItem("Campaigns")) != undefined){
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
     DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
 }
 
-if(JSON.parse(localStorage.getItem("Ads")) != null) {
+if(JSON.parse(localStorage.getItem("Ads")) != null && JSON.parse(localStorage.getItem("Campaigns")) != undefined) {
     const adsData = JSON.parse(localStorage.getItem("Ads")).data
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 }
