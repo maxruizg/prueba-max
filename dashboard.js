@@ -69,6 +69,7 @@ function ArregloDatos(metrica, semanas){
     return arreglo
 }
 
+console.log(ArregloDatos(metrica[0], semanas))
 
 (() => {
     let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
