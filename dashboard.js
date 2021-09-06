@@ -449,7 +449,7 @@ function Actualizacion4(){
 
     console.log(valorMetrica)
 
-    Datos(metrica, 4, 'suma1', 'porcentaje1', 'icono1')
+    Datos(metrica, 4, 'suma2', 'porcentaje2', 'icono2')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
