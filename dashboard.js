@@ -217,8 +217,8 @@ function ArregloDatos(metrica, semanas){
         datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
         datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
 
-        chart.update()
     })
+    chart.update()
 })();
 
 // Funcion para salvar metricas desde un el boton salvar filtros
