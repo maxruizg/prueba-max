@@ -193,7 +193,7 @@ function ArregloDatos(metrica, semanas){
     });
     myChart1.resize(20, 20)
 
-    console.log(myChart.data.datasets)
+    console.log(myChart.data.datasets[0])
 
     // const selectMetrica = document.getElementById('selectMetrica1')
     // selectMetrica.addEventListener('change', (event, myChart) => {
