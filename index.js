@@ -219,8 +219,9 @@ window.fbAsyncInit = function()
     });
 }
 
-function ReloadApp() {
-  const valorMonth = document.getElementById('selectMonth').value
+const selectMonth = document.getElementById('selectMonth')
+selectMonth.addEventListener('onchange', (event) => {
+  const valorMonth = event.value
   localStorage.setItem('filterMonth', JSON.stringify(valorMonth))
   location.reload()
-}
+})

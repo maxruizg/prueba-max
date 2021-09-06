@@ -614,3 +614,10 @@ function ActualizacionAds() {
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
+
+const selectMonth = document.getElementById('selectMonth')
+selectMonth.addEventListener('onchange', (event) => {
+  const valorMonth = event.value
+  localStorage.setItem('filterMonth', JSON.stringify(valorMonth))
+  location.reload()
+})
