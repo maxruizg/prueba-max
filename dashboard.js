@@ -413,13 +413,13 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
 console.log(JSON.parse(localStorage.getItem("Campaigns")))
 console.log(JSON.parse(localStorage.getItem("Campaigns")).data)
 
-// if(JSON.parse(localStorage.getItem("Campaigns")).data != undefined || JSON.parse(localStorage.getItem("Ads")).data != undefined){
-//     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
-//     const adsData = JSON.parse(localStorage.getItem("Ads")).data
+if(JSON.parse(localStorage.getItem("Campaigns")).data != undefined || JSON.parse(localStorage.getItem("Ads")).data != undefined){
+    const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
+    const adsData = JSON.parse(localStorage.getItem("Ads")).data
     
-//     DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
-//     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
-// }
+    DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
+    DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
+}
 
 
 function Actualizacion3(){
