@@ -35,6 +35,8 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
   }
 }
 
+console.log()
+
 window.fbAsyncInit = function()
 {
     FB.init({
@@ -74,7 +76,7 @@ window.fbAsyncInit = function()
          );
        }
 
-        if(parseInt(mesActual) >= d.getMonth()){
+        if(parseInt(mesActual) > d.getMonth()){
           localStorage.setItem('Semana-2', JSON.stringify(0))
         }else {
           FB.api(
@@ -91,7 +93,7 @@ window.fbAsyncInit = function()
           );
         } 
 
-        if(parseInt(mesActual) >= d.getMonth()){
+        if(parseInt(mesActual) > d.getMonth()){
           localStorage.setItem('Semana-3', JSON.stringify(0))
         }else {
           FB.api(
@@ -108,7 +110,7 @@ window.fbAsyncInit = function()
           );
         }
 
-        if(parseInt(mesActual) >= d.getMonth()){
+        if(parseInt(mesActual) > d.getMonth()){
           localStorage.setItem('Semana-4', JSON.stringify(0))
         }else {
           FB.api(
