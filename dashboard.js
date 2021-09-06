@@ -454,31 +454,110 @@ function Actualizacion4(){
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
 
-// const selectElement = document.getElementById('selectMetrica3')
+function Actualizacion5() {
+    const valorMetrica = document.getElementById('selectMetrica5').value
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
 
-// selectElement.addEventListener('change', (event) => {
-//     const valorMetrica = document.getElementById('selectMetrica3').value
-//     let metrica = []
-//     if(JSON.parse(localStorage.getItem("filterData")) == null){
-//         metrica[0] = 0
-//         metrica[1] = 0
-//         metrica[2] = 0
-//         metrica[3] = 0
-//         metrica[4] = 0
-//         metrica[5] = 0
-//         metrica[6] = 0
-//         metrica[7] = 0
-//         metrica[8] = 0
-//         metrica[9] = 0
-//     }else {
-//         metrica = JSON.parse(localStorage.getItem("filterData"))
-//     }
+    metrica[5] = valorMetrica
 
-//     metrica[3] = valorMetrica
+    console.log(valorMetrica)
 
-//     console.log(valorMetrica)
+    Datos(metrica, 5, 'suma3', 'porcentaje3', 'icono3')
 
-//     Datos(metrica, 3, 'suma1', 'porcentaje1', 'icono1')
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
 
-//     localStorage.setItem('filterData', JSON.stringify(metrica))
-// })
+function Actualizacion6() {
+    const valorMetrica = document.getElementById('selectMetrica6').value
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
+
+    metrica[6] = valorMetrica
+
+    console.log(valorMetrica)
+
+    Datos(metrica, 6, 'suma4', 'porcentaje4', 'icono4')
+
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
+
+function Actualizacion7() {
+    const valorMetrica = document.getElementById('selectMetrica7').value
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
+
+    metrica[7] = valorMetrica
+
+    console.log(valorMetrica)
+
+    Datos(metrica, 7, 'suma5', 'porcentaje5', 'icono5')
+
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
+
+function Actualizacion8() {
+    const valorMetrica = document.getElementById('selectMetrica8').value
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
+
+    metrica[8] = valorMetrica
+
+    console.log(valorMetrica)
+
+    Datos(metrica, 8, 'suma6', 'porcentaje6', 'icono6')
+
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
