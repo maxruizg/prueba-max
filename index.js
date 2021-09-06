@@ -13,7 +13,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   }else {
     mesAnterior = parseInt(mesActual - 1).toString()
   }
-  localStorage.setItem("filterMonth", JSON.stringify(mesActual))
+  localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
 }else {
   var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth"))) + 1
   mesActual = aux.toString()
