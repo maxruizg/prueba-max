@@ -220,9 +220,10 @@ function ArregloDatos(metrica, semanas){
         let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA) 
 
         function addData(chart, actual, anterior){
-            chart.data.datasets[0].data.push(actual)
-            chart.data.datasets[1].data.push(anterior)
-            chart.update()
+            console.log(chart.data.datasets)
+            // chart.data.datasets[0].data.push(actual)
+            // chart.data.datasets[1].data.push(anterior)
+            // chart.update()
         }
         addData(myChart, datosGrafica1Actual, datosGrafica1Anterior)
     })
