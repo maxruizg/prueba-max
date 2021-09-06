@@ -329,8 +329,6 @@ Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
 Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
-const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
-const adsData = JSON.parse(localStorage.getItem("Ads")).data
 
 function DatosTop(metrica, idMetrica, data, nombre, valor) {
     const arregloTop = []
@@ -412,8 +410,14 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
     }
 }
 
-DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
-DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
+if(JSON.parse(localStorage.getItem("Campaigns")) != undefined){
+    const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
+    const adsData = JSON.parse(localStorage.getItem("Ads")).data
+    
+    DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
+    DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
+}
+
 
 function Actualizacion3(){
     const valorMetrica = document.getElementById('selectMetrica3').value
