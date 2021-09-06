@@ -28,8 +28,6 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
 
-console.log(metrica)
-
 function ArregloDatos(metrica, semanas){
     const arreglo = [0, 0, 0, 0]
     switch(metrica){
@@ -412,12 +410,13 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
     }
 }
 
-if((JSON.parse(localStorage.getItem("Campaigns")) != null && JSON.parse(localStorage.getItem("Ads")) != null) && 
-(JSON.parse(localStorage.getItem("Campaigns")).data != undefined && JSON.parse(localStorage.getItem("Ads")) != undefined)){
+if(JSON.parse(localStorage.getItem("Campaigns")) != null){
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
-    const adsData = JSON.parse(localStorage.getItem("Ads")).data
-    
     DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
+}
+
+if(JSON.parse(localStorage.getItem("Ads")) != null) {
+    const adsData = JSON.parse(localStorage.getItem("Ads")).data
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 }
 
