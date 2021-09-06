@@ -218,3 +218,9 @@ window.fbAsyncInit = function()
       }
     });
 }
+
+function ReloadApp() {
+  const valorMonth = document.getElementById('selectMonth').value
+  localStorage.setItem('filterMonth', JSON.stringify(valorMonth))
+  location.reload()
+}
