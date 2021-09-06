@@ -637,7 +637,6 @@ selectMetrica.addEventListener('change', (event) => {
     }
 
     metrica[0] = valorMetrica
-    localStorage.setItem('selectMetrica1', JSON.stringify(metrica))
-
+    localStorage.setItem('filterData', JSON.stringify(metrica))
     location.reload()
 })
