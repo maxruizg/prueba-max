@@ -135,7 +135,7 @@ function ArregloDatos(metrica, semanas){
     });
 
     var ctx = document.getElementById('myChart2');
-    var myChart = new Chart(ctx, {
+    var myChart1 = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
@@ -192,7 +192,12 @@ function ArregloDatos(metrica, semanas){
         }
     }
     });
-    myChart.resize(20, 20)
+    myChart1.resize(20, 20)
+
+    function addData(chart){
+        console.log(chart.data.datasets)
+    }
+    addData(myChart)
 })();
 
 
