@@ -68,13 +68,12 @@ function ArregloDatos(metrica, semanas){
 
 
 (() => {
-    var ctx = document.getElementById('myChart1');
-
     let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
     let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
     let datosGrafica2Actual = ArregloDatos(metrica[1], semanas)
     let datosGrafica2Anterior = ArregloDatos(metrica[1], semanasA)
 
+    var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -194,39 +193,41 @@ function ArregloDatos(metrica, semanas){
     });
     myChart1.resize(20, 20)
 
-    const selectMetrica = document.getElementById('selectMetrica1')
-    selectMetrica.addEventListener('change', (event, myChart) => {
-        const valorMetrica = event.value
-        let metrica = []
-        if(JSON.parse(localStorage.getItem("filterData")) == null){
-            metrica[0] = 0
-            metrica[1] = 0
-            metrica[2] = 0
-            metrica[3] = 0
-            metrica[4] = 0
-            metrica[5] = 0
-            metrica[6] = 0
-            metrica[7] = 0
-            metrica[8] = 0
-            metrica[9] = 0
-        }else {
-            metrica = JSON.parse(localStorage.getItem("filterData"))
-        }
+    console.log(myChart.data.datasets)
 
-        metrica[0] = valorMetrica
-        localStorage.setItem('selectMetrica1', JSON.stringify(metrica))
+    // const selectMetrica = document.getElementById('selectMetrica1')
+    // selectMetrica.addEventListener('change', (event, myChart) => {
+    //     const valorMetrica = event.value
+    //     let metrica = []
+    //     if(JSON.parse(localStorage.getItem("filterData")) == null){
+    //         metrica[0] = 0
+    //         metrica[1] = 0
+    //         metrica[2] = 0
+    //         metrica[3] = 0
+    //         metrica[4] = 0
+    //         metrica[5] = 0
+    //         metrica[6] = 0
+    //         metrica[7] = 0
+    //         metrica[8] = 0
+    //         metrica[9] = 0
+    //     }else {
+    //         metrica = JSON.parse(localStorage.getItem("filterData"))
+    //     }
 
-        let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
-        let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA) 
+    //     metrica[0] = valorMetrica
+    //     localStorage.setItem('selectMetrica1', JSON.stringify(metrica))
 
-        function addData(chart, actual, anterior){
-            console.log(chart.data.datasets)
-            // chart.data.datasets[0].data.push(actual)
-            // chart.data.datasets[1].data.push(anterior)
-            // chart.update()
-        }
-        addData(myChart, datosGrafica1Actual, datosGrafica1Anterior)
-    })
+    //     let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
+    //     let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA) 
+
+    //     function addData(chart, actual, anterior){
+    //         console.log(chart.data.datasets)
+    //         // chart.data.datasets[0].data.push(actual)
+    //         // chart.data.datasets[1].data.push(anterior)
+    //         // chart.update()
+    //     }
+    //     addData(myChart, datosGrafica1Actual, datosGrafica1Anterior)
+    // })
 })();
 
 
