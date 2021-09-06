@@ -76,62 +76,62 @@ function ArregloDatos(metrica, semanas){
     let datosGrafica2Anterior = ArregloDatos(metrica[1], semanasA)
 
     var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
-        datasets: [
-        {
-            label: "Actual",
-            data: datosGrafica1Actual,
+        type: 'line',
+        data: {
+            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+            datasets: [
+            {
+                label: "Actual",
+                data: datosGrafica1Actual,
 
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 206, 86, 0.2)',
-                // 'rgba(75, 192, 192, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 2
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    // 'rgba(54, 162, 235, 0.2)',
+                    // 'rgba(255, 206, 86, 0.2)',
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2
+            },
+            {
+                label: "Anterior",
+                data: datosGrafica1Anterior,
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    // 'rgba(255, 206, 86, 0.2)',
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2
+            }
+        ]
         },
-        {
-            label: "Anterior",
-            data: datosGrafica1Anterior,
-            backgroundColor: [
-                // 'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 206, 86, 0.2)',
-                // 'rgba(75, 192, 192, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                // 'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 2
-        }
-    ]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
     });
 
     var ctx = document.getElementById('myChart2');
@@ -195,7 +195,7 @@ function ArregloDatos(metrica, semanas){
     myChart1.resize(20, 20)
 
     function addData(chart){
-        console.log(chart.data.datasets)
+        console.log(chart.data)
     }
     addData(myChart)
 })();
@@ -613,4 +613,11 @@ function ActualizacionAds() {
 
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
     localStorage.setItem('filterData', JSON.stringify(metrica))
+}
+
+
+function ReloadApp() {
+    const valorMonth = document.getElementById('selectMonth').value
+    localStorage.setItem('filterMonth', JSON.stringify(valorMonth))
+    location.reload()
 }
