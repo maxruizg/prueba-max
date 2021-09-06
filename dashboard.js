@@ -28,6 +28,8 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
 
+console.log(metrica)
+
 function ArregloDatos(metrica, semanas){
     const arreglo = [0, 0, 0, 0]
     switch(metrica){
