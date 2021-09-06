@@ -410,7 +410,7 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
     }
 }
 
-if(JSON.parse(localStorage.getItem("Campaigns")) != undefined){
+if(JSON.parse(localStorage.getItem("Campaigns")).data != undefined || JSON.parse(localStorage.getItem("Ads")).data != undefined){
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
     const adsData = JSON.parse(localStorage.getItem("Ads")).data
     
