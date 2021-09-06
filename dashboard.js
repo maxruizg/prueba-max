@@ -98,6 +98,8 @@ function ArregloDatos(metrica, semanas){
 
         datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
         datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
+
+        console.log(valorMetrica)
     })
 
     var myChart = new Chart(ctx, {
