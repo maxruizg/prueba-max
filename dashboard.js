@@ -418,11 +418,9 @@ function Actualizacion3(){
         metrica = JSON.parse(localStorage.getItem("filterData"))
     }
 
-    metrica[3] = valorMetrica
+    metrica[2] = valorMetrica
 
-    console.log(valorMetrica)
-
-    Datos(metrica, 3, 'suma1', 'porcentaje1', 'icono1')
+    Datos(metrica, 2, 'suma1', 'porcentaje1', 'icono1')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
@@ -445,11 +443,9 @@ function Actualizacion4(){
         metrica = JSON.parse(localStorage.getItem("filterData"))
     }
 
-    metrica[4] = valorMetrica
+    metrica[3] = valorMetrica
 
-    console.log(valorMetrica)
-
-    Datos(metrica, 4, 'suma2', 'porcentaje2', 'icono2')
+    Datos(metrica, 3, 'suma2', 'porcentaje2', 'icono2')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
@@ -472,11 +468,9 @@ function Actualizacion5() {
         metrica = JSON.parse(localStorage.getItem("filterData"))
     }
 
-    metrica[5] = valorMetrica
+    metrica[4] = valorMetrica
 
-    console.log(valorMetrica)
-
-    Datos(metrica, 5, 'suma3', 'porcentaje3', 'icono3')
+    Datos(metrica, 4, 'suma3', 'porcentaje3', 'icono3')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
@@ -499,11 +493,9 @@ function Actualizacion6() {
         metrica = JSON.parse(localStorage.getItem("filterData"))
     }
 
-    metrica[6] = valorMetrica
+    metrica[5] = valorMetrica
 
-    console.log(valorMetrica)
-
-    Datos(metrica, 6, 'suma4', 'porcentaje4', 'icono4')
+    Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
@@ -526,11 +518,9 @@ function Actualizacion7() {
         metrica = JSON.parse(localStorage.getItem("filterData"))
     }
 
-    metrica[7] = valorMetrica
+    metrica[6] = valorMetrica
 
-    console.log(valorMetrica)
-
-    Datos(metrica, 7, 'suma5', 'porcentaje5', 'icono5')
+    Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
@@ -553,11 +543,61 @@ function Actualizacion8() {
         metrica = JSON.parse(localStorage.getItem("filterData"))
     }
 
+    metrica[7] = valorMetrica
+
+    Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
+
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
+
+function ActualizacionCampaigns() {
+    const valorMetrica = document.getElementById('selectMetrica9').value
+
+    const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
+
     metrica[8] = valorMetrica
 
-    console.log(valorMetrica)
+    DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
 
-    Datos(metrica, 8, 'suma6', 'porcentaje6', 'icono6')
+function ActualizacionAds() {
+    const valorMetrica = document.getElementById('selectMetrica10').value
+    const adsData = JSON.parse(localStorage.getItem("Ads")).data
 
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
+
+    metrica[9] = valorMetrica
+
+    DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
