@@ -57,7 +57,7 @@ window.fbAsyncInit = function()
         });
 
        //Datos mes actual
-       if(parseInt(mesActual) > d.getMonth()){
+       if(parseInt(mesActual)-1 > d.getMonth()){
          console.log(mesActual)
          console.log(d.getMonth())
         localStorage.setItem('Semana-1', JSON.stringify(0))
@@ -76,7 +76,7 @@ window.fbAsyncInit = function()
          );
        }
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-2', JSON.stringify(0))
         }else {
           FB.api(
@@ -93,7 +93,7 @@ window.fbAsyncInit = function()
           );
         } 
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-3', JSON.stringify(0))
         }else {
           FB.api(
@@ -110,7 +110,7 @@ window.fbAsyncInit = function()
           );
         }
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-4', JSON.stringify(0))
         }else {
           FB.api(
@@ -130,7 +130,7 @@ window.fbAsyncInit = function()
 
         // Datos mes anterior
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-1a', JSON.stringify(0))
         }else {
           FB.api(
@@ -147,7 +147,7 @@ window.fbAsyncInit = function()
           );
         }
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-2a', JSON.stringify(0))
         }else {
           FB.api(
@@ -164,7 +164,7 @@ window.fbAsyncInit = function()
           );
         }
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-3a', JSON.stringify(0))
         }else {
           FB.api(
@@ -181,7 +181,7 @@ window.fbAsyncInit = function()
           );
         }
 
-        if(parseInt(mesActual) > d.getMonth()){
+        if(parseInt(mesActual)-1 > d.getMonth()){
           localStorage.setItem('Semana-4a', JSON.stringify(0))
         }else {
           FB.api(
