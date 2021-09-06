@@ -427,6 +427,10 @@ function Actualizacion3(){
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
 
+function MiFuncion(){
+    const date = document.getElementById('selectYear').value
+    document.getElementById('Date').innerHTML = date
+}
 // const selectElement = document.getElementById('selectMetrica3')
 
 // selectElement.addEventListener('change', (event) => {
