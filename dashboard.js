@@ -393,6 +393,8 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
         let valorB = parseFloat(b.value)
         return valorA - valorB
     })
+
+    console.log(arregloTop)
     
     let j = 1
     for(var i = arregloTop.length; i > (arregloTop.length - 5); i--){
