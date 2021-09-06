@@ -24,6 +24,7 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica[7] = 0
     metrica[8] = 0
     metrica[9] = 0
+    localStorage.setItem("filterData", JSON.stringify(metrica))
 }else {
     metrica = JSON.parse(localStorage.getItem("filterData"))
 }
@@ -331,6 +332,7 @@ Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
 
 
 function DatosTop(metrica, idMetrica, data, nombre, valor) {
+    console.log()
     const arregloTop = []
     switch(metrica[idMetrica]){
         case '0': 
@@ -412,13 +414,13 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
     }
 }
 
-if(JSON.parse(localStorage.getItem("Campaigns")).data != null && JSON.parse(localStorage.getItem("Campaigns")).data != undefined){
+if(JSON.parse(localStorage.getItem("Campaigns")) != null && JSON.parse(localStorage.getItem("Campaigns")) != undefined){
     console.log('hola')
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
     DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
 }
 
-if(JSON.parse(localStorage.getItem("Ads")).data != null && JSON.parse(localStorage.getItem("Campaigns")).data != undefined) {
+if(JSON.parse(localStorage.getItem("Ads")) != null && JSON.parse(localStorage.getItem("Campaigns")) != undefined) {
     const adsData = JSON.parse(localStorage.getItem("Ads")).data
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 }
