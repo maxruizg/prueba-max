@@ -218,10 +218,3 @@ window.fbAsyncInit = function()
       }
     });
 }
-
-const selectMonth = document.getElementById('selectMonth')
-selectMonth.addEventListener('onchange', (event) => {
-  const valorMonth = event.value
-  localStorage.setItem('filterMonth', JSON.stringify(valorMonth))
-  location.reload()
-})
