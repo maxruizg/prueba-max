@@ -66,10 +66,39 @@ function ArregloDatos(metrica, semanas){
     return arreglo
 }
 
+
 (() => {
     var ctx = document.getElementById('myChart1');
 
+    let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
+    let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
+    let datosGrafica2Actual = ArregloDatos(metrica[1], semanas)
+    let datosGrafica2Anterior = ArregloDatos(metrica[1], semanasA)
     
+
+    const selectElement = document.getElementById('selectMetrica1')
+    selectElement.addEventListener('change', (event) => {
+        const valorMetrica = event.target.value
+        let metrica = []
+        if(JSON.parse(localStorage.getItem("filterData")) == null){
+            metrica[0] = 0
+            metrica[1] = 0
+            metrica[2] = 0
+            metrica[3] = 0
+            metrica[4] = 0
+            metrica[5] = 0
+            metrica[6] = 0
+            metrica[7] = 0
+            metrica[8] = 0
+            metrica[9] = 0
+        }else {
+            metrica = JSON.parse(localStorage.getItem("filterData"))
+        }
+        metrica[0] = valorMetrica
+
+        datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
+        datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
+    })
 
     var myChart = new Chart(ctx, {
     type: 'line',
@@ -78,7 +107,7 @@ function ArregloDatos(metrica, semanas){
         datasets: [
         {
             label: "Actual",
-            data: ArregloDatos(metrica[0], semanas),
+            data: datosGrafica1Actual,
 
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -100,7 +129,7 @@ function ArregloDatos(metrica, semanas){
         },
         {
             label: "Anterior",
-            data: ArregloDatos(metrica[0], semanasA),
+            data: datosGrafica1Anterior,
             backgroundColor: [
                 // 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -138,7 +167,7 @@ function ArregloDatos(metrica, semanas){
         datasets: [
         {
             label: "Actual",
-            data: ArregloDatos(metrica[1], semanas),
+            data: datosGrafica2Actual,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)',
@@ -159,7 +188,7 @@ function ArregloDatos(metrica, semanas){
         },
         {
             label: "Anterior",
-            data: ArregloDatos(metrica[1], semanasA),
+            data: datosGrafica2Anterior,
             backgroundColor: [
                 // 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -604,10 +633,3 @@ function ActualizacionAds() {
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
-
-const selectElement = document.getElementById('selectYear')
-
-selectElement.addEventListener('change', (event) => {
-    const result = document.getElementById('texto')
-    result.innerHTML = `Valor del anio ${event.target.value}`
-})
