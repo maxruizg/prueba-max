@@ -427,6 +427,33 @@ function Actualizacion3(){
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
 
+function Actualizacion4(){
+    const valorMetrica = document.getElementById('selectMetrica4').value
+    let metrica = []
+    if(JSON.parse(localStorage.getItem("filterData")) == null){
+        metrica[0] = 0
+        metrica[1] = 0
+        metrica[2] = 0
+        metrica[3] = 0
+        metrica[4] = 0
+        metrica[5] = 0
+        metrica[6] = 0
+        metrica[7] = 0
+        metrica[8] = 0
+        metrica[9] = 0
+    }else {
+        metrica = JSON.parse(localStorage.getItem("filterData"))
+    }
+
+    metrica[4] = valorMetrica
+
+    console.log(valorMetrica)
+
+    Datos(metrica, 4, 'suma1', 'porcentaje1', 'icono1')
+
+    localStorage.setItem('filterData', JSON.stringify(metrica))
+}
+
 // const selectElement = document.getElementById('selectMetrica3')
 
 // selectElement.addEventListener('change', (event) => {
