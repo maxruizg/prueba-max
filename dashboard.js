@@ -400,36 +400,7 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
 DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
 DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 
-// function Actualizacion3(){
-//     const valorMetrica = document.getElementById('selectMetrica3').value
-//     let metrica = []
-//     if(JSON.parse(localStorage.getItem("filterData")) == null){
-//         metrica[0] = 0
-//         metrica[1] = 0
-//         metrica[2] = 0
-//         metrica[3] = 0
-//         metrica[4] = 0
-//         metrica[5] = 0
-//         metrica[6] = 0
-//         metrica[7] = 0
-//         metrica[8] = 0
-//         metrica[9] = 0
-//     }else {
-//         metrica = JSON.parse(localStorage.getItem("filterData"))
-//     }
-
-//     metrica[3] = valorMetrica
-
-//     console.log(valorMetrica)
-
-//     Datos(metrica, 3, 'suma1', 'porcentaje1', 'icono1')
-
-//     localStorage.setItem('filterData', JSON.stringify(metrica))
-// }
-
-const selectElement = document.getElementById('selectMetrica3')
-
-selectElement.addEventListener('change', (event) => {
+function Actualizacion3(){
     const valorMetrica = document.getElementById('selectMetrica3').value
     let metrica = []
     if(JSON.parse(localStorage.getItem("filterData")) == null){
@@ -454,4 +425,33 @@ selectElement.addEventListener('change', (event) => {
     Datos(metrica, 3, 'suma1', 'porcentaje1', 'icono1')
 
     localStorage.setItem('filterData', JSON.stringify(metrica))
-})
+}
+
+// const selectElement = document.getElementById('selectMetrica3')
+
+// selectElement.addEventListener('change', (event) => {
+//     const valorMetrica = document.getElementById('selectMetrica3').value
+//     let metrica = []
+//     if(JSON.parse(localStorage.getItem("filterData")) == null){
+//         metrica[0] = 0
+//         metrica[1] = 0
+//         metrica[2] = 0
+//         metrica[3] = 0
+//         metrica[4] = 0
+//         metrica[5] = 0
+//         metrica[6] = 0
+//         metrica[7] = 0
+//         metrica[8] = 0
+//         metrica[9] = 0
+//     }else {
+//         metrica = JSON.parse(localStorage.getItem("filterData"))
+//     }
+
+//     metrica[3] = valorMetrica
+
+//     console.log(valorMetrica)
+
+//     Datos(metrica, 3, 'suma1', 'porcentaje1', 'icono1')
+
+//     localStorage.setItem('filterData', JSON.stringify(metrica))
+// })
