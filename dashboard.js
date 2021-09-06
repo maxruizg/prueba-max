@@ -193,33 +193,8 @@ function ArregloDatos(metrica, semanas){
     }
     });
     myChart.resize(20, 20)
-
-    const selectElement = document.getElementById('selectMetrica1')
-    selectElement.addEventListener('change', (event) => {
-        const valorMetrica = event.target.value
-        let metrica = []
-        if(JSON.parse(localStorage.getItem("filterData")) == null){
-            metrica[0] = 0
-            metrica[1] = 0
-            metrica[2] = 0
-            metrica[3] = 0
-            metrica[4] = 0
-            metrica[5] = 0
-            metrica[6] = 0
-            metrica[7] = 0
-            metrica[8] = 0
-            metrica[9] = 0
-        }else {
-            metrica = JSON.parse(localStorage.getItem("filterData"))
-        }
-        metrica[0] = valorMetrica
-
-        datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
-        datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
-
-    })
-    chart.update()
 })();
+
 
 // Funcion para salvar metricas desde un el boton salvar filtros
 // iteradores = 10
