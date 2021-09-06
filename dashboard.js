@@ -68,6 +68,9 @@ function ArregloDatos(metrica, semanas){
 
 (() => {
     var ctx = document.getElementById('myChart1');
+
+    
+
     var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -601,3 +604,10 @@ function ActualizacionAds() {
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
+
+const selectElement = document.getElementById('selectYear')
+
+selectElement.addEventListener('change', (event) => {
+    const result = document.getElementById('texto')
+    result.innerHTML = `Valor del anio ${event.target.value}`
+})
