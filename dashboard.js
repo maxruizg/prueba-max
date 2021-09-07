@@ -14,6 +14,8 @@ const semanasA = [
     JSON.parse(localStorage.getItem("Semana-4a"))
 ]
 
+console.log(semanas)
+
 metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
 
