@@ -26,8 +26,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
 
 if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = d.getFullYear().toString()
-  console.log(year)
-  localStorage.setItem("filterYear", JSON.stringify(year))
+  localStorage.setItem("filterYear", JSON.stringify(2))
 }else {
   const yearValue = JSON.parse(localStorage.getItem("filterYear"))
   switch(yearValue){
