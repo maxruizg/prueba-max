@@ -168,7 +168,8 @@ function saveMetrics() {
     localStorage.setItem("filterMonth", JSON.stringify(month));
 
     // Guardar valor del año
-    var yearValue = document.getElementById('selectYear').value
+    var yearValue = document.getElementById('selectYear').innerHTML
+    
     localStorage.setItem("filterYear", JSON.stringify(yearValue))
 }
 
