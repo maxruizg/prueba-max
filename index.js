@@ -5,6 +5,11 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
+let metrica = []
+if(JSON.parse(localStorage.getItem("filterData")) == null){
+    metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    localStorage.setItem("filterData", JSON.stringify(metrica))
+}
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()

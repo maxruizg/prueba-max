@@ -17,21 +17,7 @@ const semanasA = [
 ]
 
 let metrica = []
-if(JSON.parse(localStorage.getItem("filterData")) == null){
-    metrica[0] = 0
-    metrica[1] = 0
-    metrica[2] = 0
-    metrica[3] = 0
-    metrica[4] = 0
-    metrica[5] = 0
-    metrica[6] = 0
-    metrica[7] = 0
-    metrica[8] = 0
-    metrica[9] = 0
-    localStorage.setItem("filterData", JSON.stringify(metrica))
-}else {
-    metrica = JSON.parse(localStorage.getItem("filterData"))
-}
+metrica = JSON.parse(localStorage.getItem("filterData"))
 
 function ArregloDatos(metrica, semanas){
     const arreglo = [0, 0, 0, 0]
@@ -89,19 +75,9 @@ function ArregloDatos(metrica, semanas){
 
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
-                    // 'rgba(54, 162, 235, 0.2)',
-                    // 'rgba(255, 206, 86, 0.2)',
-                    // 'rgba(75, 192, 192, 0.2)',
-                    // 'rgba(153, 102, 255, 0.2)',
-                    // 'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
-                    // 'rgba(54, 162, 235, 1)',
-                    // 'rgba(255, 206, 86, 1)',
-                    // 'rgba(75, 192, 192, 1)',
-                    // 'rgba(153, 102, 255, 1)',
-                    // 'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 2
             },
@@ -109,20 +85,10 @@ function ArregloDatos(metrica, semanas){
                 label: "Anterior",
                 data: datosGrafica1Anterior,
                 backgroundColor: [
-                    // 'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
-                    // 'rgba(255, 206, 86, 0.2)',
-                    // 'rgba(75, 192, 192, 0.2)',
-                    // 'rgba(153, 102, 255, 0.2)',
-                    // 'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
-                    // 'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
-                    // 'rgba(255, 206, 86, 1)',
-                    // 'rgba(75, 192, 192, 1)',
-                    // 'rgba(153, 102, 255, 1)',
-                    // 'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 2
             }
@@ -148,19 +114,9 @@ function ArregloDatos(metrica, semanas){
             data: datosGrafica2Actual,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 206, 86, 0.2)',
-                // 'rgba(75, 192, 192, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 2
         },
@@ -168,20 +124,10 @@ function ArregloDatos(metrica, semanas){
             label: "Anterior",
             data: datosGrafica2Anterior,
             backgroundColor: [
-                // 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 206, 86, 0.2)',
-                // 'rgba(75, 192, 192, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
-                // 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 2
         }
@@ -197,12 +143,12 @@ function ArregloDatos(metrica, semanas){
     });
     myChart1.resize(20, 20)
 
-    function addData(chart, actual, anterior){
-        console.log(chart.data.datasets)
-        chart.data.datasets[0].data.push(actual)
-        chart.data.datasets[1].data.push(anterior)
-        chart.update()
-    }
+    // function addData(chart, actual, anterior){
+    //     console.log(chart.data.datasets)
+    //     chart.data.datasets[0].data.push(actual)
+    //     chart.data.datasets[1].data.push(anterior)
+    //     chart.update()
+    // }
 
 })();
 
@@ -440,22 +386,9 @@ elementoMetrica.addEventListener('change', (event) => {
 
 function Actualizacion3(){
     const valorMetrica = document.getElementById('selectMetrica3').value
+    
     let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[2] = valorMetrica
 
     Datos(metrica, 2, 'suma1', 'porcentaje1', 'icono1')
@@ -465,22 +398,9 @@ function Actualizacion3(){
 
 function Actualizacion4(){
     const valorMetrica = document.getElementById('selectMetrica4').value
+    
     let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[3] = valorMetrica
 
     Datos(metrica, 3, 'suma2', 'porcentaje2', 'icono2')
@@ -490,22 +410,9 @@ function Actualizacion4(){
 
 function Actualizacion5() {
     const valorMetrica = document.getElementById('selectMetrica5').value
-    let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
 
+    let metrica = []
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[4] = valorMetrica
 
     Datos(metrica, 4, 'suma3', 'porcentaje3', 'icono3')
@@ -515,22 +422,9 @@ function Actualizacion5() {
 
 function Actualizacion6() {
     const valorMetrica = document.getElementById('selectMetrica6').value
+    
     let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[5] = valorMetrica
 
     Datos(metrica, 5, 'suma4', 'porcentaje4', 'icono4')
@@ -540,22 +434,9 @@ function Actualizacion6() {
 
 function Actualizacion7() {
     const valorMetrica = document.getElementById('selectMetrica7').value
+    
     let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[6] = valorMetrica
 
     Datos(metrica, 6, 'suma5', 'porcentaje5', 'icono5')
@@ -565,22 +446,9 @@ function Actualizacion7() {
 
 function Actualizacion8() {
     const valorMetrica = document.getElementById('selectMetrica8').value
-    let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
 
+    let metrica = []
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[7] = valorMetrica
 
     Datos(metrica, 7, 'suma6', 'porcentaje6', 'icono6')
@@ -592,22 +460,9 @@ function ActualizacionCampaigns() {
     const valorMetrica = document.getElementById('selectMetrica9').value
 
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
+    
     let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[8] = valorMetrica
 
     DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
@@ -617,23 +472,9 @@ function ActualizacionCampaigns() {
 function ActualizacionAds() {
     const valorMetrica = document.getElementById('selectMetrica10').value
     const adsData = JSON.parse(localStorage.getItem("Ads")).data
-
+    
     let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
-
+    metrica = JSON.parse(localStorage.getItem("filterData"))
     metrica[9] = valorMetrica
 
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
