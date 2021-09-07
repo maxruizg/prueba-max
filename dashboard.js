@@ -180,6 +180,8 @@ function saveMetrics() {
     localStorage.setItem("filterYear", JSON.stringify(yearValue))
 }
 
+saveMetrics()
+
 let readData = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     var i = 0
