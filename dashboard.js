@@ -1,18 +1,36 @@
-const semanas = [
-    JSON.parse(localStorage.getItem("Semana-1")), 
-    JSON.parse(localStorage.getItem("Semana-2")), 
-    JSON.parse(localStorage.getItem("Semana-3")),
-    JSON.parse(localStorage.getItem("Semana-4"))
-]
+setTimeout(function() {
+    const semanas = [
+        JSON.parse(localStorage.getItem("Semana-1")), 
+        JSON.parse(localStorage.getItem("Semana-2")), 
+        JSON.parse(localStorage.getItem("Semana-3")),
+        JSON.parse(localStorage.getItem("Semana-4"))
+    ]
+    
+    console.log(semanas)
+    
+    const semanasA = [
+        JSON.parse(localStorage.getItem("Semana-1a")), 
+        JSON.parse(localStorage.getItem("Semana-2a")), 
+        JSON.parse(localStorage.getItem("Semana-3a")),
+        JSON.parse(localStorage.getItem("Semana-4a"))
+    ]
+}, 3000)
 
-console.log(semanas)
+// const semanas = [
+//     JSON.parse(localStorage.getItem("Semana-1")), 
+//     JSON.parse(localStorage.getItem("Semana-2")), 
+//     JSON.parse(localStorage.getItem("Semana-3")),
+//     JSON.parse(localStorage.getItem("Semana-4"))
+// ]
 
-const semanasA = [
-    JSON.parse(localStorage.getItem("Semana-1a")), 
-    JSON.parse(localStorage.getItem("Semana-2a")), 
-    JSON.parse(localStorage.getItem("Semana-3a")),
-    JSON.parse(localStorage.getItem("Semana-4a"))
-]
+// console.log(semanas)
+
+// const semanasA = [
+//     JSON.parse(localStorage.getItem("Semana-1a")), 
+//     JSON.parse(localStorage.getItem("Semana-2a")), 
+//     JSON.parse(localStorage.getItem("Semana-3a")),
+//     JSON.parse(localStorage.getItem("Semana-4a"))
+// ]
 
 let metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
