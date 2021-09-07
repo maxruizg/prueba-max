@@ -1,36 +1,19 @@
-setTimeout(function() {
-    const semanas = [
-        JSON.parse(localStorage.getItem("Semana-1")), 
-        JSON.parse(localStorage.getItem("Semana-2")), 
-        JSON.parse(localStorage.getItem("Semana-3")),
-        JSON.parse(localStorage.getItem("Semana-4"))
-    ]
-    
-    console.log(semanas)
-    
-    const semanasA = [
-        JSON.parse(localStorage.getItem("Semana-1a")), 
-        JSON.parse(localStorage.getItem("Semana-2a")), 
-        JSON.parse(localStorage.getItem("Semana-3a")),
-        JSON.parse(localStorage.getItem("Semana-4a"))
-    ]
-}, 3000)
 
-// const semanas = [
-//     JSON.parse(localStorage.getItem("Semana-1")), 
-//     JSON.parse(localStorage.getItem("Semana-2")), 
-//     JSON.parse(localStorage.getItem("Semana-3")),
-//     JSON.parse(localStorage.getItem("Semana-4"))
-// ]
+const semanas = [
+    JSON.parse(localStorage.getItem("Semana-1")), 
+    JSON.parse(localStorage.getItem("Semana-2")), 
+    JSON.parse(localStorage.getItem("Semana-3")),
+    JSON.parse(localStorage.getItem("Semana-4"))
+]
 
-// console.log(semanas)
+console.log(semanas)
 
-// const semanasA = [
-//     JSON.parse(localStorage.getItem("Semana-1a")), 
-//     JSON.parse(localStorage.getItem("Semana-2a")), 
-//     JSON.parse(localStorage.getItem("Semana-3a")),
-//     JSON.parse(localStorage.getItem("Semana-4a"))
-// ]
+const semanasA = [
+    JSON.parse(localStorage.getItem("Semana-1a")), 
+    JSON.parse(localStorage.getItem("Semana-2a")), 
+    JSON.parse(localStorage.getItem("Semana-3a")),
+    JSON.parse(localStorage.getItem("Semana-4a"))
+]
 
 let metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
@@ -86,8 +69,6 @@ function ArregloDatos(metrica, semanas){
     }
     return arreglo
 }
-let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
-console.log(datosGrafica1Actual);
 
 (() => {
     let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
