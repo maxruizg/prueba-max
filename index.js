@@ -97,6 +97,7 @@ window.fbAsyncInit = function()
         if(parseInt(mesActual) > d.getMonth()){
           localStorage.setItem('Semana-3', JSON.stringify(0))
         }else {
+          console.log(mesActual)
           FB.api(
             '/act_704269000261751/insights',
             'GET',
