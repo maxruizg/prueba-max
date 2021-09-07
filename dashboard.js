@@ -221,6 +221,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
         case "2020": yearValue = 1; break
         case "2021": yearValue = 2; break
     }
+    console.log(yearValue)
     var select = document.getElementById(`selectYear`)
     var options = select.options
     options[yearValue].selected = true
@@ -353,8 +354,6 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
         let valorB = parseFloat(b.value)
         return valorA - valorB
     })
-
-    console.log(arregloTop)
     
     if(arregloTop.length > 0){
         let j = 1
@@ -375,7 +374,6 @@ function DatosTop(metrica, idMetrica, data, nombre, valor) {
 }
 
 if(JSON.parse(localStorage.getItem("Campaigns")) != null && JSON.parse(localStorage.getItem("Campaigns")) != undefined){
-    console.log('hola')
     const campaignsData = JSON.parse(localStorage.getItem("Campaigns")).data
     DatosTop(metrica, 8, campaignsData, 'nombreCampaign', 'valorCampaign')
 }
