@@ -1,24 +1,5 @@
 //  Variables que contengan el dataset del chart
 
-var i = 0
-var filters = []
-do{
-    filters[i] = document.getElementById(`selectMetrica${i + 1}`).value
-    i++
-}while(i < 10)
-
-//Guardar valor de month localstorage
-var month1 = document.getElementById(`selectMonth`).value
-
-// Guardar valor del año
-var year1 = document.getElementById('selectYear').value
-let yearValue = 0
-switch(year1) {
-    case '0': yearValue = '2019'; break
-    case '1': yearValue = '2020'; break
-    case '2': yearValue = '2021'; break
-}
-
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
     JSON.parse(localStorage.getItem("Semana-2")), 
@@ -32,6 +13,8 @@ const semanasA = [
     JSON.parse(localStorage.getItem("Semana-3a")),
     JSON.parse(localStorage.getItem("Semana-4a"))
 ]
+
+console.log(`${semanas}, ${semanasA}`)
 
 metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
