@@ -1,5 +1,24 @@
 //  Variables que contengan el dataset del chart
 
+var i = 0
+var filters = []
+do{
+    filters[i] = document.getElementById(`selectMetrica${i + 1}`).value
+    i++
+}while(i < 10)
+
+//Guardar valor de month localstorage
+var month = document.getElementById(`selectMonth`).value
+
+// Guardar valor del año
+var year = document.getElementById('selectYear').value
+let yearValue = 0
+switch(year) {
+    case '0': yearValue = '2019'; break
+    case '1': yearValue = '2020'; break
+    case '2': yearValue = '2021'; break
+}
+
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
     JSON.parse(localStorage.getItem("Semana-2")), 
@@ -169,8 +188,6 @@ function saveMetrics() {
 
     // Guardar valor del año
     var year = document.getElementById('selectYear').value
-    console.log(year)
-    console.log(typeof(year))
     let yearValue = 0
     switch(year) {
         case '0': yearValue = '2019'; break
@@ -223,7 +240,6 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
         case "2020": yearValue = 1; break
         case "2021": yearValue = 2; break
     }
-    console.log(yearValue)
     var select = document.getElementById(`selectYear`)
     var options = select.options
     options[yearValue].selected = true
