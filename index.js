@@ -100,7 +100,7 @@ window.fbAsyncInit = function()
           FB.api(
             '/act_704269000261751/insights',
             'GET',
-            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges,frequency":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-0"+ mesActual +"-24'}]"},
+            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges,frequency":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-"+ mesActual +"-24'}]"},
             function(response) {
               if(response.data[0] != undefined){
                 localStorage.setItem('Semana-3', JSON.stringify(response.data[0]))
@@ -171,7 +171,7 @@ window.fbAsyncInit = function()
           FB.api(
             '/act_704269000261751/insights',
             'GET',
-            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-16',until:'"+ year +"-0"+ mesAnterior +"-24'}]"},
+            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesAnterior +"-16',until:'"+ year +"-"+ mesAnterior +"-24'}]"},
             function(response) {
               if(response.data[0] != undefined){
                 localStorage.setItem('Semana-3a', JSON.stringify(response.data[0]))
