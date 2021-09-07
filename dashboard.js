@@ -8,12 +8,12 @@ do{
 }while(i < 10)
 
 //Guardar valor de month localstorage
-var month = document.getElementById(`selectMonth`).value
+var month1 = document.getElementById(`selectMonth`).value
 
 // Guardar valor del año
-var year = document.getElementById('selectYear').value
+var year1 = document.getElementById('selectYear').value
 let yearValue = 0
-switch(year) {
+switch(year1) {
     case '0': yearValue = '2019'; break
     case '1': yearValue = '2020'; break
     case '2': yearValue = '2021'; break
