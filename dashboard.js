@@ -1,20 +1,22 @@
 //  Variables que contengan el dataset del chart
 
-const semanas = [
-    JSON.parse(localStorage.getItem("Semana-1")), 
-    JSON.parse(localStorage.getItem("Semana-2")), 
-    JSON.parse(localStorage.getItem("Semana-3")),
-    JSON.parse(localStorage.getItem("Semana-4"))
-]
+// const semanas = [
+//     JSON.parse(localStorage.getItem("Semana-1")), 
+//     JSON.parse(localStorage.getItem("Semana-2")), 
+//     JSON.parse(localStorage.getItem("Semana-3")),
+//     JSON.parse(localStorage.getItem("Semana-4"))
+// ]
 
-const semanasA = [
-    JSON.parse(localStorage.getItem("Semana-1a")), 
-    JSON.parse(localStorage.getItem("Semana-2a")), 
-    JSON.parse(localStorage.getItem("Semana-3a")),
-    JSON.parse(localStorage.getItem("Semana-4a"))
-]
+// const semanasA = [
+//     JSON.parse(localStorage.getItem("Semana-1a")), 
+//     JSON.parse(localStorage.getItem("Semana-2a")), 
+//     JSON.parse(localStorage.getItem("Semana-3a")),
+//     JSON.parse(localStorage.getItem("Semana-4a"))
+// ]
 
-console.log(`${semanas}, ${semanasA}`)
+const uno = JSON.parse(localStorage.getItem("Semana-1"))
+
+console.log(`${uno}`)
 
 metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
