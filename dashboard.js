@@ -1,3 +1,4 @@
+//  Variables que contengan el dataset del chart
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
@@ -428,6 +429,14 @@ if(JSON.parse(localStorage.getItem("Ads")) != null && JSON.parse(localStorage.ge
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 }
 
+// Posibilidad de reload
+const elementoMetrica = document.getElementById('selectMonth')
+elementoMetrica.addEventListener('change', (event) => {
+    console.log(event.target.value)
+    const valorMetrica = event.target.value
+    localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
+    location.reload(true)
+})
 
 function Actualizacion3(){
     const valorMetrica = document.getElementById('selectMetrica3').value
@@ -631,10 +640,10 @@ function ActualizacionAds() {
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
 
-const elementoMetrica = document.getElementById('selectMonth')
-elementoMetrica.addEventListener('change', (event) => {
-    console.log(event.target.value)
-    const valorMetrica = event.target.value
-    localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
-    location.reload()
-})
+// const elementoMetrica = document.getElementById('selectMonth')
+// elementoMetrica.addEventListener('change', (event) => {
+//     console.log(event.target.value)
+//     const valorMetrica = event.target.value
+//     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
+//     location.reload()
+// })
