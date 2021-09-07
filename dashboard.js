@@ -218,9 +218,9 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
     console.log(year)
     let yearValue
     switch(year) {
-        case 2019: yearValue = 0; break
-        case 2020: yearValue = 1; break
-        case 2021: yearValue = 2; break
+        case "2019": yearValue = 0; break
+        case "2020": yearValue = 1; break
+        case "2021": yearValue = 2; break
     }
     console.log(yearValue)
     var select = document.getElementById(`selectYear`)
