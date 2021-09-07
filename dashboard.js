@@ -208,7 +208,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
     var options = select.options
     options[2].selected = true
 }else {
-    var year = JSON.parse(localStorage.getItem("filterYear"))
+    year = JSON.parse(localStorage.getItem("filterYear"))
     let yearValue
     switch(year) {
         case '2019': yearValue = 0; break
