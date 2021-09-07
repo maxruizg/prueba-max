@@ -64,10 +64,12 @@ window.fbAsyncInit = function()
 
        //Datos mes actual
        if(parseInt(mesActual) > d.getMonth()){
-         console.log(mesActual)
-         console.log(d.getMonth())
         localStorage.setItem('Semana-1', JSON.stringify(0))
        }else {
+        console.log(mesActual)
+        console.log(d.getMonth())
+        console.log(mesAnterior)
+        console.log(year)
          FB.api(
            '/act_704269000261751/insights',
            'GET',
@@ -102,7 +104,6 @@ window.fbAsyncInit = function()
         if(parseInt(mesActual) > d.getMonth()){
           localStorage.setItem('Semana-3', JSON.stringify(0))
         }else {
-          console.log(mesActual)
           FB.api(
             '/act_704269000261751/insights',
             'GET',
