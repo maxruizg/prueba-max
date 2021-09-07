@@ -71,7 +71,7 @@ function ArregloDatos(metrica, semanas){
             datasets: [
             {
                 label: "Actual",
-                data: datosGrafica1Actual,
+                data: ArregloDatos(metrica[0], semanas),
 
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -83,7 +83,7 @@ function ArregloDatos(metrica, semanas){
             },
             {
                 label: "Anterior",
-                data: datosGrafica1Anterior,
+                data: ArregloDatos(metrica[0], semanasA),
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
                 ],
@@ -111,7 +111,7 @@ function ArregloDatos(metrica, semanas){
         datasets: [
         {
             label: "Actual",
-            data: datosGrafica2Actual,
+            data: ArregloDatos(metrica[1], semanas),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -122,7 +122,7 @@ function ArregloDatos(metrica, semanas){
         },
         {
             label: "Anterior",
-            data: datosGrafica2Anterior,
+            data: ArregloDatos(metrica[1], semanas),
             backgroundColor: [
                 'rgba(54, 162, 235, 0.2)',
             ],
