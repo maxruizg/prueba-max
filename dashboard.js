@@ -170,6 +170,7 @@ function saveMetrics() {
     // Guardar valor del año
     var year = document.getElementById('selectYear').value
     console.log(year)
+    console.log(typeof(year))
     let yearValue = 0
     switch(year) {
         case '0': yearValue = '2019'; break
