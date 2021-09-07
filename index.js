@@ -225,8 +225,8 @@ window.fbAsyncInit = function()
     });
 }
 
-const elementoMetrica = document.getElementById('selectMonth')
-elementoMetrica.addEventListener('change', (event) => {
+const elementoMetrica1 = document.getElementById('selectMonth')
+elementoMetrica1.addEventListener('change', (event) => {
     console.log(event.target.value)
     const valorMetrica = event.target.value
     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
