@@ -633,7 +633,7 @@ function ActualizacionAds() {
 
 const elementoMetrica = document.getElementById('selectMonth')
 elementoMetrica.addEventListener('change', (event) => {
-    console.log('entro')
+    console.log(event.target.value)
     const valorMetrica = event.target.value
     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
     location.reload()
