@@ -631,8 +631,8 @@ function ActualizacionAds() {
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
 
-const selectMetrica = document.getElementById('selectMetrica1')
-selectMetrica.addEventListener('change', (event) => {
+const elementoMetrica = document.getElementById('selectMetrica1')
+elementoMetrica.addEventListener('change', (event) => {
     const valorMetrica = event.target.value
     let metrica = []
     if(JSON.parse(localStorage.getItem("filterData")) == null){
