@@ -223,26 +223,26 @@ window.fbAsyncInit = function()
     });
 }
 
-const selectMetrica = document.getElementById('selectMetrica1')
-selectMetrica.addEventListener('change', (event) => {
-    const valorMetrica = event.target.value
-    let metrica = []
-    if(JSON.parse(localStorage.getItem("filterData")) == null){
-        metrica[0] = 0
-        metrica[1] = 0
-        metrica[2] = 0
-        metrica[3] = 0
-        metrica[4] = 0
-        metrica[5] = 0
-        metrica[6] = 0
-        metrica[7] = 0
-        metrica[8] = 0
-        metrica[9] = 0
-    }else {
-        metrica = JSON.parse(localStorage.getItem("filterData"))
-    }
+// const selectMetrica = document.getElementById('selectMetrica1')
+// selectMetrica.addEventListener('change', (event) => {
+//     const valorMetrica = event.target.value
+//     let metrica = []
+//     if(JSON.parse(localStorage.getItem("filterData")) == null){
+//         metrica[0] = 0
+//         metrica[1] = 0
+//         metrica[2] = 0
+//         metrica[3] = 0
+//         metrica[4] = 0
+//         metrica[5] = 0
+//         metrica[6] = 0
+//         metrica[7] = 0
+//         metrica[8] = 0
+//         metrica[9] = 0
+//     }else {
+//         metrica = JSON.parse(localStorage.getItem("filterData"))
+//     }
 
-    metrica[0] = valorMetrica
-    localStorage.setItem('filterData', JSON.stringify(metrica))
-    location.reload()
-})
+//     metrica[0] = valorMetrica
+//     localStorage.setItem('filterData', JSON.stringify(metrica))
+//     location.reload()
+// })
