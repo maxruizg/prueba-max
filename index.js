@@ -31,15 +31,9 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
 
 if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = d.getFullYear().toString()
-  localStorage.setItem("filterYear", JSON.stringify(2))
-}else {
-  const yearValue = JSON.parse(localStorage.getItem("filterYear"))
-  switch(yearValue){
-    case '0': year = 2019; break
-    case '1': year = 2020; break
-    case '2': year = 2021; break
-  }
   localStorage.setItem("filterYear", JSON.stringify(year))
+}else {
+  year = JSON.parse(localStorage.getItem("filterYear"))
 }
 
 window.fbAsyncInit = function()
