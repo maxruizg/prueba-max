@@ -5,6 +5,8 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
+let respuesta = ''
+
 let metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -65,7 +67,7 @@ window.fbAsyncInit = function()
            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesActual + "-01',until:'"+ year +"-"+ mesActual +"-08'}]"},
            function(response) {
              if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
-               const respuesta = response.data[0]
+               respuesta = response.data[0]
                localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
              }else {
                localStorage.setItem('Semana-1', JSON.stringify(0))
