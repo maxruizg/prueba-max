@@ -169,11 +169,12 @@ function saveMetrics() {
 
     // Guardar valor del año
     var year = document.getElementById('selectYear').value
+    console.log(year)
     let yearValue = 0
     switch(year) {
-        case '0': yearValue = 2019; break
-        case '1': yearValue = 2020; break
-        case '2': yearValue = 2021; break
+        case '0': yearValue = '2019'; break
+        case '1': yearValue = '2020'; break
+        case '2': yearValue = '2021'; break
     }
     localStorage.setItem("filterYear", JSON.stringify(yearValue))
 }
