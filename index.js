@@ -39,9 +39,8 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
     case '1': year = 2020; break
     case '2': year = 2021; break
   }
+  localStorage.setItem("filterYear", JSON.stringify(year))
 }
-
-console.log()
 
 window.fbAsyncInit = function()
 {
@@ -109,7 +108,6 @@ window.fbAsyncInit = function()
             'GET',
             {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-"+ mesActual +"-24'}]"},
             function(response) {
-              console.log(response)
               if(response.data[0] != undefined){
                 localStorage.setItem('Semana-3', JSON.stringify(response.data[0]))
               }else {

@@ -7,8 +7,6 @@ const semanas = [
     JSON.parse(localStorage.getItem("Semana-4"))
 ]
 
-console.log(semanas)
-
 const semanasA = [
     JSON.parse(localStorage.getItem("Semana-1a")), 
     JSON.parse(localStorage.getItem("Semana-2a")), 
