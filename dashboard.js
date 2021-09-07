@@ -1,32 +1,4 @@
 //  Variables que contengan el dataset del chart
-// Funcion para salvar metricas desde un el boton salvar filtros
-// iteradores = 10
-function saveMetrics() {
-    // Guardar valores metricas en localstorage
-    var i = 0
-    var filters = []
-    do{
-        filters[i] = document.getElementById(`selectMetrica${i + 1}`).value
-        i++
-    }while(i < 10)
-    localStorage.setItem("filterData", JSON.stringify(filters));
-
-    //Guardar valor de month localstorage
-    var month = document.getElementById(`selectMonth`).value
-    localStorage.setItem("filterMonth", JSON.stringify(month));
-
-    // Guardar valor del año
-    var year = document.getElementById('selectYear').value
-    let yearValue = 0
-    switch(year) {
-        case '0': yearValue = 2019; break
-        case '1': yearValue = 2020; break
-        case '2': yearValue = 2021; break
-    }
-    localStorage.setItem("filterYear", JSON.stringify(yearValue))
-}
-
-saveMetrics()
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
@@ -178,6 +150,33 @@ function ArregloDatos(metrica, semanas){
 
 })();
 
+
+// Funcion para salvar metricas desde un el boton salvar filtros
+// iteradores = 10
+function saveMetrics() {
+    // Guardar valores metricas en localstorage
+    var i = 0
+    var filters = []
+    do{
+        filters[i] = document.getElementById(`selectMetrica${i + 1}`).value
+        i++
+    }while(i < 10)
+    localStorage.setItem("filterData", JSON.stringify(filters));
+
+    //Guardar valor de month localstorage
+    var month = document.getElementById(`selectMonth`).value
+    localStorage.setItem("filterMonth", JSON.stringify(month));
+
+    // Guardar valor del año
+    var year = document.getElementById('selectYear').value
+    let yearValue = 0
+    switch(year) {
+        case '0': yearValue = 2019; break
+        case '1': yearValue = 2020; break
+        case '2': yearValue = 2021; break
+    }
+    localStorage.setItem("filterYear", JSON.stringify(yearValue))
+}
 
 let readData = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
