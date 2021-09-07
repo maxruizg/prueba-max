@@ -633,6 +633,7 @@ function ActualizacionAds() {
 
 const elementoMetrica = document.getElementById('selectMetrica1')
 elementoMetrica.addEventListener('change', (event) => {
+    console.log('entro')
     const valorMetrica = event.target.value
     let metrica = []
     if(JSON.parse(localStorage.getItem("filterData")) == null){
