@@ -101,7 +101,7 @@ window.fbAsyncInit = function()
           FB.api(
             '/act_704269000261751/insights',
             'GET',
-            {"fields":"spend,clicks,impressions,ctr,cpc","time_ranges,frequency":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-"+ mesActual +"-24'}]"},
+            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesActual +"-16',until:'"+ year +"-"+ mesActual +"-24'}]"},
             function(response) {
               console.log(response)
               if(response.data[0] != undefined){
