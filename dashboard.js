@@ -57,7 +57,7 @@ function ArregloDatos(metrica, semanas){
     return arreglo
 }
 
-() => {
+(() => {
     let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
     let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
     let datosGrafica2Actual = ArregloDatos(metrica[1], semanas)
@@ -150,7 +150,7 @@ function ArregloDatos(metrica, semanas){
     //     chart.update()
     // }
 
-};
+})();
 
 
 // Funcion para salvar metricas desde un el boton salvar filtros
