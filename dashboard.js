@@ -14,7 +14,6 @@ const semanasA = [
     JSON.parse(localStorage.getItem("Semana-4a"))
 ]
 
-console.log(semanas)
 
 metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
@@ -233,8 +232,6 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null) {
 function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     const options = ArregloDatos(metrica[idMetrica], semanas)
     const optionsA = ArregloDatos(metrica[idMetrica], semanasA)
-
-    console.log(semanas)
 
     let sumOptions = 0
     let sumOptionsA = 0
