@@ -219,6 +219,10 @@ window.fbAsyncInit = function()
     });
 }
 
+async function Cargar() {
+
+}
+
 // const elementoMetrica1 = document.getElementById('selectMonth')
 // elementoMetrica1.addEventListener('change', (event) => {
 //     console.log(event.target.value)
