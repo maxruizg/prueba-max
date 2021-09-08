@@ -1,6 +1,7 @@
 //  Variables que contengan el dataset del chart
 
 let response = prueba
+console.log(prueba)
 console.log(response)
 
 const semanas = [
