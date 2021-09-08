@@ -5,6 +5,8 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
+let prueba = []
+
 let metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -66,6 +68,7 @@ window.fbAsyncInit = function()
            function(response) {
              if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
                localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+               prueba = response
              }else {
                localStorage.setItem('Semana-1', JSON.stringify(0))
              }

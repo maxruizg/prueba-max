@@ -1,5 +1,7 @@
 //  Variables que contengan el dataset del chart
 
+let response = prueba
+console.log(response)
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
