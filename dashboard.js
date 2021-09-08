@@ -57,7 +57,7 @@ function ArregloDatos(metrica, semanas){
     return arreglo
 }
 
-() => {
+const graficas = () => {
     let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
     let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
     let datosGrafica2Actual = ArregloDatos(metrica[1], semanas)
@@ -122,7 +122,7 @@ function ArregloDatos(metrica, semanas){
         },
         {
             label: "Anterior",
-            data: ArregloDatos(metrica[1], semanas),
+            data: ArregloDatos(metrica[1], semanasA),
             backgroundColor: [
                 'rgba(54, 162, 235, 0.2)',
             ],
