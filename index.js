@@ -67,7 +67,7 @@ window.fbAsyncInit = async function()
         status  : false
     });
 
-    FB.login(function(response) {
+    FB.login(async function(response) {
         console.log('Running login');
       if (response.authResponse) {
         console.log('Welcome!  Fetching your information.... ');
