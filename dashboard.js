@@ -1,8 +1,6 @@
 //  Variables que contengan el dataset del chart
 
-let response = prueba
-console.log(prueba)
-console.log(response)
+saveMetrics()
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
@@ -61,10 +59,6 @@ function ArregloDatos(metrica, semanas){
 }
 
 (() => {
-    let datosGrafica1Actual = ArregloDatos(metrica[0], semanas)
-    let datosGrafica1Anterior = ArregloDatos(metrica[0], semanasA)
-    let datosGrafica2Actual = ArregloDatos(metrica[1], semanas)
-    let datosGrafica2Anterior = ArregloDatos(metrica[1], semanasA)
 
     var ctx = document.getElementById('myChart1');
     var myChart = new Chart(ctx, {

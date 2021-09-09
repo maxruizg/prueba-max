@@ -7,6 +7,7 @@ let untilDay = ''
 
 let prueba = []
 
+// Guardamos los filtros default en local storage
 let metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -21,6 +22,10 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
   localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
+
+  var select = document.getElementById(`selectMonth`)
+  var options = select.options
+  options[mesAnterior].selected = true
 }else {
   var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth"))) + 1
   mesActual = aux.toString()
@@ -36,6 +41,15 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
   localStorage.setItem("filterYear", JSON.stringify(year))
 }else {
   year = JSON.parse(localStorage.getItem("filterYear"))
+  let yearValue
+    switch(year) {
+        case "2019": yearValue = 0; break
+        case "2020": yearValue = 1; break
+        case "2021": yearValue = 2; break
+    }
+    var select = document.getElementById(`selectYear`)
+    var options = select.options
+    options[yearValue].selected = true
 }
 
 window.fbAsyncInit = function()
