@@ -8,7 +8,7 @@
 
 // RecargaInfo()
 
-console.log('hola')
+console.log('ya sirve')
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
