@@ -5,6 +5,8 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
+console.log(document.getElementById('selectMonth'))
+
 let prueba = []
 
 // Guardamos los filtros default en local storage
@@ -22,7 +24,6 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
   localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
-  console.log(document.getElementById('selectMonth'))
   // var select = document.getElementById(`selectMonth`).value
   // console.log(select)
   // var options = select.options
