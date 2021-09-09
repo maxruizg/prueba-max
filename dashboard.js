@@ -3,6 +3,7 @@
 function RecargaInfo(){
     saveMetrics()
     location.reload(true)
+    console.log('hola')
 }
 
 RecargaInfo()
