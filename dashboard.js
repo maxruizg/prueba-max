@@ -25,7 +25,7 @@ const semanasA = [
 ]
 
 
-metrica = []
+let metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
 
 function ArregloDatos(metrica, semanas){
