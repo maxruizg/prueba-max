@@ -8,7 +8,7 @@
 
 // RecargaInfo()
 
-console.log('ya sirve')
+console.log(document.getElementById('selectMonth'))
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
