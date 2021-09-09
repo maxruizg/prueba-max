@@ -56,7 +56,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = JSON.parse(localStorage.getItem("filterYear"))
 }
 
-window.fbAsyncInit = function()
+window.fbAsyncInit = async function()
 {
     FB.init({
         appId   : "1345101055833302",
@@ -79,19 +79,22 @@ window.fbAsyncInit = function()
        if(parseInt(mesActual) > d.getMonth()){
         localStorage.setItem('Semana-1', JSON.stringify(0))
        }else {
+         const response = await
          FB.api(
            '/act_704269000261751/insights',
            'GET',
            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesActual + "-01',until:'"+ year +"-"+ mesActual +"-08'}]"},
-           function(response) {
-             if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
-               localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
-               prueba = response
-             }else {
-               localStorage.setItem('Semana-1', JSON.stringify(0))
-             }
-           }
+
+          //  function(response) {
+          //    if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
+          //      localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
+          //      prueba = response
+          //    }else {
+          //      localStorage.setItem('Semana-1', JSON.stringify(0))
+          //    }
+          //  }
          );
+         console.log(response)
        }
 
         if(parseInt(mesActual) > d.getMonth()){
