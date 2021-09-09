@@ -5,9 +5,9 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
-$(document).ready(function() {
-  console.log(document.getElementById('selectMonth'))
-})
+// $(document).ready(function() {
+//   console.log(document.getElementById('selectMonth'))
+// })
 
 let prueba = []
 
