@@ -24,7 +24,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
 
   var select = document.getElementById(`selectMonth`)
-  console.log()
+  console.log(select)
   var options = select.options
   options[mesAnterior].selected = true
 }else {
@@ -46,7 +46,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
         case "2020": yearValue = 1; break
         case "2021": yearValue = 2; break
     }
-    var select = document.getElementById('selectYear')
+    select = document.getElementById('selectYear')
     console.log(select)
     var options = select.options
     options[yearValue].selected = true
