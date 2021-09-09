@@ -12,7 +12,7 @@ let untilDay = ''
 let prueba = []
 
 // Guardamos los filtros default en local storage
-let metrica = []
+metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
     metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     localStorage.setItem("filterData", JSON.stringify(metrica))
