@@ -1,6 +1,11 @@
 //  Variables que contengan el dataset del chart
 
-saveMetrics()
+function RecargaInfo(){
+    saveMetrics()
+    location.reload(true)
+}
+
+RecargaInfo()
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
