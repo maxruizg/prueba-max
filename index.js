@@ -24,6 +24,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
 
   var select = document.getElementById(`selectMonth`)
+  console.log()
   var options = select.options
   options[mesAnterior].selected = true
 }else {
@@ -39,8 +40,6 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
 if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = d.getFullYear().toString()
   localStorage.setItem("filterYear", JSON.stringify(year))
-}else {
-  year = JSON.parse(localStorage.getItem("filterYear"))
   let yearValue
     switch(year) {
         case "2019": yearValue = 0; break
@@ -51,6 +50,8 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
     console.log(select)
     var options = select.options
     options[yearValue].selected = true
+}else {
+  year = JSON.parse(localStorage.getItem("filterYear"))
 }
 
 window.fbAsyncInit = function()
