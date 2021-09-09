@@ -3,10 +3,12 @@
 function RecargaInfo(){
     saveMetrics()
     location.reload(true)
-    console.log('hola')
+    console.log('recargando')
 }
 
 RecargaInfo()
+
+console.log('hola')
 
 const semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
