@@ -47,7 +47,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
         case "2020": yearValue = 1; break
         case "2021": yearValue = 2; break
     }
-    select = document.getElementById('selectYear').value
+    select = document.getElementById('selectYear')
     var options = select.options
     options[yearValue].selected = true
 }else {
