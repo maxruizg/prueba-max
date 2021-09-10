@@ -17,7 +17,7 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
-  let mesPrueba = mesActual == 1 ? "12" : parseInt(mesActual - 1).toString()
+  let mesPrueba = mesActual == 1 ? "12" : parseInt(mesActual).toString()
   console.log(mesPrueba)
   if(mesActual == '1'){
     mesAnterior = '12'
