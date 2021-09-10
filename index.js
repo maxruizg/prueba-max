@@ -23,7 +23,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
   localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
-  var select = document.getElementById(`selectMonth`).value
+  var select = document.getElementById(`selectMonth`)
   console.log(select)
   var options = select.options
   console.log(options)
