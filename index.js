@@ -17,6 +17,8 @@ if(JSON.parse(localStorage.getItem("filterData")) == null){
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
+  let mesPrueba = mesActual == 1 ? "12" : parseInt(mesActual - 1).toString()
+  console.log(mesPrueba)
   if(mesActual == '1'){
     mesAnterior = '12'
   }else {
@@ -83,7 +85,7 @@ window.fbAsyncInit = function()
            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesActual + "-01',until:'"+ year +"-"+ mesActual +"-08'}]"},
 
            function(response) {
-             if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
+             if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth()){
                localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
                prueba = response
              }else {
