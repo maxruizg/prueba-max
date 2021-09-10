@@ -26,6 +26,7 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   var select = document.getElementById(`selectMonth`).value
   console.log(select)
   var options = select.options
+  console.log(options)
   options[mesAnterior].selected = true
 }else {
   var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth"))) + 1
