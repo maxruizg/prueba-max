@@ -5,9 +5,6 @@ let year = ''
 let sinceDay = ''
 let untilDay = ''
 
-// $(document).ready(function() {
-//   console.log(document.getElementById('selectMonth'))
-// })
 
 let prueba = []
 
@@ -26,10 +23,10 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
     mesAnterior = parseInt(mesActual - 1).toString()
   }
   localStorage.setItem("filterMonth", JSON.stringify(mesAnterior))
-  // var select = document.getElementById(`selectMonth`).value
-  // console.log(select)
-  // var options = select.options
-  // options[mesAnterior].selected = true
+  var select = document.getElementById(`selectMonth`).value
+  console.log(select)
+  var options = select.options
+  options[mesAnterior].selected = true
 }else {
   var aux = parseInt(JSON.parse(localStorage.getItem("filterMonth"))) + 1
   mesActual = aux.toString()
@@ -43,15 +40,15 @@ if(JSON.parse(localStorage.getItem("filterMonth")) == null){
 if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = d.getFullYear().toString()
   localStorage.setItem("filterYear", JSON.stringify(year))
-  // let yearValue
-  //   switch(year) {
-  //       case "2019": yearValue = 0; break
-  //       case "2020": yearValue = 1; break
-  //       case "2021": yearValue = 2; break
-  //   }
-  //   select = document.getElementById('selectYear').value
-  //   var options = select.options
-  //   options[yearValue].selected = true
+  let yearValue
+    switch(year) {
+        case "2019": yearValue = 0; break
+        case "2020": yearValue = 1; break
+        case "2021": yearValue = 2; break
+    }
+    select = document.getElementById('selectYear').value
+    var options = select.options
+    options[yearValue].selected = true
 }else {
   year = JSON.parse(localStorage.getItem("filterYear"))
 }
