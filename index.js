@@ -53,7 +53,7 @@ if(JSON.parse(localStorage.getItem("filterYear")) == null){
   year = JSON.parse(localStorage.getItem("filterYear"))
 }
 
-window.fbAsyncInit = async function()
+window.fbAsyncInit = function()
 {
     FB.init({
         appId   : "1345101055833302",
@@ -64,7 +64,7 @@ window.fbAsyncInit = async function()
         status  : false
     });
 
-    FB.login(async function(response) {
+    FB.login(function(response) {
         console.log('Running login');
       if (response.authResponse) {
         console.log('Welcome!  Fetching your information.... ');
