@@ -239,7 +239,7 @@ window.fbAsyncInit = function()
       }
     });
     saveMetrics();
-flagReload=setInterval(evaluarRecarga,5000 ) /*5*/
+flagReload=setInterval(evaluarRecarga,3000 ) /*5*/
 }
 function evaluarRecarga() {
   console.log("evaluarRecarga");
@@ -252,7 +252,7 @@ let s2a=JSON.parse(localStorage.getItem("Semana-2a"))
 let s3a=JSON.parse(localStorage.getItem("Semana-3a"))
 let s4a=JSON.parse(localStorage.getItem("Semana-4a"))
 let p1 = document.getElementById('suma1').value
-if(s1==null || p1==0 ){
+if(s1==null ){
 clearTimeout(flagReload);
 console.log("voy a reiniciar");
 //location.reload(true)
