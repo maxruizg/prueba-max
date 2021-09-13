@@ -11,7 +11,7 @@ let prueba = []
 // Guardamos los filtros default en local storage
 metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
-    metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    metrica = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
     localStorage.setItem("filterData", JSON.stringify(metrica))
 }
 
