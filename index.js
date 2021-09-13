@@ -240,7 +240,6 @@ window.fbAsyncInit = function()
        console.log('User cancelled login or did not fully authorize.');
       }
     });
-    saveMetrics()
 }
 
 // const elementoMetrica1 = document.getElementById('selectMonth')
