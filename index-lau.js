@@ -256,6 +256,8 @@ function evaluarRecarga() {
     clearTimeout(flagReload);
     console.log("voy a reiniciar");
     location.reload(true)
+  }else {
+    localStorage.clear()
   }
 }
 
