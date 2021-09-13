@@ -237,6 +237,8 @@ function Datos(metrica, idMetrica, idSuma, idPorcentaje, idIcono){
     const options = ArregloDatos(metrica[idMetrica], semanas)
     const optionsA = ArregloDatos(metrica[idMetrica], semanasA)
 
+    console.log(options)
+
     let sumOptions = 0
     let sumOptionsA = 0
     let porcentaje = 0

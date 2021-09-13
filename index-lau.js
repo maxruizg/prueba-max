@@ -251,14 +251,12 @@ let s1a=JSON.parse(localStorage.getItem("Semana-1a"))
 let s2a=JSON.parse(localStorage.getItem("Semana-2a"))
 let s3a=JSON.parse(localStorage.getItem("Semana-3a"))
 let s4a=JSON.parse(localStorage.getItem("Semana-4a"))
-if(s1==null && s2==null && s3==null && s4==null && s1a==null && s2a==null && s3a==null && s4a==null ){
+let p1 = document.getElementById('suma1').value
+if(s1==null || p1==0 ){
 clearTimeout(flagReload);
 console.log("voy a reiniciar");
 //location.reload(true)
 }
-}
-async function Cargar() {
-
 }
 
 // const elementoMetrica1 = document.getElementById('selectMonth')
