@@ -239,6 +239,7 @@ window.fbAsyncInit = function()
       } else {
        console.log('User cancelled login or did not fully authorize.');
       }
+      saveMetrics()
     });
 }
 
