@@ -252,7 +252,7 @@ function evaluarRecarga() {
   let s3a=JSON.parse(localStorage.getItem("Semana-3a"))
   let s4a=JSON.parse(localStorage.getItem("Semana-4a"))
   let p1 = document.getElementById('suma1').value
-  if(s1==null ){
+  if(s1!=null ){
     clearTimeout(flagReload);
     console.log("voy a reiniciar");
     location.reload(true)
