@@ -152,7 +152,7 @@ function ArregloDatos(metrica, semanas){
     //     chart.data.datasets[1].data.push(anterior)
     //     chart.update()
     // }
-    console.log(chart.data.datasets[0].data)
+    console.log(myChart.data.datasets[0].data)
 
     function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
         chart.data.datasets.forEach((datasets) => {
