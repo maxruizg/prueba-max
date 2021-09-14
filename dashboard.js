@@ -157,7 +157,8 @@ function ArregloDatos(metrica, semanas){
         // chart.data.datasets.forEach((datasets) => {
         //     datasets.data.pop()
         // })
-        console.log(chart.data.datasets)
+        var c = chart.data.datasets
+        console.log(c)
     }
     
     ActualizarGrafica(myChart)
