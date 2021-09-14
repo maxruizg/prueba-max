@@ -157,7 +157,6 @@ function ArregloDatos(metrica, semanas){
         chart.data.datasets.forEach((datasets) => {
             datasets.data.pop()
         })
-        chart.update()
 
         chart.data.datasets[0].data = ArregloDatos(metrica, semanas)
         chart.data.datasets[1].data = ArregloDatos(metrica, semanasA)
@@ -165,7 +164,7 @@ function ArregloDatos(metrica, semanas){
     }
 
     const el = document.getElementById("selectMetrica1")
-    el.addEventListener("change", () => {ActualizarGrafica(myChart, metrica[0], semanas, semanasA)}, false)
+    el.addEventListener("change", ActualizarGrafica(myChart, metrica[0], semanas, semanasA), false)
     
 })();
 
