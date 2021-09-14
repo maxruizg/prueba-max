@@ -158,8 +158,8 @@ function ArregloDatos(metrica, semanas){
             datasets.data.pop()
         })
 
-        chart.data.datasets[0].data = ArregloDatos(metrica[posMetrica], semanas)
-        chart.data.datasets[1].data = ArregloDatos(metrica[posMetrica], semanasA)
+        chart.data.datasets[0].data.push(ArregloDatos(metrica[posMetrica], semanas))
+        chart.data.datasets[1].data.push(ArregloDatos(metrica[posMetrica], semanasA))
         chart.update()
     }
 
