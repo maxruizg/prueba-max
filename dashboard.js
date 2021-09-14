@@ -153,15 +153,18 @@ function ArregloDatos(metrica, semanas){
     //     chart.update()
     // }
 
-    function ActualizarGrafica(chart) {
-        // chart.data.datasets.forEach((datasets) => {
-        //     datasets.data.pop()
-        // })
-        var c = chart.data.datasets
-        console.log(c)
+    function ActualizarGrafica(chart, metrica, semanas, semanasA) {
+        chart.data.datasets.forEach((datasets) => {
+            datasets.data.pop()
+        })
+
+        chart.data.datasets[0].data = ArregloDatos(metrica, semanas)
+        chart.data.datasets[1].data = ArregloDatos(metrica, semanasA)
     }
+
+    const el = document.getElementById("selectMetrica1")
+    el.addEventListener("change", () => {ActualizarGrafica(myChart, metrica[0], semanas, semanasA)}, false)
     
-    ActualizarGrafica(myChart)
 })();
 
 
