@@ -153,6 +153,14 @@ function ArregloDatos(metrica, semanas){
     //     chart.update()
     // }
 
+    function ActualizarGrafica(chart) {
+        // chart.data.datasets.forEach((datasets) => {
+        //     datasets.data.pop()
+        // })
+        console.log(chart.data.datasets)
+    }
+    
+    ActualizarGrafica(myChart)
 })();
 
 
