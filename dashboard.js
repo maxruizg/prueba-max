@@ -152,6 +152,7 @@ function ArregloDatos(metrica, semanas){
     //     chart.data.datasets[1].data.push(anterior)
     //     chart.update()
     // }
+    console.log(chart.data.datasets[0].data)
 
     function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
         chart.data.datasets.forEach((datasets) => {
@@ -161,10 +162,11 @@ function ArregloDatos(metrica, semanas){
         chart.data.datasets[0].data.push(ArregloDatos(metrica[posMetrica], semanas))
         chart.data.datasets[1].data.push(ArregloDatos(metrica[posMetrica], semanasA))
         chart.update()
+
     }
 
-    const el = document.getElementById("selectMetrica1")
-    el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
+    // const el = document.getElementById("selectMetrica1")
+    // el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
     
 })();
 
