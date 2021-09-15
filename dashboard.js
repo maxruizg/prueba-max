@@ -157,27 +157,26 @@ function ArregloDatos(metrica, semanas){
     // const c = myChart.data.datasets[0].data
     // console.log(c)
 
-    function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
-        const datosSemanas = [
-            ArregloDatos(metrica[posMetrica], semanas),
-            ArregloDatos(metrica[posMetrica], semanasA)
-        ]
-
-        chart.data.datasets.forEach((datasets, index) => {
-            datasets.data.pop()
-            datasets.data.push(ArregloDatos(metrica[posMetrica], datosSemanas[index]))
-            console.log(index)
-        })
-        chart.update()
-
-        // console.log(datosSemanas)
-    }
-
     const el = document.getElementById("selectMetrica1")
     el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
     
 })();
 
+function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
+    const datosSemanas = [
+        ArregloDatos(metrica[posMetrica], semanas),
+        ArregloDatos(metrica[posMetrica], semanasA)
+    ]
+
+    chart.data.datasets.forEach((datasets, index) => {
+        datasets.data.pop()
+        datasets.data.push(ArregloDatos(metrica[posMetrica], datosSemanas[index]))
+        console.log(index)
+    })
+    chart.update()
+
+    // console.log(datosSemanas)
+}
 
 // Funcion para salvar metricas desde un el boton salvar filtros
 // iteradores = 10
