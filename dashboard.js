@@ -166,6 +166,7 @@ function ArregloDatos(metrica, semanas){
         chart.data.datasets.forEach((datasets, index) => {
             datasets.data.pop()
             datasets.data.push(ArregloDatos(metrica[posMetrica], datosSemanas[index]))
+            console.log(index)
         })
         chart.update()
 
