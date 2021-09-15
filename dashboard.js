@@ -23,6 +23,7 @@ const semanasA = [
 ]
 
 
+
 let metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
 
@@ -158,20 +159,17 @@ function ArregloDatos(metrica, semanas){
 
     function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
         const datosSemanas = [
-            semanas,
-            semanasA
+            ArregloDatos(metrica[posMetrica], semanas),
+            ArregloDatos(metrica[posMetrica], semanasA)
         ]
 
-        // chart.data.datasets.forEach((datasets) => {
-        //     datasets.data.pop()
-        //     datasets.data.push(ArregloDatos(metrica[posMetrica], semanas))
-        // })
+        chart.data.datasets.forEach((datasets, index) => {
+            datasets.data.pop()
+            datasets.data.push(ArregloDatos(metrica[posMetrica], datosSemanas[index]))
+        })
+        chart.update()
 
-        // chart.data.datasets[0].data.push(ArregloDatos(metrica[posMetrica], semanas))
-        // chart.data.datasets[1].data.push(ArregloDatos(metrica[posMetrica], semanasA))
-        // chart.update()
-
-        console.log(datosSemanas)
+        // console.log(datosSemanas)
     }
 
     const el = document.getElementById("selectMetrica1")
