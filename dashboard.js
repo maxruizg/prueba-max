@@ -157,8 +157,8 @@ function ArregloDatos(metrica, semanas){
     // const c = myChart.data.datasets[0].data
     // console.log(c)
 
-    const el = document.getElementById("selectMetrica1")
-    el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
+    // const el = document.getElementById("selectMetrica1")
+    // el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
     
 })();
 
