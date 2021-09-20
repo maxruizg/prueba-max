@@ -159,23 +159,72 @@ function ArregloDatos(metrica, semanas){
 
     // const el = document.getElementById("selectMetrica1")
     // el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
-    
 })();
 
-function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
+
+// function ActualizarGrafica(chart, metrica, posMetrica, semanas, semanasA) {
+//     const datosSemanas = [
+//         ArregloDatos(metrica[posMetrica], semanas),
+//         ArregloDatos(metrica[posMetrica], semanasA)
+//     ]
+
+//     chart.data.datasets.forEach((datasets, index) => {
+//         datasets.data.pop()
+//         datasets.data.push(ArregloDatos(metrica[posMetrica], datosSemanas[index]))
+//         console.log(index)
+//     })
+//     chart.update()
+
+//     console.log(datosSemanas)
+// }
+
+function ActualizacionGrafica1() {
+    const valorMetrica = document.getElementById('selectMetrica1').value
+    
     const datosSemanas = [
-        ArregloDatos(metrica[posMetrica], semanas),
-        ArregloDatos(metrica[posMetrica], semanasA)
+        ArregloDatos(valorMetrica.toString(), semanas),
+        ArregloDatos(valorMetrica.toString(), semanasA)
     ]
 
-    chart.data.datasets.forEach((datasets, index) => {
-        datasets.data.pop()
-        datasets.data.push(ArregloDatos(metrica[posMetrica], datosSemanas[index]))
-        console.log(index)
-    })
-    chart.update()
+    var ctx = document.getElementById('myChart1');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+            datasets: [
+            {
+                label: "Actual",
+                data: datosSemanas[0],
 
-    // console.log(datosSemanas)
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 2
+            },
+            {
+                label: "Anterior",
+                data: datosSemanas[1],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 2
+            }
+        ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 }
 
 // Funcion para salvar metricas desde un el boton salvar filtros
