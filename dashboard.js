@@ -568,4 +568,4 @@ function ActualizacionGrafica1() {
 }
 
 const el = document.getElementById('selectMetrica1')
-el.addEventListener("change", ActualizacionGrafica1(), false)
+el.addEventListener("change", ActualizacionGrafica1, false)
