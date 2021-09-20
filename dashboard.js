@@ -563,6 +563,8 @@ function ActualizacionGrafica1() {
             }
         }
     });
+
+    console.log('Actualizacion grafica')
 }
 
 const el = document.getElementById('selectMetrica1')
