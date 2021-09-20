@@ -67,7 +67,7 @@ function ArregloDatos(metrica, semanas){
 
 (() => {
 
-    var ctx = document.getElementById('myChart1');
+    var ctx = document.getElementById('myChart1').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -410,15 +410,6 @@ if(JSON.parse(localStorage.getItem("Ads")) != null && JSON.parse(localStorage.ge
     const adsData = JSON.parse(localStorage.getItem("Ads")).data
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
 }
-
-// Posibilidad de reload
-const elementoMetrica = document.getElementById('selectMonth')
-elementoMetrica.addEventListener('change', (event) => {
-    console.log(event.target.value)
-    const valorMetrica = event.target.value
-    localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
-    location.reload(true)
-})
 
 function Actualizacion3(){
     const valorMetrica = document.getElementById('selectMetrica3').value
