@@ -178,55 +178,6 @@ function ArregloDatos(metrica, semanas){
 //     console.log(datosSemanas)
 // }
 
-function ActualizacionGrafica1() {
-    const valorMetrica = document.getElementById('selectMetrica1').value
-    
-    const datosSemanas = [
-        ArregloDatos(valorMetrica.toString(), semanas),
-        ArregloDatos(valorMetrica.toString(), semanasA)
-    ]
-
-    var ctx = document.getElementById('myChart1');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
-            datasets: [
-            {
-                label: "Actual",
-                data: datosSemanas[0],
-
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 2
-            },
-            {
-                label: "Anterior",
-                data: datosSemanas[1],
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderWidth: 2
-            }
-        ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-
 // Funcion para salvar metricas desde un el boton salvar filtros
 // iteradores = 10
 function saveMetrics() {
@@ -573,3 +524,52 @@ function ActualizacionAds() {
 //     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
 //     location.reload()
 // })
+
+function ActualizacionGrafica1() {
+    const valorMetrica = document.getElementById('selectMetrica1').value
+    
+    const datosSemanas = [
+        ArregloDatos(valorMetrica.toString(), semanas),
+        ArregloDatos(valorMetrica.toString(), semanasA)
+    ]
+
+    var ctx = document.getElementById('myChart1');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+            datasets: [
+            {
+                label: "Actual",
+                data: datosSemanas[0],
+
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 2
+            },
+            {
+                label: "Anterior",
+                data: datosSemanas[1],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 2
+            }
+        ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
