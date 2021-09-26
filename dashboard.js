@@ -152,7 +152,7 @@ function ArregloDatos(metrica, semanas){
 })();
 
 const el = document.getElementById('selectMetrica1')
-el.addEventListener("change", ActualizacionGrafica1())
+el.addEventListener("change", ActualizacionGrafica1(), true)
 
 function ActualizacionGrafica1() {
     const valorMetrica = document.getElementById('selectMetrica1').value
