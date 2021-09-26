@@ -147,18 +147,61 @@ function ArregloDatos(metrica, semanas){
     });
     myChart1.resize(20, 20)
 
-    // function addData(chart, actual, anterior){
-    //     console.log(chart.data.datasets)
-    //     chart.data.datasets[0].data.push(actual)
-    //     chart.data.datasets[1].data.push(anterior)
-    //     chart.update()
-    // }
+    function ActualizacionGrafica1(myChart) {
+        const valorMetrica = document.getElementById('selectMetrica1').value
+        
+        const datosSemanas = [
+            ArregloDatos(valorMetrica.toString(), semanas),
+            ArregloDatos(valorMetrica.toString(), semanasA)
+        ]
 
-    // const c = myChart.data.datasets[0].data
-    // console.log(c)
-
-    // const el = document.getElementById("selectMetrica1")
-    // el.addEventListener("change", ActualizarGrafica(myChart, metrica, 0, semanas, semanasA), false)
+        myChart.destroy()
+    
+        var ctx = document.getElementById('myChart1');
+        var myChart1 = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+                datasets: [
+                {
+                    label: "Actual",
+                    data: datosSemanas[0],
+    
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 2
+                },
+                {
+                    label: "Anterior",
+                    data: datosSemanas[1],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 2
+                }
+            ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        console.log('Actualizacion grafica')
+    }
+    
+    const el = document.getElementById('selectMetrica1')
+    el.addEventListener("change", ActualizacionGrafica1, false)
 })();
 
 
@@ -515,57 +558,3 @@ function ActualizacionAds() {
 //     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
 //     location.reload()
 // })
-
-function ActualizacionGrafica1() {
-    const valorMetrica = document.getElementById('selectMetrica1').value
-    
-    const datosSemanas = [
-        ArregloDatos(valorMetrica.toString(), semanas),
-        ArregloDatos(valorMetrica.toString(), semanasA)
-    ]
-
-    var ctx = document.getElementById('myChart1');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
-            datasets: [
-            {
-                label: "Actual",
-                data: datosSemanas[0],
-
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 2
-            },
-            {
-                label: "Anterior",
-                data: datosSemanas[1],
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderWidth: 2
-            }
-        ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    console.log('Actualizacion grafica')
-}
-
-const el = document.getElementById('selectMetrica1')
-el.addEventListener("change", ActualizacionGrafica1, false)
