@@ -240,7 +240,6 @@ window.fbAsyncInit = function()
     });
     saveMetrics();
   flagReload=setInterval(evaluarRecarga,3000 ) /*5*/
-
 }
 
 function evaluarRecarga() {
@@ -259,11 +258,3 @@ function evaluarRecarga() {
     location.reload(true)
   }
 }
-
-// const elementoMetrica1 = document.getElementById('selectMonth')
-// elementoMetrica1.addEventListener('change', (event) => {
-//     console.log(event.target.value)
-//     const valorMetrica = event.target.value
-//     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
-//     location.reload()
-// })
