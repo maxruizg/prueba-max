@@ -150,7 +150,7 @@ function ArregloDatos(metrica, semanas){
     
     
     const el = document.getElementById('selectMetrica1')
-    el.addEventListener("change", ActualizacionGrafica1(myChart), false)
+    el.addEventListener("change", ActualizacionGrafica1(myChart), true)
 })();
 
 function ActualizacionGrafica1(myChart) {
