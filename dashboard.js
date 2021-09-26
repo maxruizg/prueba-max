@@ -149,11 +149,12 @@ function ArregloDatos(metrica, semanas){
 
     
     
-    const el = document.getElementById('selectMetrica1')
-    el.addEventListener("change", ActualizacionGrafica1(myChart))
 })();
 
-function ActualizacionGrafica1(myChart) {
+const el = document.getElementById('selectMetrica1')
+el.addEventListener("change", ActualizacionGrafica1())
+
+function ActualizacionGrafica1() {
     const valorMetrica = document.getElementById('selectMetrica1').value
     
     const datosSemanas = [
