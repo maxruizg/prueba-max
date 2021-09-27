@@ -15,7 +15,7 @@
             <div>
                 <div class='grafic'>
                     <div class='espacio'></div>
-                    <select class='options' id='selectMetrica1' onchange="ActualizarG()">
+                    <select class='options' id='selectMetrica1' onchange="ActualizarGrafica1()">
                         <option value="0" >Gasto Total</option>
                         <option value="1" >Clicks</option>
                         <option value="2" >Impresiones</option>
@@ -29,7 +29,7 @@
             <div>
                 <div class='grafic'>
                     <div class ='espacio'></div>
-                    <select class='options' id='selectMetrica2'>
+                    <select class='options' id='selectMetrica2' onchange="ActualizarGrafica2()">
                         <option value="0">Gasto Total</option>
                         <option value="1">Clicks</option>
                         <option value="2">Impresiones</option>
@@ -105,6 +105,11 @@
                     ArregloDatos(metrica[0], semanasA)
                 ]
 
+                const datosGrafica2 = [
+                    ArregloDatos(metrica[1], semanas),
+                    ArregloDatos(metrica[1], semanasA)
+                ]
+
                 // setup block
                 let data = {
                     labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
@@ -154,8 +159,70 @@
                     config
                 )
 
-                function ActualizarG() {
+                // setup block
+                let data1 = {
+                    labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+                        datasets: [
+                        {
+                            label: "Actual",
+                            data: datosGrafica1[0],
+
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                            ],
+                            borderWidth: 2
+                        },
+                        {
+                            label: "Anterior",
+                            data: datosGrafica1[1],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                            ],
+                            borderWidth: 2
+                        }
+                    ]
+                }
+
+                // config block
+                let config1 = {
+                    type: 'line',
+                    data,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                }
+
+                // init block (render)
+                let myChart1 = new Chart(
+                    document.getElementById('myChart2'),
+                    config
+                )
+
+                function ActualizarGrafica1() {
                     const valorMetrica = document.getElementById('selectMetrica1').value
+
+                    const datosNuevos = [
+                        ArregloDatos(valorMetrica, semanas),
+                        ArregloDatos(valorMetrica, semanasA)
+                    ]
+
+                    myChart.data.datasets[0].data = datosNuevos[0]
+                    myChart.data.datasets[1].data = datosNuevos[1]
+                    myChart.update()
+                }
+
+                function ActualizarGrafica2() {
+                    const valorMetrica = document.getElementById('selectMetrica2').value
 
                     const datosNuevos = [
                         ArregloDatos(valorMetrica, semanas),
