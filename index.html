@@ -40,17 +40,17 @@
                     <canvas id="myChart2" width="600" height="250"></canvas>
                 </div>
             </div>
-            
+
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-                semanas = [
+                const semanas = [
                     JSON.parse(localStorage.getItem("Semana-1")), 
                     JSON.parse(localStorage.getItem("Semana-2")), 
                     JSON.parse(localStorage.getItem("Semana-3")),
                     JSON.parse(localStorage.getItem("Semana-4"))
                 ]
 
-                semanasA = [
+                const semanasA = [
                     JSON.parse(localStorage.getItem("Semana-1a")), 
                     JSON.parse(localStorage.getItem("Semana-2a")), 
                     JSON.parse(localStorage.getItem("Semana-3a")),
@@ -150,7 +150,7 @@
 
                 // init block (render)
                 let myChart = new Chart(
-                    document.getElementById('myChart'),
+                    document.getElementById('myChart1'),
                     config
                 )
 

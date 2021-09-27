@@ -8,14 +8,14 @@
 
 // RecargaInfo()
 
-const semanas = [
+semanas = [
     JSON.parse(localStorage.getItem("Semana-1")), 
     JSON.parse(localStorage.getItem("Semana-2")), 
     JSON.parse(localStorage.getItem("Semana-3")),
     JSON.parse(localStorage.getItem("Semana-4"))
 ]
 
-const semanasA = [
+semanasA = [
     JSON.parse(localStorage.getItem("Semana-1a")), 
     JSON.parse(localStorage.getItem("Semana-2a")), 
     JSON.parse(localStorage.getItem("Semana-3a")),
@@ -24,7 +24,7 @@ const semanasA = [
 
 
 
-let metrica = []
+metrica = []
 metrica = JSON.parse(localStorage.getItem("filterData"))
 
 function ArregloDatos(metrica, semanas){
