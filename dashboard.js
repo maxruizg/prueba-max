@@ -479,11 +479,3 @@ function ActualizacionAds() {
     DatosTop(metrica, 9, adsData, 'nombreAd', 'valorAd')
     localStorage.setItem('filterData', JSON.stringify(metrica))
 }
-
-// const elementoMetrica = document.getElementById('selectMonth')
-// elementoMetrica.addEventListener('change', (event) => {
-//     console.log(event.target.value)
-//     const valorMetrica = event.target.value
-//     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
-//     location.reload()
-// })

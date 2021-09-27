@@ -4,21 +4,19 @@ var d = new Date()
 let year = ''
 let sinceDay = ''
 let untilDay = ''
-
+var flagReload;
 
 let prueba = []
 
 // Guardamos los filtros default en local storage
 metrica = []
 if(JSON.parse(localStorage.getItem("filterData")) == null){
-    metrica = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+    metrica = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     localStorage.setItem("filterData", JSON.stringify(metrica))
 }
 
 if(JSON.parse(localStorage.getItem("filterMonth")) == null){
   mesActual = d.getMonth().toString()
-  let mesPrueba = mesActual == 1 ? "12" : parseInt(mesActual).toString()
-  console.log(mesPrueba)
   if(mesActual == '1'){
     mesAnterior = '12'
   }else {
@@ -85,7 +83,7 @@ window.fbAsyncInit = function()
            {"fields":"spend,clicks,impressions,ctr,cpc,frequency","time_ranges":"[{since:'"+ year +"-"+ mesActual + "-01',until:'"+ year +"-"+ mesActual +"-08'}]"},
 
            function(response) {
-             if(response.data[0] != undefined /*|| parseInt(mesActual) > d.getMonth()*/){
+             if(response.data[0] != undefined || parseInt(mesActual) > d.getMonth){
                localStorage.setItem('Semana-1', JSON.stringify(response.data[0]))
                prueba = response
              }else {
@@ -240,12 +238,16 @@ window.fbAsyncInit = function()
        console.log('User cancelled login or did not fully authorize.');
       }
     });
+  //   saveMetrics();
+  // flagReload=setInterval(evaluarRecarga,3000 ) /*5*/
 }
 
-// const elementoMetrica1 = document.getElementById('selectMonth')
-// elementoMetrica1.addEventListener('change', (event) => {
-//     console.log(event.target.value)
-//     const valorMetrica = event.target.value
-//     localStorage.setItem('filterMonth', JSON.stringify(valorMetrica))
-//     location.reload()
-// })
+// function evaluarRecarga() {
+//   console.log("evaluarRecarga");
+//   let s1=JSON.parse(localStorage.getItem("Semana-1"))
+//   if( s1!=null ){
+//     clearTimeout(flagReload);
+//     console.log("voy a reiniciar");
+//     location.reload(true)
+//   }
+// }
