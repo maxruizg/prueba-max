@@ -65,91 +65,90 @@ function ArregloDatos(metrica, semanas){
     return arreglo
 }
 
-(() => {
+// (() => {
 
-    var ctx = document.getElementById('myChart1').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
-            datasets: [
-            {
-                label: "Actual",
-                data: ArregloDatos(metrica[0], semanas),
+//     var ctx = document.getElementById('myChart1').getContext('2d');
+//     var myChart = new Chart(ctx, {
+//         type: 'line',
+//         data: {
+//             labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+//             datasets: [
+//             {
+//                 label: "Actual",
+//                 data: ArregloDatos(metrica[0], semanas),
 
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 2
-            },
-            {
-                label: "Anterior",
-                data: ArregloDatos(metrica[0], semanasA),
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderWidth: 2
-            }
-        ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+//                 backgroundColor: [
+//                     'rgba(255, 99, 132, 0.2)',
+//                 ],
+//                 borderColor: [
+//                     'rgba(255, 99, 132, 1)',
+//                 ],
+//                 borderWidth: 2
+//             },
+//             {
+//                 label: "Anterior",
+//                 data: ArregloDatos(metrica[0], semanasA),
+//                 backgroundColor: [
+//                     'rgba(54, 162, 235, 0.2)',
+//                 ],
+//                 borderColor: [
+//                     'rgba(54, 162, 235, 1)',
+//                 ],
+//                 borderWidth: 2
+//             }
+//         ]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: true
+//                 }
+//             }
+//         }
+//     });
 
-    var ctx = document.getElementById('myChart2');
-    var myChart1 = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
-        datasets: [
-        {
-            label: "Actual",
-            data: ArregloDatos(metrica[1], semanas),
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-            ],
-            borderWidth: 2
-        },
-        {
-            label: "Anterior",
-            data: ArregloDatos(metrica[1], semanasA),
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.2)',
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 2
-        }
-    ]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-    });
-    myChart1.resize(20, 20)
+//     var ctx = document.getElementById('myChart2');
+//     var myChart1 = new Chart(ctx, {
+//     type: 'line',
+//     data: {
+//         labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
+//         datasets: [
+//         {
+//             label: "Actual",
+//             data: ArregloDatos(metrica[1], semanas),
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//             ],
+//             borderColor: [
+//                 'rgba(255, 99, 132, 1)',
+//             ],
+//             borderWidth: 2
+//         },
+//         {
+//             label: "Anterior",
+//             data: ArregloDatos(metrica[1], semanasA),
+//             backgroundColor: [
+//                 'rgba(54, 162, 235, 0.2)',
+//             ],
+//             borderColor: [
+//                 'rgba(54, 162, 235, 1)',
+//             ],
+//             borderWidth: 2
+//         }
+//     ]
+//     },
+//     options: {
+//         scales: {
+//             y: {
+//                 beginAtZero: true
+//             }
+//         }
+//     }
+//     });
 
     
     
-})();
+// })();
 
 // const el = document.getElementById('selectMetrica1')
 // el.addEventListener("change", ActualizacionGrafica1(),)
@@ -161,46 +160,6 @@ function ActualizacionGrafica1() {
         ArregloDatos(valorMetrica.toString(), semanas),
         ArregloDatos(valorMetrica.toString(), semanasA)
     ]
-
-    var ctx = document.getElementById('myChart1').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Semana-1', 'Semana-2', 'Semana-3', 'Semana-4'],
-            datasets: [
-            {
-                label: "Actual",
-                data: ArregloDatos(metrica[0], semanas),
-
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 2
-            },
-            {
-                label: "Anterior",
-                data: ArregloDatos(metrica[0], semanasA),
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
-                borderWidth: 2
-            }
-        ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
 
     myChart.destroy()
 
